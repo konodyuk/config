@@ -11,4 +11,4 @@
     path: '~/.{{ item }}'
     state: link
   loop:
-  - zshrc
+    - zshrc
