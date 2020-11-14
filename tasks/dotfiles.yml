@@ -1,3 +1,4 @@
+---
 - name: dotfiles dirs
   file:
     path: '~/.{{ item }}'
