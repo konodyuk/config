@@ -1,15 +1,30 @@
 ---
+- name: discover directories
+  find:
+    paths: dotfiles/
+    hidden: yes
+    recurse: yes
+    file_type: directory
+  register: dir_search_result
+
+- name: discover files
+  find:
+    paths: dotfiles/
+    hidden: yes
+    recurse: yes
+    file_type: file
+  register: file_search_result
+
 - name: dotfiles dirs
   file:
-    path: '~/.{{ item }}'
+    path: '~/{{ item.path | regex_replace("dotfiles/") }}'
     state: directory
     mode: '0755'
-  loop: []
+  with_items: '{{ dir_search_result.files }}'
 
 - name: dotfiles links
   file:
-    src: '{{ ansible_env.PWD }}/dotfiles/{{ item }}'
-    path: '~/.{{ item }}'
+    src: '{{ ansible_env.PWD }}/{{ item.path }}'
+    path: '~/{{ item.path | regex_replace("dotfiles/") }}'
     state: link
-  loop:
-    - zshrc
+  with_items: '{{ file_search_result.files }}'
