@@ -1,0 +1,7 @@
+try:
+    %pylab inline
+    from IPython.display import set_matplotlib_formats
+    set_matplotlib_formats('retina')
+    style.use("dark_background")
+except:
+    pass
