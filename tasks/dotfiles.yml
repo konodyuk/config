@@ -1,0 +1,13 @@
+- name: dotfiles dirs
+  file:
+    path: '~/.{{ item }}'
+    state: directory
+  loop: []
+
+- name: dotfiles links
+  file:
+    src: '{{ ansible_env.PWD }}/dotfiles/{{ item }}'
+    path: '~/.{{ item }}'
+    state: link
+  loop:
+  - zshrc
