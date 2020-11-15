@@ -12,9 +12,9 @@ cd config
 ```
 Run playbook in check mode:
 ``` sh
-ansible-playbook -C playbook.yml
+ansible-playbook -C playbook.yml --ask-become-pass
 ```
 Start configuration:
 ``` sh
-ansible-playbook playbook.yml
+ansible-playbook playbook.yml --ask-become-pass
 ```
