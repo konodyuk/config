@@ -1,0 +1,35 @@
+---
+- name: obsidian - create vault
+  file:
+    path: '~/Documents/vault/.obsidian'
+    state: directory
+    mode: '0755'
+
+- name: obsidian - plugins, themes, snippets
+  file:
+    src: '{{ ansible_env.PWD }}/obsidian/{{ item }}'
+    path: '~/Documents/vault/.obsidian/{{ item }}'
+    state: link
+  loop:
+    - plugins
+    - themes
+    - snippets
+
+- name: obsidian - settings
+  file:
+    src: '{{ ansible_env.PWD }}/obsidian/settings/{{ item }}'
+    path: '~/Documents/vault/.obsidian/{{ item }}'
+    state: link
+  loop:
+    - config
+    - daily-notes.json
+    - global-search.json
+    - graph.json
+
+- name: obsidian - tex
+  file:
+    src: '{{ ansible_env.PWD }}/obsidian/{{ item.src }}'
+    path: '~/Documents/vault/.obsidian/{{ item.dst }}'
+    state: link
+  loop:
+    - {src: 'tex/preamble.sty', dst: 'preamble.sty'}
