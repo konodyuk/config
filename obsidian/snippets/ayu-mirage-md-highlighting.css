@@ -1,0 +1,45 @@
+.theme-dark {
+  --ayu-common-accent: #ffcc66;
+  --ayu-common-bg: #1f2430;
+  --ayu-common-fg: #cbccc6;
+  --ayu-common-ui: #707a8c;
+
+  --ayu-syntax-tag: #5CCFE6;
+  --ayu-syntax-func: #FFD580;
+  --ayu-syntax-entity: #73D0FF;
+  --ayu-syntax-string: #BAE67E;
+  --ayu-syntax-regexp: #95E6CB;
+  --ayu-syntax-markup: #F28779;
+  --ayu-syntax-keyword: #FFA759;
+  --ayu-syntax-special: #FFE6B3;
+  --ayu-syntax-comment: #5C6773;
+  --ayu-syntax-constant: #D4BFFF;
+  --ayu-syntax-operator: #F29E74;
+  --ayu-syntax-error: #FF3333;
+
+  --ayu-ui-line: #19132a;
+  --ayu-ui-panel-bg: #232834;
+  --ayu-ui-panel-shadow: #141925;
+  --ayu-ui-panel-border: #101521;
+  --ayu-ui-gutter-normal: #707a8c66;
+  --ayu-ui-gutter-active: #707a8ccc;
+  --ayu-ui-selection-bg: #33415e;
+  --ayu-ui-selection-inactive: #323a4c;
+  --ayu-ui-selection-border: #323a4c;
+  --ayu-ui-guide-active: #707a8cb3;
+  --ayu-ui-guide-normal: #707a8c4d;
+
+  --ayu-vcs-added: #a6cc70;
+  --ayu-vcs-modified: #77a8d9;
+  --ayu-vcs-removed: #f27983;
+
+  --ayu-mirage-syntax-tag-bracket: #5ccfe680;
+
+  --text-faint: var(--ayu-syntax-comment);
+  --yellow:  var(--ayu-common-accent);
+}
+
+pre.HyperMD-header, .cm-strong {
+    color: var(--ayu-syntax-special) !important;
+}
+
