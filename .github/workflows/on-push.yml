@@ -28,6 +28,7 @@ jobs:
     name: Integration
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os:
           - macos-10.15
