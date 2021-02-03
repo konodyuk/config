@@ -7,42 +7,42 @@
 
 <separator />
 
+    <!-- Create new paths and text -->
+    <toolitem action='ToolPencil' />
+    <toolitem action='ToolText' />
+    <toolitem action='ToolPen' />
+    <!-- <toolitem action='ToolCalligraphic' /> -->
+
+<separator />
+
     <!-- Create predefined shapes -->
     <toolitem action='ToolRect' />
     <toolitem action='ToolArc' />
     <toolitem action='ToolStar' />
-    <toolitem action='Tool3DBox' />
-    <toolitem action='ToolSpiral' />
-
-<separator />
-
-    <!-- Create new paths and text -->
-    <toolitem action='ToolPen' />
-    <toolitem action='ToolPencil' />
-    <toolitem action='ToolCalligraphic' />
-    <toolitem action='ToolText' />
+    <!-- <toolitem action='Tool3DBox' /> -->
+    <!-- <toolitem action='ToolSpiral' /> -->
 
 <separator />
 
     <!-- Edit color of objects -->
-    <toolitem action='ToolGradient' />
-    <toolitem action='ToolMesh' />
-    <toolitem action='ToolDropper' />
-    <toolitem action='ToolPaintBucket' />
+    <!-- <toolitem action='ToolGradient' /> -->
+    <!-- <toolitem action='ToolMesh' /> -->
+    <!-- <toolitem action='ToolDropper' /> -->
+    <!-- <toolitem action='ToolPaintBucket' /> -->
 
-<separator />
+<!-- <separator /> -->
 
     <!-- Other tools to edit objects -->
-    <toolitem action='ToolTweak' />
-    <toolitem action='ToolSpray' />
+    <!-- <toolitem action='ToolTweak' /> -->
+    <!-- <toolitem action='ToolSpray' /> -->
     <toolitem action='ToolEraser' />
-    <toolitem action='ToolConnector' />
+    <!-- <toolitem action='ToolConnector' /> -->
     <!--<toolitem action='ToolLPETool' />-->
 
-<separator />
+<!-- <separator /> -->
 
     <!-- Other tools that do not modify objects -->
-    <toolitem action='ToolZoom' />
+    <!-- <toolitem action='ToolZoom' /> -->
     <toolitem action='ToolMeasure' />
 
   </toolbar>
