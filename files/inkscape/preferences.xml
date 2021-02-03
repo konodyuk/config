@@ -31,7 +31,7 @@
        state="1" />
     <group
        id="rulers"
-       state="1" />
+       state="0" />
     <group
        id="scrollbars"
        state="1" />
@@ -126,11 +126,14 @@
       <eventcontext
          id="rect"
          style="fill:blue;"
-         usecurrent="1" />
+         usecurrent="1"
+         width="210.271"
+         height="51.8604" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
-         usecurrent="1">
+         usecurrent="1"
+         persp="perspective187">
         <side
            id="XYfront"
            style="fill:#8686bf;stroke:none;stroke-linejoin:round;"
@@ -161,12 +164,16 @@
          style="fill:red;"
          end="0"
          start="0"
-         usecurrent="1" />
+         usecurrent="1"
+         rx="45.8085"
+         ry="22.9043" />
       <eventcontext
          id="star"
-         magnitude="5"
+         magnitude="10"
          style="fill:yellow;"
-         usecurrent="1" />
+         usecurrent="1"
+         proportion="1"
+         isflatsided="1" />
       <eventcontext
          id="spiral"
          style="fill:none;stroke:black"
@@ -305,7 +312,8 @@
        tracebackground="0"
        usepressure="1"
        usetilt="0"
-       selcue="1" />
+       selcue="1"
+       break_apart="1" />
     <eventcontext
        id="lpetool"
        mode="drag"
@@ -396,6 +404,11 @@
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
        usecurrent="1" />
+    <group
+       id="measure"
+       measure-start="0,0"
+       measure-end="0,0"
+       fontsize="10" />
   </group>
   <group
      id="palette">
@@ -534,14 +547,14 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="0"
+       page="2"
        x="0"
        y="0"
        w="378"
        h="441"
-       visible="0"
+       visible="1"
        state="2"
-       placement="2" />
+       placement="1" />
     <group
        id="filtereffects" />
     <group
@@ -581,9 +594,9 @@
     <group
        id="preferences"
        state="1"
-       page="46"
-       x="172"
-       y="3"
+       page="48"
+       x="261"
+       y="13"
        w="979"
        h="918"
        visible="0"
@@ -626,12 +639,14 @@
        ask="1"
        ask_svg="1"
        link="link"
-       scale="optimizeSpeed" />
+       scale="auto"
+       import_mode_svg="include" />
     <group
        id="debug"
        redirect="0" />
     <group
-       id="clonetiler" />
+       id="clonetiler"
+       dotrace="0" />
     <group
        id="gridtiler" />
     <group
@@ -665,6 +680,16 @@
        id="colorpickerwindow" />
     <group
        id="undo-history" />
+    <group
+       id="selectors"
+       panedpos="215"
+       x="0"
+       y="0"
+       w="320"
+       h="260"
+       visible="0"
+       state="2"
+       placement="1" />
   </group>
   <group
      id="printing">
@@ -946,7 +971,7 @@
     <group
        id="font"
        unitType="2"
-       scaleLineHeightFromFontSIze="0.533335" />
+       scaleLineHeightFromFontSIze="1" />
     <group
        id="savedialogposition"
        value="0" />
@@ -961,12 +986,12 @@
      id="extensions" />
   <group
      id="desktop"
-     style="fill:#ffffff;font-size:21.33333333px;stroke:#00e600;-inkscape-font-specification:'Fira Code,  weight=453';font-family:'Fira Code';">
+     style="fill:#ffffff;font-size:21.33333332999999854px;stroke:#00e600;-inkscape-font-specification:'Fira Code, weight=453';font-family:'Fira Code';fill-opacity:0;stroke-width:1.0015748">
     <group
        width="1502"
-       height="943"
-       x="0"
-       y="25"
+       height="838"
+       x="215"
+       y="1108"
        fullscreen="0"
        id="geometry"
        maximized="0" />
