@@ -5,8 +5,24 @@
     state: directory
     mode: '0755'
 
+- name: inkscape - ensure ui directory
+  file:
+    path: '/Applications/Inkscape.app/Contents/Resources/share/inkscape/ui'
+    state: directory
+    mode: '0755'
+
 - name: inkscape - preferences
   file:
     src: '{{ ansible_env.PWD }}/files/inkscape/preferences.xml'
     path: '~/Library/Application Support/org.inkscape.Inkscape/config/inkscape/preferences.xml'
     state: link
+
+- name: inkscape - ui
+  file:
+    src: '{{ ansible_env.PWD }}/files/inkscape/ui/{{ item }}'
+    path: '/Applications/Inkscape.app/Contents/Resources/share/inkscape/ui/{{ item }}'
+    state: link
+  loop:
+    - toolbar-commands.ui
+    - toolbar-tool.ui
+    - toolbox.xml
