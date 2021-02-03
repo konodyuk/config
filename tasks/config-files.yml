@@ -1,0 +1,12 @@
+---
+- name: inkscape - ensure config directory
+  file:
+    path: '~/Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/'
+    state: directory
+    mode: '0755'
+
+- name: inkscape - preferences
+  file:
+    src: '{{ ansible_env.PWD }}/files/inkscape/preferences.xml'
+    path: '~/Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/preferences.xml'
+    state: link
