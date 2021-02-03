@@ -7,7 +7,7 @@
      id="window">
     <group
        id="task"
-       taskset="0" />
+       taskset="2" />
     <group
        id="menu"
        state="1" />
@@ -319,7 +319,7 @@
        font_sample="AaBbCcIiPpQq12369$\342\202\254\302\242?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:'Fira Code';font-size:21.33333333px;-inkscape-font-specification:'Fira Code,  weight=453';"
+       style="line-height:1.25;font-family:'Fira Code';font-size:21.33333332999999854px;-inkscape-font-specification:'Fira Code, weight=453';word-spacing:0px"
        selcue="1" />
     <eventcontext
        id="nodes"
@@ -582,8 +582,8 @@
        id="preferences"
        state="1"
        page="46"
-       x="470"
-       y="107"
+       x="172"
+       y="3"
        w="979"
        h="918"
        visible="0"
@@ -854,10 +854,10 @@
        remove="1" />
     <group
        id="blurquality"
-       value="0" />
+       value="-2" />
     <group
        id="filterquality"
-       value="1" />
+       value="-2" />
     <group
        id="showfiltersinfobox"
        value="1" />
@@ -940,7 +940,7 @@
        partialdynamic="0" />
     <group
        id="defaultwindowsize"
-       value="0" />
+       value="-1" />
     <group
        id="rendering" />
     <group
@@ -950,6 +950,12 @@
     <group
        id="savedialogposition"
        value="0" />
+    <group
+       id="savedocviewport"
+       value="0" />
+    <group
+       id="threading"
+       numthreads="8" />
   </group>
   <group
      id="extensions" />
@@ -957,8 +963,8 @@
      id="desktop"
      style="fill:#ffffff;font-size:21.33333333px;stroke:#00e600;-inkscape-font-specification:'Fira Code,  weight=453';font-family:'Fira Code';">
     <group
-       width="725"
-       height="600"
+       width="1502"
+       height="943"
        x="0"
        y="25"
        fullscreen="0"
