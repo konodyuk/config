@@ -1,7 +1,6 @@
-<!--
 <ui>
   <toolbar name='CommandsToolbar'>
-    <toolitem action='FileNew' />
+    <!-- <toolitem action='FileNew' />
     <toolitem action='FileOpen' />
     <toolitem action='FileSave' />
     <toolitem action='FilePrint' />
@@ -31,14 +30,13 @@
     <toolitem action='DialogFillStroke' />
     <toolitem action='DialogText' />
     <toolitem action='DialogLayers' />
-    <toolitem action='DialogXMLEditor' />
+    <toolitem action='DialogXMLEditor' /> -->
     <!--
     <toolitem action='DialogSelectors' />
     -->
-    <toolitem action='DialogAlignDistribute' />
+    <!-- <toolitem action='DialogAlignDistribute' />
     <separator />
     <toolitem action='DialogDocumentProperties' />
-    <toolitem action='DialogPreferences' />
+    <toolitem action='DialogPreferences' /> -->
   </toolbar>
 </ui>
--->
