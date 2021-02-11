@@ -32,14 +32,91 @@
   --ayu-vcs-added: #a6cc70;
   --ayu-vcs-modified: #77a8d9;
   --ayu-vcs-removed: #f27983;
+
+  --svg-main: var(--ayu-common-fg);
+  --svg-accent: var(--ayu-common-accent);
+  --svg-inverse: var(--ayu-common-bg);
+  --svg-blue: var(--ayu-vcs-modified);
+  --svg-green: var(--ayu-vcs-added);
+  --svg-red: var(--ayu-vcs-removed);
+  --svg-yellow: var(--ayu-common-accent);
 }
 
+/* Fonts */
 body {
   --font-monospace: 'Fira Code Retina', 'Source Code Pro', monospace !important;
   font-family: 'Fira Code Retina', 'Source Code Pro', monospace !important;
 }
 
+/* Headers */
 h1, h2, h3, h4, h5, h6, strong, b {
   color: var(--ayu-syntax-special) !important;
 }
 
+/* Tables */
+.markdown-preview-view th, .markdown-preview-view td {
+  border: 1px solid var(--ayu-common-ui) !important;
+}
+
+/* Quotes */
+.markdown-preview-view blockquote {
+  border: 1px solid var(--ayu-common-ui) !important;
+  border-left-width: 8px !important;
+}
+
+/* File browser */
+.nav-file-title, .nav-folder-title {
+  color: #bbb !important;
+}
+.nav-file-title:hover, 
+.nav-folder-title:hover, 
+.nav-file-title.is-active, 
+.nav-folder-title.is-active {
+  color: var(--ayu-common-fg) !important;
+  background-color:  var(--background-secondary) !important;
+}
+
+/* EMBEDS */
+
+/* Remove title */
+.markdown-embed-title { 
+  display: none; 
+}
+
+/* Remove paddings */
+.markdown-preview-view .markdown-embed { 
+  border: none;
+  padding: 0;
+  margin: 0; 
+}
+.markdown-preview-view .markdown-embed .markdown-preview-view { padding: 0px 0px 0px 0px; }
+
+/* Add border around embed */
+.markdown-preview-view .markdown-embed::before { 
+  left: -8px;
+  right: -8px;
+  top: -0px;
+  bottom: -0px;
+  border: 1px solid var(--ayu-common-ui);
+  border-radius: 6px;
+  content: "";
+  position: absolute;
+}
+
+/* Link icon: rotate and shift; */
+.markdown-embed-link {
+  top: 0px;
+  right: -8px;
+  color: var(--ayu-common-ui);
+}
+.markdown-embed-link svg {
+  transform: rotate(90deg);
+}
+
+/* Remove margins of top and bottom blocks of embed */
+.markdown-preview-view .markdown-embed-content { max-height: unset;}
+.markdown-preview-view .markdown-embed-content>div>div>:nth-child(2)>:first-child { margin-top: 0;}
+.markdown-preview-view .markdown-embed-content>div>div>:last-child>:first-child { margin-top: 0; margin-bottom: 0; }
+.markdown-preview-view .markdown-embed-content>div>div>:last-child>:last-child { margin-top: 0; margin-bottom: 0; }
+
+/* END EMBEDS */
