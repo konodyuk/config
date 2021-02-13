@@ -11,6 +11,7 @@
   include_tasks: obsidian-build-package.yml
   loop:
     - obsidian-latex
+    - obsidian-text-expander
 
 - name: obsidian - plugins, themes, snippets
   tags: obsidian
@@ -33,4 +34,3 @@
     - config
     - daily-notes.json
     - global-search.json
-    - graph.json
