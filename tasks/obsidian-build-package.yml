@@ -15,8 +15,17 @@
     chdir: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}'
   when: source_stat.stat.mtime > build_stat.stat.mtime
 
-- name: link - {{ item }}
+- name: ensure plugin dir - {{ item }}
   file:
-    src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}'
     path: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}'
-    state: link
+    state: directory
+
+- name: copy built sources - {{ item }}
+  copy:
+    src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/{{ filename }}'
+    dest: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}/{{ filename }}'
+  loop_control:
+    loop_var: filename
+  loop:
+    - manifest.json
+    - main.js
