@@ -34,3 +34,12 @@
     - config
     - daily-notes.json
     - global-search.json
+
+- name: obsidian - scripts
+  tags: obsidian
+  file:
+    src: '{{ ansible_env.PWD }}/obsidian/scripts/{{ item }}'
+    path: '~/Documents/vault/.obsidian/{{ item }}'
+    state: link
+  loop:
+    - main.py
