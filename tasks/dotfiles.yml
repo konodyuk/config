@@ -1,5 +1,6 @@
 ---
 - name: dotfiles dirs
+  tags: dotfiles
   file:
     path: '~/{{ item }}'
     state: directory
@@ -9,6 +10,7 @@
     - .oh-my-zsh/custom/plugins
 
 - name: dotfiles links
+  tags: dotfiles
   file:
     src: '{{ ansible_env.PWD }}/dotfiles/{{ item }}'
     path: '~/{{ item }}'

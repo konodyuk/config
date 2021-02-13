@@ -1,26 +1,31 @@
 ---
 - name: get mdate of source - {{ item }}
+  tags: obsidian
   stat:
     path: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/main.ts'
   register: source_stat
 
 - name: get mdate of build - {{ item }}
+  tags: obsidian
   stat:
     path: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/main.js'
   register: build_stat
 
 - name: build - {{ item }}
+  tags: obsidian
   command: "npm run rebuild-cleanup"
   args:
     chdir: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}'
   when: source_stat.stat.mtime > build_stat.stat.mtime
 
 - name: ensure plugin dir - {{ item }}
+  tags: obsidian
   file:
     path: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}'
     state: directory
 
 - name: copy built sources - {{ item }}
+  tags: obsidian
   copy:
     src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/{{ filename }}'
     dest: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}/{{ filename }}'

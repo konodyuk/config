@@ -7,6 +7,10 @@
         msg: Check we are running in the directory of the script
       failed_when: not ansible_env.PWD.endswith('/config')
     - include_tasks: tasks/sudo-touchid.yml
+      tags: touchid
     - include_tasks: tasks/dotfiles.yml
+      tags: dotfiles
     - include_tasks: tasks/obsidian.yml
+      tags: obsidian
     - include_tasks: tasks/config-files.yml
+      tags: inkscape

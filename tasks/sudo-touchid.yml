@@ -1,12 +1,14 @@
 # Reference: https://apple.stackexchange.com/a/392407
 ---
 - name: install pam_reattach pam module
+  tags: touchid
   homebrew:
     name: fabianishere/personal/pam_reattach
     state: present
   register: reattach_result
 
 - name: detect touch id support
+  tags: touchid
   command: pgrep ControlStrip
   ignore_errors: true
   register: touch_id_result
@@ -14,6 +16,7 @@
   changed_when: false
 
 - name: enable touch id for sudo commands
+  tags: touchid
   lineinfile:
     path: /etc/pam.d/sudo
     line: 'auth       sufficient     pam_tid.so'
@@ -22,6 +25,7 @@
   when: touch_id_result is succeeded and touch_id_result.rc == 0 and touch_id_result.stdout != ''
 
 - name: enable persistent touch id for tmux and iterm
+  tags: touchid
   lineinfile:
     path: /etc/pam.d/sudo
     line: 'auth       optional       pam_reattach.so'
