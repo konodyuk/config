@@ -5,6 +5,11 @@
     state: directory
     mode: '0755'
 
+- name: obsidian - own-packages
+  include_tasks: obsidian-build-package.yml
+  loop:
+    - obsidian-latex
+
 - name: obsidian - plugins, themes, snippets
   file:
     src: '{{ ansible_env.PWD }}/obsidian/{{ item }}'
@@ -25,11 +30,3 @@
     - daily-notes.json
     - global-search.json
     - graph.json
-
-- name: obsidian - tex
-  file:
-    src: '{{ ansible_env.PWD }}/obsidian/{{ item.src }}'
-    path: '~/Documents/vault/.obsidian/{{ item.dst }}'
-    state: link
-  loop:
-    - {src: 'tex/preamble.sty', dst: 'preamble.sty'}
