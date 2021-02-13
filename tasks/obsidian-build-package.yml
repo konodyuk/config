@@ -1,0 +1,22 @@
+---
+- name: get mdate of source - {{ item }}
+  stat:
+    path: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/main.ts'
+  register: source_stat
+
+- name: get mdate of build - {{ item }}
+  stat:
+    path: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/main.js'
+  register: build_stat
+
+- name: build - {{ item }}
+  command: "npm run rebuild-cleanup"
+  args:
+    chdir: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}'
+  when: source_stat.stat.mtime > build_stat.stat.mtime
+
+- name: link - {{ item }}
+  file:
+    src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}'
+    path: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}'
+    state: link
