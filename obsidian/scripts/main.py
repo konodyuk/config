@@ -2,8 +2,6 @@ import re
 import sys
 import json
 
-sys.stderr = open("/Users/konodyuk/report.txt", "w")
-
 class Processor:
     def __init__(self, regex, function, text_preprocessor=None):
         self.regex = re.compile(regex)
@@ -102,7 +100,8 @@ except ImportError:
 else:
     SYMPY_AVAILABLE = True
 
-x, y, z, t = symbols('x y z t')
+if SYMPY_AVAILABLE:
+    x, y, z, t = symbols('x y z t')
 """
 sympy_namespace = dict()
 exec(sympy_preamble, sympy_namespace)
