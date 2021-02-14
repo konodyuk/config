@@ -13,7 +13,7 @@
     - obsidian-latex
     - obsidian-text-expander
 
-- name: obsidian - plugins, themes, snippets
+- name: obsidian - plugins, themes, snippets, scripts
   tags: obsidian
   file:
     src: '{{ ansible_env.PWD }}/obsidian/{{ item }}'
@@ -23,6 +23,7 @@
     - plugins
     - themes
     - snippets
+    - scripts
 
 - name: obsidian - settings
   tags: obsidian
@@ -34,12 +35,3 @@
     - config
     - daily-notes.json
     - global-search.json
-
-- name: obsidian - scripts
-  tags: obsidian
-  file:
-    src: '{{ ansible_env.PWD }}/obsidian/scripts/{{ item }}'
-    path: '~/Documents/vault/.obsidian/{{ item }}'
-    state: link
-  loop:
-    - main.py
