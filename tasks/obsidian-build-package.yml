@@ -24,13 +24,25 @@
     path: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}'
     state: directory
 
-- name: copy built sources - {{ item }}
+- name: check built sources - {{ item }}
   tags: obsidian
-  copy:
-    src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/{{ filename }}'
-    dest: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}/{{ filename }}'
+  stat:
+    path: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/{{ filename }}'
   loop_control:
     loop_var: filename
   loop:
     - manifest.json
     - main.js
+    - styles.css
+  register: built_stat
+
+- name: copy built sources - {{ item }}
+  tags: obsidian
+  copy:
+    src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/{{ file_stat.filename }}'
+    dest: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}/{{ file_stat.filename }}'
+  when: file_stat.stat.exists
+  loop_control:
+    loop_var: file_stat
+    label: "{{ file_stat.filename }}"
+  with_items: "{{ built_stat.results }}"
