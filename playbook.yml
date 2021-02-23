@@ -12,5 +12,5 @@
       tags: dotfiles
     - include_tasks: tasks/obsidian.yml
       tags: obsidian
-    - include_tasks: tasks/config-files.yml
+    - include_tasks: tasks/inkscape.yml
       tags: inkscape
