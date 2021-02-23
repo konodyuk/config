@@ -8,6 +8,7 @@
   loop:
     - .ipython/profile_default/startup
     - .oh-my-zsh/custom/plugins
+    - .config
 
 - name: dotfiles links
   tags: dotfiles
@@ -22,3 +23,4 @@
     - .ipython/profile_default/startup/01-pylab.ipy
     - .ipython/profile_default/startup/02-imports.py
     - .oh-my-zsh/custom/plugins/zsh-autosuggestions
+    - .config/starship.toml
