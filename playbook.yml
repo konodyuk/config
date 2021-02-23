@@ -14,3 +14,5 @@
       tags: obsidian
     - include_tasks: tasks/inkscape.yml
       tags: inkscape
+    - include_tasks: tasks/files.yml
+      tags: term
