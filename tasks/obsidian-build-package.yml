@@ -13,10 +13,10 @@
 
 - name: build - {{ item }}
   tags: obsidian
-  command: "npm run rebuild-cleanup"
+  command: "npm run ship"
   args:
     chdir: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}'
-  when: source_stat.stat.mtime > build_stat.stat.mtime
+  when: (not build_stat.stat.exists) or source_stat.stat.mtime > build_stat.stat.mtime
 
 - name: ensure plugin dir - {{ item }}
   tags: obsidian
