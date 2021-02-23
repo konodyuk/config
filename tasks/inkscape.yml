@@ -16,14 +16,14 @@
 - name: inkscape - preferences
   tags: inkscape
   file:
-    src: '{{ ansible_env.PWD }}/files/inkscape/preferences.xml'
+    src: '{{ ansible_env.PWD }}/inkscape/preferences.xml'
     path: '~/Library/Application Support/org.inkscape.Inkscape/config/inkscape/preferences.xml'
     state: link
 
 - name: inkscape - ui
   tags: inkscape
   file:
-    src: '{{ ansible_env.PWD }}/files/inkscape/ui/{{ item }}'
+    src: '{{ ansible_env.PWD }}/inkscape/ui/{{ item }}'
     path: '/Applications/Inkscape.app/Contents/Resources/share/inkscape/ui/{{ item }}'
     state: link
   loop:

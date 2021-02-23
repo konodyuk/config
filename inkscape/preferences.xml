@@ -34,7 +34,7 @@
        state="0" />
     <group
        id="scrollbars"
-       state="1" />
+       state="0" />
   </group>
   <group
      id="fullscreen">
@@ -125,14 +125,16 @@
        gradientdrag="1">
       <eventcontext
          id="rect"
-         style="fill:blue;"
-         usecurrent="1"
-         width="210.271"
-         height="51.8604" />
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
+         width="50"
+         height="20"
+         ry="5.00001"
+         rx="4.99999" />
       <eventcontext
          id="3dbox"
-         style="stroke:none;stroke-linejoin:round;"
-         usecurrent="1"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
          persp="perspective187">
         <side
            id="XYfront"
@@ -161,22 +163,22 @@
       </eventcontext>
       <eventcontext
          id="arc"
-         style="fill:red;"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
          end="0"
          start="0"
-         usecurrent="1"
-         rx="45.8085"
-         ry="22.9043" />
+         usecurrent="0"
+         rx="58.8785"
+         ry="13.5514" />
       <eventcontext
          id="star"
          magnitude="10"
-         style="fill:yellow;"
-         usecurrent="1"
-         proportion="1"
-         isflatsided="1" />
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
+         proportion="0.5"
+         isflatsided="0" />
       <eventcontext
          id="spiral"
-         style="fill:none;stroke:black"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
          expansion="1"
          usecurrent="0"
          revolution="3" />
@@ -186,17 +188,20 @@
        style="fill:none;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-linecap:butt;">
       <eventcontext
          id="pencil"
-         tolerance="4.0"
+         tolerance="10"
          selcue="1"
-         style="stroke-width:1px;"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
          usecurrent="0"
          average_all_sketches="1"
-         pressure="0" />
+         pressure="0"
+         freehand-mode="0"
+         shape="0"
+         simplify="0" />
       <eventcontext
          id="pen"
          mode="drag"
          selcue="1"
-         style="stroke-width:1px;"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
          usecurrent="0" />
     </group>
     <eventcontext
@@ -318,7 +323,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -327,8 +332,9 @@
        font_sample="AaBbCcIiPpQq12369$\342\202\254\302\242?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:'Fira Code';font-size:21.33333332999999854px;-inkscape-font-specification:'Fira Code, weight=453';word-spacing:0px"
-       selcue="1" />
+       style="line-height:1.25;font-family:'Fira Code';font-size:13.33333333px;-inkscape-font-specification:'Fira Code, weight=453';word-spacing:0px"
+       selcue="1"
+       align_mode="1" />
     <eventcontext
        id="nodes"
        selcue="1"
@@ -344,8 +350,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="331.206"
-       y="217.157"
+       x="114.375"
+       y="890.936"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -538,7 +544,7 @@
        panel_mode="1"
        panel_ratio="100"
        panel_wrap="0"
-       palette="Inkscape default"
+       palette="MD-SVG"
        panel_border="0" />
   </group>
   <group
@@ -551,10 +557,10 @@
        x="0"
        y="0"
        w="378"
-       h="441"
+       h="509"
        visible="1"
        state="2"
-       placement="1" />
+       placement="5" />
     <group
        id="filtereffects" />
     <group
@@ -568,7 +574,15 @@
        placement="1" />
     <group
        id="transformation"
-       applyseparately="0" />
+       applyseparately="0"
+       rotateCounterClockwise="1"
+       x="0"
+       y="0"
+       w="446"
+       h="205"
+       visible="0"
+       state="2"
+       placement="1" />
     <group
        id="align" />
     <group
@@ -580,9 +594,16 @@
        h="260"
        visible="0"
        state="2"
-       placement="2" />
+       placement="5" />
     <group
-       id="find" />
+       id="find"
+       x="0"
+       y="0"
+       w="378"
+       h="218"
+       visible="1"
+       state="2"
+       placement="2" />
     <group
        id="spellcheck"
        w="200"
@@ -594,10 +615,10 @@
     <group
        id="preferences"
        state="1"
-       page="48"
-       x="261"
+       page="15"
+       x="142"
        y="13"
-       w="979"
+       w="1217"
        h="918"
        visible="0"
        placement="1" />
@@ -609,11 +630,20 @@
        id="export"
        default=""
        append_extension="1"
-       path="">
+       path=""
+       x="0"
+       y="0"
+       w="402"
+       h="459"
+       visible="0"
+       state="2"
+       placement="1">
       <group
-         id="exportarea" />
+         id="exportarea"
+         value="drawing" />
       <group
-         id="defaultxdpi" />
+         id="defaultxdpi"
+         value="300" />
     </group>
     <group
        id="save_as"
@@ -631,7 +661,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/Users/konodyuk/Documents/" />
+       path="/Users/konodyuk/Documents/vault/proj/svg-draw/" />
     <group
        id="import"
        enable_preview="1"
@@ -657,7 +687,20 @@
     <group
        id="messages" />
     <group
-       id="swatches" />
+       id="swatches"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="378"
+       h="487"
+       visible="0"
+       state="2"
+       placement="5"
+       palette="Auto" />
     <group
        id="iconpreview" />
     <group
@@ -666,7 +709,14 @@
        id="treeeditor" />
     <group
        id="layers"
-       maxDepth="20" />
+       maxDepth="20"
+       x="0"
+       y="0"
+       w="296"
+       h="226"
+       visible="0"
+       state="2"
+       placement="1" />
     <group
        id="extensioneditor" />
     <group
@@ -687,6 +737,16 @@
        y="0"
        w="320"
        h="260"
+       visible="0"
+       state="2"
+       placement="1" />
+    <group
+       id="livepatheffect"
+       dialogmode="0"
+       x="0"
+       y="0"
+       w="378"
+       h="120"
        visible="0"
        state="2"
        placement="1" />
@@ -854,7 +914,7 @@
     <group
        id="transform"
        stroke="1"
-       rectcorners="1"
+       rectcorners="0"
        pattern="1"
        gradient="1" />
     <group
@@ -981,17 +1041,48 @@
     <group
        id="threading"
        numthreads="8" />
+    <group
+       id="kbshortcuts"
+       value="hello" />
+    <group
+       id="markers"
+       colorCustomMarkers="1" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.print.wmf.FixPPTCharPos="0"
+     org.inkscape.print.wmf.FixPPTDashLine="0"
+     org.inkscape.print.wmf.FixPPTGrad2Polys="0"
+     org.inkscape.print.wmf.FixPPTPatternAsHatch="0"
+     org.inkscape.print.wmf.textToPath="1"
+     org.inkscape.print.emf.FixPPTCharPos="0"
+     org.inkscape.print.emf.FixPPTDashLine="0"
+     org.inkscape.print.emf.FixPPTGrad2Polys="0"
+     org.inkscape.print.emf.FixPPTLinGrad="0"
+     org.inkscape.print.emf.FixPPTPatternAsHatch="0"
+     org.inkscape.print.emf.FixImageRot="0"
+     org.inkscape.print.emf.textToPath="1"
+     org.inkscape.effects.edge3d.__live_effect__="0"
+     org.inkscape.effect.guides_creator.guides_preset="custom"
+     org.inkscape.effect.guides_creator.margins_preset="custom"
+     org.inkscape.effect.guides_creator.header_margin="10"
+     org.inkscape.effect.guides_creator.footer_margin="10"
+     org.inkscape.effect.guides_creator.left_margin="10"
+     org.inkscape.effect.guides_creator.right_margin="10"
+     frame.position="outside"
+     org.greygreen.inkscape.effects.extrude.mode="Lines"
+     org.inkscape.filter.add_nodes.method="bymax"
+     org.inkscape.color.black_and_white.__live_effect__="0"
+     org.ekips.filter.flatten.__live_effect__="0"
+     org.ekips.filter.flatten.flatness="2" />
   <group
      id="desktop"
-     style="fill:#ffffff;font-size:21.33333332999999854px;stroke:#00e600;-inkscape-font-specification:'Fira Code, weight=453';font-family:'Fira Code';fill-opacity:0;stroke-width:1.0015748">
+     style="fill:#1a5fb4;font-size:10.66666666999999968px;-inkscape-font-specification:raleway;font-family:raleway;line-height:1.25;text-decoration:none;text-decoration-color:#000000;word-spacing:0px;stop-color:#000000;stroke-linecap:round;text-anchor:middle;text-align:center;stroke-width:25;stroke:#1a5fb4">
     <group
        width="1502"
        height="838"
-       x="215"
-       y="1108"
+       x="0"
+       y="25"
        fullscreen="0"
        id="geometry"
        maximized="0" />
@@ -1111,5 +1202,11 @@
        symbolicSuccessColor="869366527"
        symbolicWarningColor="4118348031"
        symbolicErrorColor="3422552319" />
+  </group>
+  <group
+     id="live_effects">
+    <group
+       id="powerstroke"
+       powerpencil="0" />
   </group>
 </inkscape>
