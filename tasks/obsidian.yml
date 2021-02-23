@@ -8,7 +8,7 @@
 
 - name: obsidian - own-packages
   tags: obsidian
-  include_tasks: utils/obsidian-build-package.yml
+  include_tasks: utils/build-obsidian-package.yml
   loop:
     - obsidian-latex
     - obsidian-text-expander
