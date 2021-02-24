@@ -1,0 +1,16 @@
+GIMP Palette
+Name: Main
+Columns: 0
+#
+{% for section_name, section_colors in colors.palettes.items() %}
+{% for color in section_colors %}
+{% for ch in range(3) %}{{ '%3d' | format(color.value[1+ch*2:3+ch*2] | int(value, 16)) }} {% endfor %}{{ color.name }} ({{ section_name }})
+{% endfor %}
+{% if not loop.last %}
+
+{% for _ in range(5) %}
+{% for ch in range(3) %}{{ '%3d' | format(colors.placeholder.value[1+ch*2:3+ch*2] | int(value, 16)) }} {% endfor %}{{ colors.placeholder.name }}
+{% endfor %}
+
+{% endif %}
+{% endfor %}

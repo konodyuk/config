@@ -49,6 +49,10 @@
   tags: inkscape, build
   include_tasks: utils/build-inkscape-shortcuts.yml
 
+- name: inkscape - build palettes
+  tags: inkscape, build
+  include_tasks: utils/build-inkscape-palettes.yml
+
 - name: inkscape - link preferences
   tags: inkscape
   file:
@@ -58,6 +62,16 @@
     force: yes
   loop:
     - preferences.xml
+
+- name: inkscape - palettes
+  tags: inkscape
+  file:
+    src: '{{ ansible_env.PWD }}/inkscape/palettes/{{ item }}'
+    path: '{{ inkscape_user_data_directory }}/palettes/{{ item }}'
+    state: link
+    force: yes
+  loop:
+    - palette.gpl
 
 - name: inkscape - keys
   tags: inkscape

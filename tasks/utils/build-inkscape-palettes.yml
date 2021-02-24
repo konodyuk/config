@@ -1,0 +1,8 @@
+---
+- tags: build, inkscape
+  block:
+  - name: Build - inkscape palettes
+    template:
+      src: '{{ ansible_env.PWD }}/inkscape/palettes/palette.gpl.j2'
+      dest: '{{ ansible_env.PWD }}/inkscape/palettes/palette.gpl'
+      mode: '644'
