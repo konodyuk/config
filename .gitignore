@@ -150,5 +150,9 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,ansible,node
 
-# Own packages
+# Build objects: obsidian
 obsidian/plugins/obsidian-latex
+
+# Build objects: inkscape
+inkscape/extensions
+inkscape/keys/default.xml
