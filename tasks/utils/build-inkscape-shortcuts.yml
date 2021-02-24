@@ -1,0 +1,7 @@
+---
+- tags: build, inkscape
+  block:
+  - name: Build - inkscape shortcuts
+    template:
+      src: '{{ ansible_env.PWD }}/inkscape/keys/default.xml.j2'
+      dest: '{{ ansible_env.PWD }}/inkscape/keys/default.xml'
