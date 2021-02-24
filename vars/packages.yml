@@ -1,0 +1,10 @@
+---
+brew_packages:
+  none:
+    - none
+
+brew_cask_packages:
+  inkscape:
+    - inkscape
+  shell:
+    - iterm2

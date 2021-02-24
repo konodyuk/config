@@ -16,6 +16,8 @@
       failed_when: not ansible_env.PWD.endswith('/config')
     - include_tasks: tasks/setup.yml
       tags: always
+    - include_tasks: tasks/installs.yml
+      tags: always
     - include_tasks: tasks/sudo-touchid.yml
       tags: touchid
     - include_tasks: tasks/dotfiles.yml
