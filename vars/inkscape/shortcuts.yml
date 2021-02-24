@@ -1,0 +1,7 @@
+---
+shortcuts:
+  - key: 'braceright'
+    action: 'SelectionToFront'
+
+  - key: 'braceleft'
+    action: 'SelectionToBack'

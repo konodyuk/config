@@ -1,0 +1,42 @@
+---
+extensions:
+  - name: 'arrowend'
+    key: 'parenright'
+    styles:
+      marker-end: "url(#ArrowTexStyle)"
+    requires:
+      - "ArrowTexStyle"
+    reversible: yes
+
+  - name: 'arrowstart'
+    key: 'parenleft'
+    styles:
+      marker-start: "url(#ArrowTexStyle)"
+    requires:
+      - "ArrowTexStyle"
+    reversible: yes
+
+  - name: 'width05px'
+    key: '1'
+    modifiers: 'Alt'
+    styles:
+      stroke-width: "0.2px"
+
+  - name: 'width10px'
+    key: '2'
+    modifiers: 'Alt'
+    styles:
+      stroke-width: "0.3px"
+
+  - name: 'width15px'
+    key: '3'
+    modifiers: 'Alt'
+    styles:
+      stroke-width: "0.6px"
+
+  - name: 'dashed'
+    key: '4'
+    modifiers: 'Alt'
+    styles:
+      stroke-dasharray: '2.0, 0.5'
+    reversible: yes
