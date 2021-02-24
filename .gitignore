@@ -151,7 +151,7 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/macos,ansible,node
 
 # Linked objects: obsidian
-obsidian/own-plugins/obsidian-text-expander
+obsidian/own-packages/obsidian-text-expander
 
 # Build objects: obsidian
 obsidian/plugins/obsidian-latex
