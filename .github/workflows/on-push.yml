@@ -37,14 +37,6 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
-      # - name: Uninstall GitHub Actions' built-in Homebrew.
-      #   run: bash tests/uninstall-homebrew.sh
-
-      - name: Uninstall GitHub Actions' built-in browser installs.
-        run: |
-          sudo rm -rf /Applications/Firefox.app
-          sudo rm -rf /Applications/Google\ Chrome.app
-
       - name: Install test dependencies.
         run: sudo pip3 install ansible
 
