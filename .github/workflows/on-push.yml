@@ -3,11 +3,6 @@ name: CI
 
 on: [push]
 
-env:
-  ANSIBLE_VERSION: 3.0.0
-  ANSIBLE_LINT_VERSION: 5.0.2
-  YAMLLINT_VERSION: 1.25.0
-
 jobs:
   lint:
     name: Lint
@@ -21,11 +16,16 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install ansible
-        run: sudo apt-get install -y ansible==${{ env.ANSIBLE_VERSION }}
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-      - name: Install linters
-        run: sudo apt-get install -y ansible-lint==${{ env.ANSIBLE_LINT_VERSION }} yamllint==${{ env.YAMLLINT_VERSION }}
+      - name: Install test dependencies.
+        run: pip3 install -r requirements.txt -r requirements-dev.txt
 
       - name: Lint code.
         run: |
@@ -47,8 +47,16 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install ansible.
-        run: brew install ansible==${{ env.ANSIBLE_VERSION }}
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: ~/Library/Caches/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install test dependencies.
+        run: sudo pip3 install -r requirements.txt
 
       - name: Test the playbook's syntax.
         run: ansible-playbook playbook.yml --syntax-check
