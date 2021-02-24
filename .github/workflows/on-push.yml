@@ -16,7 +16,15 @@ jobs:
         with:
           python-version: '3.x'
 
+      - uses: actions/cache@v2
+        with:
+          path: ~/Library/Caches/pip
+          key: ${{ runner.os }}-pip
+          restore-keys: |
+            ${{ runner.os }}-pip
+
       - name: Install test dependencies.
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pip3 install yamllint ansible-lint ansible
 
       - name: Lint code.
@@ -39,7 +47,15 @@ jobs:
         with:
           submodules: recursive
 
+      - uses: actions/cache@v2
+        with:
+          path: ~/Library/Caches/pip
+          key: ${{ runner.os }}-pip
+          restore-keys: |
+            ${{ runner.os }}-pip
+
       - name: Install test dependencies.
+        if: steps.cache.outputs.cache-hit != 'true'
         run: sudo pip3 install ansible
 
       - name: Test the playbook's syntax.
