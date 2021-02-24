@@ -27,6 +27,7 @@
     src: '{{ ansible_env.PWD }}/inkscape/ui/{{ item }}'
     path: '{{ inkscape_system_data_directory }}/ui/{{ item }}'
     state: link
+    force: yes
   loop:
     - toolbar-commands.ui
     - toolbar-tool.ui
