@@ -1,0 +1,12 @@
+---
+- tags: build, inkscape
+  block:
+  - name: Build - inkscape extension - {{ item.name }}
+    template:
+      src: '{{ ansible_env.PWD }}/inkscape/extensions.j2/extension.{{ filetype }}.j2'
+      dest: '{{ ansible_env.PWD }}/inkscape/extensions/{{ item.name }}.{{ filetype }}'
+    loop_control:
+      loop_var: filetype
+    loop:
+      - py
+      - inx

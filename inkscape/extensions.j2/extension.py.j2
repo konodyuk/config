@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+# coding=utf-8
+
+import sys
+import time
+import inkex
+from lxml import etree
+
+STYLES = [
+    {% for style in item.styles.items() %}
+    {{ style }},
+    {% endfor %}
+]
+
+ITEM = {{ item }}
+
+DEFINITIONS = [
+    {% if 'requires' in item %}
+        {% for requirement in item.requires %}
+        {{ inkscape.definitions[requirement] }}
+        {% endfor %}
+    {% endif %}
+]
+
+REVERSIBLE = ITEM.get("reversible", False)
+
+def log(*args):
+    return
+    print(*args, file=sys.stderr)
+
+class Extension(inkex.EffectExtension):
+    def effect(self):
+        self.get_defs()
+        # log(type(self.svg))
+        for node in self.svg.get_selected(inkex.PathElement):
+            for key, value in STYLES:
+                if REVERSIBLE and node.style.get(key, None) == value:
+                    value = 'none'
+                node.style[key] = value
+        self.add_definitions()
+
+    def add_definitions(self):
+        for definition in DEFINITIONS:
+            self.add_definition(definition)
+
+    def add_definition(self, definition):
+        defs = etree.SubElement(
+            self.document.getroot(),
+            inkex.addNS("defs", "svg")
+        )
+        def_element = etree.SubElement(
+            defs,
+            inkex.addNS(definition['tag'], "svg"),
+            {
+                "id": definition['id'],
+                **definition['attributes']
+            }
+        )
+        etree.SubElement(
+            def_element,
+            inkex.addNS("path", "svg"),
+            definition['style']
+        )
+
+    def cleanup(self):
+        pass
+
+    def get_defs(self):
+        self.defs = {}
+
+        def recursive(g):
+            for i in g:
+                if i.tag == inkex.addNS("defs", "svg"):
+                    for j in i:
+                        self.defs[j.get("id")] = i
+                if i.tag == inkex.addNS("g", 'svg'):
+                    recursive(i)
+
+        recursive(self.document.getroot())
+
+if __name__ == '__main__':
+    extension = Extension()
+    extension.run()
