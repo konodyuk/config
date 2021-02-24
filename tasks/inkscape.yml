@@ -47,3 +47,23 @@
 - name: inkscape - build shortcuts
   tags: inkscape, build
   include_tasks: utils/build-inkscape-shortcuts.yml
+
+- name: inkscape - link preferences
+  tags: inkscape
+  file:
+    src: '{{ ansible_env.PWD }}/inkscape/{{ item }}'
+    path: '{{ inkscape_user_data_directory }}/{{ item }}'
+    state: link
+    force: yes
+  loop:
+    - preferences.xml
+
+- name: inkscape - keys
+  tags: inkscape
+  file:
+    src: '{{ ansible_env.PWD }}/inkscape/keys/{{ item }}'
+    path: '{{ inkscape_user_data_directory }}/keys/{{ item }}'
+    state: link
+    force: yes
+  loop:
+    - default.xml

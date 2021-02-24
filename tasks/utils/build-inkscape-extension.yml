@@ -10,3 +10,14 @@
     loop:
       - py
       - inx
+
+  - name: Link - inkscape extension - {{ item.name }}
+    file:
+      src: '{{ ansible_env.PWD }}/inkscape/extensions/{{ item.name }}.{{ filetype }}'
+      path: '{{ inkscape_user_data_directory }}/extensions/{{ item.name }}.{{ filetype }}'
+      state: link
+    loop_control:
+      loop_var: filetype
+    loop:
+      - py
+      - inx
