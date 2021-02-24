@@ -165,3 +165,4 @@ obsidian/plugins/obsidian-text-expander/styles.css
 # Build objects: inkscape
 inkscape/extensions
 inkscape/keys/default.xml
+inkscape/palettes/palette.gpl
