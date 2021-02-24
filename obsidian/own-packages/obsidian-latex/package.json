@@ -9,7 +9,8 @@
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run reinstall && npm run build",
-    "rebuild-cleanup": "npm run rebuild && npm run clean"
+    "rebuild-cleanup": "npm run rebuild && npm run clean",
+    "ship": "npm run rebuild-cleanup"
   },
   "keywords": [],
   "author": "",
