@@ -6,6 +6,10 @@
   vars_files:
     - default.config.yml
 
+  pre_tasks:
+    - include_tasks: tasks/read-vars.yml
+      tags: always
+
   tasks:
     - debug:
         msg: Check we are running in the directory of the script

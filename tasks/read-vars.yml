@@ -1,0 +1,13 @@
+---
+- name: Read vars
+  tags: always
+  block:
+    - name: Read vars
+      include_vars:
+        dir: '{{ ansible_env.PWD }}/vars'
+        depth: 1
+
+    - name: Read vars - inkscape
+      include_vars:
+        name: inkscape
+        dir: '{{ ansible_env.PWD }}/vars/inkscape'
