@@ -9,6 +9,6 @@
 
   - name: git clone obsidian-text-expander
     git:
-      repo: https://github.com/konoduyk/obsidian-text-expander
+      repo: https://github.com/konodyuk/obsidian-text-expander
       dest: '{{ ansible_env.PWD }}/obsidian/own-packages/obsidian-text-expander'
       update: no
