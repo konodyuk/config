@@ -150,6 +150,9 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,ansible,node
 
+# Virtual submodules:
+dotfiles/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
 # Linked objects: obsidian
 obsidian/own-packages/obsidian-text-expander
 
