@@ -1,0 +1,2 @@
+yamllint==1.25.0
+ansible-lint==5.0.2
