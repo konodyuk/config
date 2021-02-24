@@ -18,7 +18,7 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path: ~/Library/Caches/pip
+          path: ~/.cache/pip
           key: ${{ runner.os }}-pip
           restore-keys: |
             ${{ runner.os }}-pip
