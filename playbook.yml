@@ -2,6 +2,10 @@
 ---
 - hosts: localhost
   connection: local
+
+  vars_files:
+    - default.config.yml
+
   tasks:
     - debug:
         msg: Check we are running in the directory of the script
