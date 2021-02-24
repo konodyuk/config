@@ -155,6 +155,9 @@ obsidian/own-packages/obsidian-text-expander
 
 # Build objects: obsidian
 obsidian/plugins/obsidian-latex
+obsidian/plugins/obsidian-text-expander/main.js
+obsidian/plugins/obsidian-text-expander/manifest.json
+obsidian/plugins/obsidian-text-expander/styles.css
 
 # Build objects: inkscape
 inkscape/extensions
