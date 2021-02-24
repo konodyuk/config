@@ -23,6 +23,7 @@
   file:
     path: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}'
     state: directory
+    mode: '666'
 
 - name: check built sources - {{ item }}
   tags: obsidian
@@ -41,6 +42,7 @@
   copy:
     src: '{{ ansible_env.PWD }}/obsidian/own-packages/{{ item }}/{{ file_stat.filename }}'
     dest: '{{ ansible_env.PWD }}/obsidian/plugins/{{ item }}/{{ file_stat.filename }}'
+    mode: '666'
   when: file_stat.stat.exists
   loop_control:
     loop_var: file_stat
