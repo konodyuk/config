@@ -18,6 +18,8 @@
       tags: always
     - include_tasks: tasks/installs.yml
       tags: always
+    - include_tasks: tasks/git.yml
+      tags: always
     - include_tasks: tasks/sudo-touchid.yml
       tags: touchid
     - include_tasks: tasks/dotfiles.yml
