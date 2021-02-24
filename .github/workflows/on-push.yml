@@ -36,6 +36,8 @@ jobs:
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Install test dependencies.
         run: sudo pip3 install ansible
