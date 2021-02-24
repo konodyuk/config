@@ -22,10 +22,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install ansible
-        run: sudo apt-get install -y ansible=={{ ANSIBLE_VERSION }}
+        run: sudo apt-get install -y ansible=={{ env.ANSIBLE_VERSION }}
 
       - name: Install linters
-        run: sudo apt-get install -y ansible-lint=={{ ANSIBLE_LINT_VERSION }} yamllint=={{ YAMLLINT_VERSION }}
+        run: sudo apt-get install -y ansible-lint=={{ env.ANSIBLE_LINT_VERSION }} yamllint=={{ env.YAMLLINT_VERSION }}
 
       - name: Lint code.
         run: |
@@ -48,7 +48,7 @@ jobs:
           submodules: recursive
 
       - name: Install ansible.
-        run: brew install ansible=={{ ANSIBLE_VERSION }}
+        run: brew install ansible=={{ env.ANSIBLE_VERSION }}
 
       - name: Test the playbook's syntax.
         run: ansible-playbook playbook.yml --syntax-check
