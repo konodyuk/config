@@ -1,0 +1,20 @@
+---
+colors:
+  placeholder:
+    name: placeholder
+    value: '#363636'
+  palettes:
+    theme-dark:
+      - name: main
+        value: '#ffffff'
+      - name: accent
+        value: '#ffcc66'
+
+    theme-light:
+      - name: main
+        value: '#000000'
+      - name: accent
+        value: '#ff0000'
+      - name: light-blue
+        value: '#bbbbff'
+        old_names: blue
