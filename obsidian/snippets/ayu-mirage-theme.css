@@ -76,6 +76,16 @@ h1, h2, h3, h4, h5, h6, strong, b {
   background-color:  var(--background-secondary) !important;
 }
 
+/* PDF background */
+@media print {
+  body {
+    box-shadow: inset 0 0 0 1000px var(--background-primary) !important;
+  }
+  .markdown-preview-view {
+    color: var(--text-normal) !important;
+  }
+}
+
 /* EMBEDS */
 
 /* Remove title */
