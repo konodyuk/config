@@ -130,3 +130,63 @@ h1, h2, h3, h4, h5, h6, strong, b {
 .markdown-preview-view .markdown-embed-content>div>div>:last-child>:last-child { margin-top: 0; margin-bottom: 0; }
 
 /* END EMBEDS */
+
+/* RULE LINE IN LISTS */
+
+/* unordered -> unordered */
+ul > li > ul {
+    position: relative;
+}
+
+ul > li > ul::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1em;
+    top: 0;
+    bottom: 0;
+}
+
+/* ordered -> ordered */
+ol > li > ol {
+    position: relative;
+}
+
+ol > li > ol::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+}
+
+/* unordered -> ordered */
+ul > li > ol {
+    position: relative;
+}
+
+ul > li > ol::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1em;
+    top: 0;
+    bottom: 0;
+}
+
+/* ordered -> unordered */
+ol > li > ul {
+    position: relative;
+}
+
+ol > li > ul::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+}
+
+/* END RULE LINE IN LISTS */
