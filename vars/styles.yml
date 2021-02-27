@@ -1,20 +1,51 @@
 ---
 colors:
-  placeholder:
-    name: placeholder
-    value: '#363636'
-  palettes:
-    theme-dark:
-      - name: main
-        value: '#ffffff'
-      - name: accent
-        value: '#ffcc66'
+  theme-dark:
+    - name: 'main'
+      value: '#ffffff'
+    - name: 'accent'
+      value: '#ffcc66'
+    - name: 'solid-yellow'
+      value: &solid-yellow '#ffff00'
+    - name: 'solid-red'
+      value: &solid-red '#ff0000'
+    - name: 'solid-blue'
+      value: &solid-blue '#0000ff'
+    - name: 'solid-green'
+      value: &solid-green '#009900'
+    - name: 'light-blue'
+      value: &light-blue '#87cefa'
+    - name: 'dark-green'
+      value: &dark-green '#004400'
+    - name: 'solid-orange'
+      value: &solid-orange '#ff9900'
+    - name: 'solid-white'
+      value: &solid-white '#ffffff'
+    - name: 'solid-black'
+      value: &solid-black '#000000'
 
-    theme-light:
-      - name: main
-        value: '#000000'
-      - name: accent
-        value: '#ff0000'
-      - name: light-blue
-        value: '#bbbbff'
-        old_names: blue
+  theme-light:
+    - name: 'main'
+      value: '#000000'
+    - name: 'accent'
+      value: '#ff0000'
+    - name: 'solid-yellow'
+      value: *solid-yellow
+    - name: 'solid-red'
+      value: *solid-red
+    - name: 'solid-blue'
+      value: *solid-blue
+    - name: 'solid-green'
+      value: *solid-green
+    - name: 'light-blue'
+      value: *light-blue
+    - name: 'dark-green'
+      value: *dark-green
+    - name: 'solid-orange'
+      value: *solid-orange
+    - name: 'solid-white'
+      value: *solid-white
+    - name: 'solid-black'
+      value: *solid-black
+
+styles:
