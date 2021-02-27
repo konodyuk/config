@@ -1,8 +1,15 @@
 ---
 - tags: build, inkscape
   block:
-  - name: Build - inkscape palettes
-    template:
-      src: '{{ ansible_env.PWD }}/inkscape/palettes/palette.gpl.j2'
-      dest: '{{ ansible_env.PWD }}/inkscape/palettes/palette.gpl'
-      mode: '644'
+    - name: Build - inkscape palette {{ item.key }}
+      template:
+        src: '{{ ansible_env.PWD }}/inkscape/palettes/palette.gpl.j2'
+        dest: '{{ ansible_env.PWD }}/inkscape/palettes/{{ item.key }}.gpl'
+        mode: '644'
+
+    - name: Link - inkscape palette {{ item.key }}
+      file:
+        src: '{{ ansible_env.PWD }}/inkscape/palettes/{{ item.key }}.gpl'
+        path: '{{ inkscape_user_data_directory }}/palettes/{{ item.key }}.gpl'
+        state: link
+        force: yes
