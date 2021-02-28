@@ -30,3 +30,5 @@
       tags: inkscape
     - include_tasks: tasks/files.yml
       tags: term
+    - include_tasks: tasks/tools.yml
+      tags: tools
