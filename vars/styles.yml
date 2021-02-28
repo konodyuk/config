@@ -2,7 +2,7 @@
 colors:
   theme-dark:
     - name: 'main'
-      value: &dark-main '#ffffff'
+      value: &dark-main '#fffffe'
     - name: 'accent'
       value: &dark-accent '#ffcc66'
     - name: 'solid-yellow'
@@ -26,9 +26,9 @@ colors:
 
   theme-light:
     - name: 'main'
-      value: &light-main '#000000'
+      value: &light-main '#000001'
     - name: 'accent'
-      value: &light-accent '#ff0000'
+      value: &light-accent '#ff5500'
     - name: 'solid-yellow'
       value: *solid-yellow
     - name: 'solid-red'
