@@ -1,5 +1,5 @@
 ---
-colors:
+palettes:
   theme-dark:
     - name: 'main'
       value: &dark-main '#fffffe'

@@ -52,7 +52,7 @@
 - name: inkscape - build palettes
   tags: inkscape, build
   include_tasks: utils/build-inkscape-palettes.yml
-  loop: '{{ colors | dict2items }}'
+  loop: '{{ palettes | dict2items }}'
 
 - name: inkscape - link preferences
   tags: inkscape
