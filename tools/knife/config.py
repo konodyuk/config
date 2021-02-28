@@ -31,8 +31,7 @@ class Config:
     def set_override(self, mode):
         if mode not in self.data.overrides:
             raise UserWarning(f"No override {mode} specified")
-        for key, value in self.data.overrides[mode].items():
-            self.data[key].merge_update(value)
+        self.data.merge_update(self.data.overrides[mode])
 
     def render(self, path):
         path = Path(path).resolve()
