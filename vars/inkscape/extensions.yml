@@ -16,23 +16,23 @@ extensions:
       - "ArrowTexStyle"
     reversible: yes
 
-  - name: 'width05px'
+  - name: 'width-half'
     key: '1'
     modifiers: 'Alt'
     styles:
-      stroke-width: "0.2px"
+      stroke-width: "0.25"
 
-  - name: 'width10px'
+  - name: 'width-default'
     key: '2'
     modifiers: 'Alt'
     styles:
-      stroke-width: "0.3px"
+      stroke-width: "0.5"
 
-  - name: 'width15px'
+  - name: 'width-double'
     key: '3'
     modifiers: 'Alt'
     styles:
-      stroke-width: "0.6px"
+      stroke-width: "1.0"
 
   - name: 'dashed'
     key: '4'
