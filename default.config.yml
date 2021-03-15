@@ -1,0 +1,4 @@
+vaults:
+  main:
+    - "~/Documents/vaults/main-vault"
+  additional: []
