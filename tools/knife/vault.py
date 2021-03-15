@@ -1,8 +1,11 @@
 import os
-import click
+import json
 import webbrowser
+import subprocess
 from pathlib import Path
 from urllib.parse import quote
+
+import click
 
 from knife.group import cli_group
 
@@ -26,6 +29,20 @@ def _open_vault(vault_name):
     url = f"obsidian://open?vault={vault_name}"
     webbrowser.open(url)
 
+def _create_vaults(names, vaults_dir):
+    vault_dirs = [str(Path(vaults_dir) / name) for name in names]
+    args = [
+        'ansible-playbook',
+        str(Path('~/config/playbook.yml').expanduser()),
+        '--tags',
+        'obsidian',
+        '--skip-tags',
+        'obsidian_main_vaults',
+        '--extra-vars',
+        json.dumps({"vaults": {"additional": vault_dirs}}),
+    ]
+    subprocess.run(args, stdout=subprocess.PIPE)
+
 @cli_group.command()
 @click.option("--new", is_flag=True)
 @click.option("--list", "show_list", is_flag=True)
@@ -37,7 +54,8 @@ def _open_vault(vault_name):
 @click.argument("names", nargs=-1)
 def vault(names, new, show_list, vaults_dir):
     if new:
-        raise UserWarning()
+        _create_vaults(names, vaults_dir)
+        return
     if show_list:
         print("\n".join(_list_vaults(vaults_dir)))
         return
