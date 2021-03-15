@@ -45,7 +45,7 @@ def _create_vaults(names, vaults_dir):
 
 @cli_group.command()
 @click.option("--new", is_flag=True)
-@click.option("--list", "show_list", is_flag=True)
+@click.option("-l", "--list", "show_list", is_flag=True)
 @click.option(
     "--vaults_dir",
     type=click.Path(resolve_path=True, exists=True),
