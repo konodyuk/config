@@ -1,0 +1,604 @@
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                        GLOBAL: VARS                        ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.theme-dark {
+  --ayu-common-accent: #ffcc66;
+  --ayu-common-bg: #1f2430;
+  --ayu-common-fg: #dcddde;
+  --ayu-common-ui: #707a8c;
+
+  --ayu-syntax-tag: #5CCFE6;
+  --ayu-syntax-func: #FFD580;
+  --ayu-syntax-entity: #73D0FF;
+  --ayu-syntax-string: #BAE67E;
+  --ayu-syntax-regexp: #95E6CB;
+  --ayu-syntax-markup: #F28779;
+  --ayu-syntax-keyword: #FFA759;
+  --ayu-syntax-special: #FFE6B3;
+  --ayu-syntax-comment: #5C6773;
+  --ayu-syntax-constant: #D4BFFF;
+  --ayu-syntax-operator: #F29E74;
+  --ayu-syntax-error: #FF3333;
+
+  --ayu-ui-line: #19132a;
+  --ayu-ui-panel-bg: #232834;
+  --ayu-ui-panel-shadow: #141925;
+  --ayu-ui-panel-border: #101521;
+  --ayu-ui-gutter-normal: #707a8c66;
+  --ayu-ui-gutter-active: #707a8ccc;
+  --ayu-ui-selection-bg: #33415e;
+  --ayu-ui-selection-inactive: #323a4c;
+  --ayu-ui-selection-border: #323a4c;
+  --ayu-ui-guide-active: #707a8cb3;
+  --ayu-ui-guide-normal: #707a8c4d;
+
+  --ayu-vcs-added: #a6cc70;
+  --ayu-vcs-modified: #77a8d9;
+  --ayu-vcs-removed: #f27983;
+
+  --ayu-mirage-syntax-tag-bracket: #5ccfe680;
+}
+
+.theme-dark {
+  --svg-color-main: #fffffe;
+  --svg-color-accent: #ffcc66;
+  --svg-color-solid-yellow: #ffff00;
+  --svg-color-solid-red: #ff0000;
+  --svg-color-solid-blue: #0000ff;
+  --svg-color-solid-green: #009900;
+  --svg-color-light-blue: #87cefa;
+  --svg-color-dark-green: #004400;
+  --svg-color-solid-orange: #ff9900;
+  --svg-color-solid-white: #ffffff;
+  --svg-color-solid-black: #000000;
+
+  --svg-stroke-width-width-half: 0.25;
+  --svg-stroke-width-width-default: 0.5;
+  --svg-stroke-width-width-double: 1.0;
+  --svg-stroke-dasharray-dashed: 2.0, 0.5;
+}
+
+.theme-dark/* , .theme-light */ {
+  /* --background-primary: #1e2430; */
+  /* --background-primary-alt: #1b202b; */
+  /* --background-secondary: #1b202b; */
+  /* --background-secondary-alt: #171b24; */
+
+  --background-primary: var(--ayu-common-bg);
+  --background-primary-alt:  var(--background-primary);
+  --background-secondary:  var(--background-primary);
+  --background-secondary-alt:  var(--background-primary);
+
+  --text-faint: var(--ayu-syntax-comment);
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                       GLOBAL: FONTS                        ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+body {
+  --font-monospace: 'Fira Code Retina', 'Source Code Pro', monospace !important;
+  font-family: 'Fira Code Retina', 'Source Code Pro', monospace !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                   PREVIEW, EDIT: HEADERS                   ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+h1, h2, h3, h4, h5, h6,
+pre.HyperMD-header {
+  color: var(--ayu-syntax-string) !important;
+}
+
+strong, b,
+.cm-strong {
+  color: var(--ayu-syntax-markup) !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: TABLES                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.markdown-preview-view th, .markdown-preview-view td {
+  border: 1px solid var(--ayu-common-ui) !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: QUOTES                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.markdown-preview-view blockquote {
+  border: 1px solid var(--ayu-common-ui) !important;
+  border-left-width: 8px !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                   PREVIEW: FILE EXPLORER                   ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.nav-file-title, .nav-folder-title {
+  color: #bbb !important;
+}
+
+.nav-file-title:hover, 
+.nav-folder-title:hover, 
+.nav-file-title.is-active, 
+.nav-folder-title.is-active {
+  color: var(--ayu-common-fg) !important;
+  background-color:  var(--background-secondary) !important;
+}
+
+div[data-type="file-explorer"] {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: EMBEDS                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Remove title */
+.markdown-embed-title { 
+  display: none; 
+}
+
+/* Remove paddings */
+.markdown-preview-view .markdown-embed { 
+  border: none;
+  padding: 0;
+  margin: 0; 
+}
+.markdown-preview-view .markdown-embed .markdown-preview-view { 
+  padding: 0px 0px 0px 0px; 
+}
+
+/* Add border around embed */
+.markdown-preview-view .markdown-embed::before { 
+  left: -8px;
+  right: -8px;
+  top: -0px;
+  bottom: -0px;
+  border: 1px solid var(--ayu-common-ui);
+  border-style: dashed;
+  border-radius: 6px;
+  content: "";
+  position: absolute;
+}
+
+/* Link icon: rotate and shift; */
+.markdown-embed-link {
+  top: 0px;
+  right: -8px;
+  color: var(--ayu-common-ui);
+}
+.markdown-embed-link svg {
+  transform: rotate(90deg);
+}
+
+/* Remove margins of top and bottom blocks of embed */
+.markdown-preview-view .markdown-embed-content { 
+  max-height: unset;
+}
+.markdown-preview-view .markdown-embed-content>div>div>:nth-child(2)>:first-child {
+ margin-top: 0;
+}
+.markdown-preview-view .markdown-embed-content>div>div>:last-child>:first-child { 
+  margin-top: 0; margin-bottom: 0; 
+}
+.markdown-preview-view .markdown-embed-content>div>div>:last-child>:last-child { 
+  margin-top: 0; margin-bottom: 0; 
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                       PREVIEW: LISTS                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* unordered -> unordered */
+ul > li > ul {
+    position: relative;
+}
+
+ul > li > ul::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1em;
+    top: 0;
+    bottom: 0;
+}
+
+/* ordered -> ordered */
+ol > li > ol {
+    position: relative;
+}
+
+ol > li > ol::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+}
+
+/* unordered -> ordered */
+ul > li > ol {
+    position: relative;
+}
+
+ul > li > ol::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1em;
+    top: 0;
+    bottom: 0;
+}
+
+/* ordered -> unordered */
+ol > li > ul {
+    position: relative;
+}
+
+ol > li > ul::before {
+    content: '';
+    border-left: 1px solid var(--ayu-common-ui);
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****          PREVIEW: EMBED/IMAGE POSITION MODIFIERS           ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* ref: https://forum.obsidian.md/t/how-to-achieve-css-code-snippets/8474/35 */
+span[src$="#portrait"] {
+  position: relative;
+  float: right;
+  width: 250px;
+  margin-left: 16px;
+}
+
+span[src$="left"], span[alt$="left"] {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+}
+
+span[src$="right"], span[alt$="right"] {
+  position: relative;
+  float: right;
+  margin-left: 16px;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                     PREVIEW: DATAVIEW                      ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.table-view-table > thead > tr > th {
+    font-size: 1em !important;
+}
+
+.table-view-table {
+    width: auto !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                    PREVIEW: CODEBLOCKS                     ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Borders */
+pre[class*='language-'], .markdown-preview-view code {
+  border: 1px solid var(--ayu-common-ui);
+}
+
+/* Highlighing */
+.theme-dark :not(pre) > code[class*='language-'],
+.theme-dark pre[class*='language-'] {
+  background: var(--ayu-common-bg) !important;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  line-height: 1.2 !important;
+}
+
+.token.comment {
+  color: var(--ayu-syntax-comment) !important;
+}
+
+.token.doctype {
+  color: var(--ayu-syntax-special) !important;
+}
+
+.token.punctuation {
+  color: var(--ayu-syntax-operator) !important;
+}
+
+.token.selector {
+  color: var(--ayu-syntax-tag) !important;
+}
+
+.token.tag {
+  color: var(--ayu-syntax-tag) !important;
+}
+
+.token.property {
+  color: var(--ayu-syntax-func) !important;
+}
+
+.token.boolean {
+  color: var(--ayu-syntax-keyword) !important;
+  font-weight: bold !important;
+}
+
+.token.number {
+  color: var(--ayu-common-accent) !important;
+}
+
+.token.constant {
+  color: var(--ayu-syntax-constant) !important;
+}
+
+.token.symbol,
+.token.attr-name {
+  color: var(--ayu-syntax-string) !important;
+}
+
+.token.string {
+  color: var(--ayu-syntax-string) !important;
+}
+
+.token.attr-value {
+  color: var(--ayu-syntax-string) !important;
+}
+
+.token.builtin {
+  color: var(--ayu-syntax-tag) !important;
+}
+
+.token.operator {
+  color: var(--ayu-syntax-operator) !important;
+  font-weight: bold !important;
+}
+
+.token.keyword {
+  color: var(--ayu-syntax-keyword) !important; 
+  font-weight: bold !important;
+}
+
+.token.function {
+  color: var(--ayu-syntax-func) !important;
+}
+
+.token.class-name {
+  color: var(--ayu-syntax-func) !important;
+}
+
+.token.variable {
+  color: var(--ayu-common-fg) !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                EDIT: CODEBLOCK HIGHLIGHTING                ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.cm-s-obsidian pre.HyperMD-codeblock span.cm-formatting-code-block {
+  color: var(--text-muted) !important;
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock .cm-keyword {
+  font-weight: italic !important;
+}
+
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock {
+  color: var(--ayu-common-fg) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-keyword,
+.theme-dark .cm-s-obsidian .cm-math.cm-keyword,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-keyword {
+  color: var(--ayu-syntax-keyword) !important;
+  font-weight: bold !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
+.theme-dark .cm-s-obsidian .cm-math.cm-atom,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-atom {
+  color: var(--ayu-syntax-tag) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
+.theme-dark .cm-s-obsidian .cm-math.cm-number,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-number {
+  color: var(--ayu-common-accent) !important;
+}
+.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-type,
+.theme-dark .cm-s-obsidian span.cm-math.cm-type,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-type {
+  color: #A06FCA !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-def,
+.theme-dark .cm-s-obsidian .cm-math.cm-def,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-def {
+  color: var(--ayu-syntax-func) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property,
+.theme-dark .cm-s-obsidian .cm-math.cm-property,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-property {
+  color: var(--ayu-syntax-func) !important;
+}
+.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable,
+.theme-dark .cm-s-obsidian span.cm-math.cm-variable,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable {
+  color: var(--ayu-common-fg) !important;
+}
+.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-2,
+.theme-dark .cm-s-obsidian span.cm-math.cm-variable-2,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable-2 {
+  color: var(--ayu-syntax-entity) !important;
+}
+.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-3,
+.theme-dark .cm-s-obsidian span.cm-math.cm-variable-3,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable-3 {
+  color: var(--ayu-common-fg) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-type.cm-def,
+.theme-dark .cm-s-obsidian .cm-math.cm-type.cm-def,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-type.cm-def {
+  color: #FC4384 !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property.cm-def,
+.theme-dark .cm-s-obsidian .cm-math.cm-property.cm-def,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-property.cm-def {
+  color: #FC4384 !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-callee,
+.theme-dark .cm-s-obsidian .cm-math.cm-callee,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-callee {
+  color: #FC4384 !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-operator,
+.theme-dark .cm-s-obsidian .cm-math.cm-operator,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-operator {
+  color: var(--ayu-syntax-operator) !important;
+  font-weight: bold !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-qualifier,
+.theme-dark .cm-s-obsidian .cm-math.cm-qualifier,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-qualifier {
+  color: var(--ayu-syntax-func) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag,
+.theme-dark .cm-s-obsidian .cm-math.cm-tag,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-tag {
+  color: var(--ayu-syntax-tag) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag.cm-bracket,
+.theme-dark .cm-s-obsidian .cm-math.cm-tag.cm-bracket,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-tag.cm-bracket {
+  color: var(--ayu-mirage-syntax-tag-bracket) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-attribute,
+.theme-dark .cm-s-obsidian .cm-math.cm-attribute,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-attribute {
+  color: var(--ayu-syntax-string) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment,
+.theme-dark .cm-s-obsidian .cm-math.cm-comment,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-comment {
+  color: var(--ayu-syntax-comment) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-tag,
+.theme-dark .cm-s-obsidian .cm-math.cm-comment.cm-tag,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-comment.cm-tag {
+  color: #FC4384 !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-attribute,
+.theme-dark .cm-s-obsidian .cm-math.cm-comment.cm-attribute,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-comment.cm-attribute {
+  color: #D4D4D4 !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
+.theme-dark .cm-s-obsidian .cm-math.cm-string,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-string {
+  color: var(--ayu-syntax-string) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string-2,
+.theme-dark .cm-s-obsidian .cm-math.cm-string-2,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-string-2 {
+  color: var(--ayu-syntax-string) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
+.theme-dark .cm-s-obsidian .cm-math.cm-meta,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-meta {
+  color: var(--ayu-syntax-special) !important;
+  background: inherit !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-builtin,
+.theme-dark .cm-s-obsidian .cm-math.cm-builtin,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-builtin {
+  color: var(--ayu-syntax-tag) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-header,
+.theme-dark .cm-s-obsidian .cm-math.cm-header,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-header {
+  color: var(--ayu-syntax-string) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-hr,
+.theme-dark .cm-s-obsidian .cm-math.cm-hr,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-hr {
+  color: var(--ayu-syntax-comment) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-link,
+.theme-dark .cm-s-obsidian .cm-math.cm-link,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-link {
+  color: var(--ayu-syntax-tag) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-error,
+.theme-dark .cm-s-obsidian .cm-math.cm-error,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-error {
+  border-bottom: 1px solid var(--ayu-syntax-error) !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-activeline-background,
+.theme-dark .cm-s-obsidian .cm-math.CodeMirror-activeline-background,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .CodeMirror-activeline-background {
+  background: #272727 !important;
+}
+.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-matchingbracket,
+.theme-dark .cm-s-obsidian .cm-math.CodeMirror-matchingbracket,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .CodeMirror-matchingbracket {
+  outline: 1px solid grey !important;
+  color: var(--ayu-syntax-special) !important;
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                   PRINT: PDF BACKGROUND                    ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+@media print {
+  body {
+    box-shadow: inset 0 0 0 1000px var(--background-primary) !important;
+  }
+  .markdown-preview-view {
+    color: var(--text-normal) !important;
+  }
+}
