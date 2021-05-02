@@ -1,0 +1,7 @@
+.table-view-table > thead > tr > th {
+    font-size: 1em !important;
+}
+
+.table-view-table {
+    width: auto !important;
+}
