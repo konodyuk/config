@@ -46,3 +46,7 @@ pre.HyperMD-header {
 .cm-strong {
     color: var(--ayu-syntax-markup) !important;
 }
+
+pre[class*='language-'], .markdown-preview-view code {
+  border: 1px solid var(--ayu-common-ui);
+}
