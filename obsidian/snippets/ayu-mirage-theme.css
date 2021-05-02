@@ -49,6 +49,16 @@
   --svg-stroke-width-width-default: 0.5;
   --svg-stroke-width-width-double: 1.0;
   --svg-stroke-dasharray-dashed: 2.0, 0.5;
+
+  /* --background-primary: #1e2430; */
+  /* --background-primary-alt: #1b202b; */
+  /* --background-secondary: #1b202b; */
+  /* --background-secondary-alt: #171b24; */
+
+  --background-primary: var(--ayu-common-bg);
+  --background-primary-alt:  var(--background-primary);
+  --background-secondary:  var(--background-primary);
+  --background-secondary-alt:  var(--background-primary);
 }
 
 /* Fonts */
