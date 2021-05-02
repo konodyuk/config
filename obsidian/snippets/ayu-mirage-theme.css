@@ -33,13 +33,22 @@
   --ayu-vcs-modified: #77a8d9;
   --ayu-vcs-removed: #f27983;
 
-  --svg-main: var(--ayu-common-fg);
-  --svg-accent: var(--ayu-common-accent);
-  --svg-inverse: var(--ayu-common-bg);
-  --svg-blue: var(--ayu-vcs-modified);
-  --svg-green: var(--ayu-vcs-added);
-  --svg-red: var(--ayu-vcs-removed);
-  --svg-yellow: var(--ayu-common-accent);
+  --svg-color-main: #fffffe;
+  --svg-color-accent: #ffcc66;
+  --svg-color-solid-yellow: #ffff00;
+  --svg-color-solid-red: #ff0000;
+  --svg-color-solid-blue: #0000ff;
+  --svg-color-solid-green: #009900;
+  --svg-color-light-blue: #87cefa;
+  --svg-color-dark-green: #004400;
+  --svg-color-solid-orange: #ff9900;
+  --svg-color-solid-white: #ffffff;
+  --svg-color-solid-black: #000000;
+
+  --svg-stroke-width-width-half: 0.25;
+  --svg-stroke-width-width-default: 0.5;
+  --svg-stroke-width-width-double: 1.0;
+  --svg-stroke-dasharray-dashed: 2.0, 0.5;
 }
 
 /* Fonts */
