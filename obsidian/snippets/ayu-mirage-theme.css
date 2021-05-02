@@ -49,8 +49,11 @@ body {
 }
 
 /* Headers */
-h1, h2, h3, h4, h5, h6, strong, b {
-  color: var(--ayu-syntax-special) !important;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ayu-syntax-string) !important;
+}
+strong, b {
+  color: var(--ayu-syntax-markup) !important;
 }
 
 /* Tables */
