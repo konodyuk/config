@@ -79,6 +79,10 @@ strong, b {
   background-color:  var(--background-secondary) !important;
 }
 
+div[data-type="file-explorer"] {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
 /* PDF background */
 @media print {
   body {
