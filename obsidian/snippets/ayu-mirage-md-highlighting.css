@@ -39,7 +39,10 @@
   --yellow:  var(--ayu-common-accent);
 }
 
-pre.HyperMD-header, .cm-strong {
-    color: var(--ayu-syntax-special) !important;
+pre.HyperMD-header {
+    color: var(--ayu-syntax-string) !important;
 }
 
+.cm-strong {
+    color: var(--ayu-syntax-markup) !important;
+}
