@@ -198,3 +198,23 @@ ol > li > ul::before {
 }
 
 /* END RULE LINE IN LISTS */
+
+/* ref: https://forum.obsidian.md/t/how-to-achieve-css-code-snippets/8474/35 */
+span[src$="#portrait"] {
+  position: relative;
+  float: right;
+  width: 250px;
+  margin-left: 16px;
+}
+
+span[src$="left"], span[alt$="left"] {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+}
+
+span[src$="right"], span[alt$="right"] {
+  position: relative;
+  float: right;
+  margin-left: 16px;
+}
