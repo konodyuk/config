@@ -7,10 +7,6 @@
   font-weight: italic !important;
 }
 
-.cm-s-obsidian pre.HyperMD-codeblock {
-  background-color: var(--ayu-common-bg) !important;
-}
-
 .theme-dark .cm-s-obsidian {
   --ayu-common-accent: #ffcc66;
   --ayu-common-bg: #1f2430;
