@@ -39,7 +39,7 @@
   --ayu-vcs-modified: #77a8d9;
   --ayu-vcs-removed: #f27983;
 
-  --ayu-mirage-syntax-tag-bracket: #5ccfe680;
+  --ayu-syntax-tag-bracket: #5ccfe680;
 }
 
 .theme-dark {
@@ -512,7 +512,7 @@ pre[class*='language-'] {
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag.cm-bracket,
 .theme-dark .cm-s-obsidian .cm-math.cm-tag.cm-bracket,
 .theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-tag.cm-bracket {
-  color: var(--ayu-mirage-syntax-tag-bracket) !important;
+  color: var(--ayu-syntax-tag-bracket) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-attribute,
 .theme-dark .cm-s-obsidian .cm-math.cm-attribute,
