@@ -115,6 +115,7 @@ div[data-type="file-explorer"] {
   top: -0px;
   bottom: -0px;
   border: 1px solid var(--ayu-common-ui);
+  border-style: dashed;
   border-radius: 6px;
   content: "";
   position: absolute;
