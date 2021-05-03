@@ -91,6 +91,18 @@ body {
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
+/* *****                       GLOBAL: INTERFACE                    ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Sidepane separators */
+hr.workspace-leaf-resize-handle {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
 /* *****                   PREVIEW, EDIT: HEADERS                   ***** */
 /* *****                                                            ***** */
 /* ********************************************************************** */
@@ -145,10 +157,6 @@ strong, b,
 .nav-folder-title.is-active {
   color: var(--ayu-common-fg) !important;
   background-color:  var(--background-secondary) !important;
-}
-
-div[data-type="file-explorer"] {
-  border-right: 1px solid var(--background-modifier-border);
 }
 
 
