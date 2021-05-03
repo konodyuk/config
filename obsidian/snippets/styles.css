@@ -147,14 +147,6 @@ strong, b,
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
-.nav-file-title:hover, 
-.nav-folder-title:hover, 
-.nav-file-title.is-active, 
-.nav-folder-title.is-active {
-  color: var(--ayu-common-fg) !important;
-  background-color:  var(--background-secondary) !important;
-}
-
 /* Fix width of space containing icon */
 .nav-folder-children .nav-file-title-content:first-child::before,
 .nav-folder-children .nav-folder-title-content::before {
@@ -187,6 +179,13 @@ strong, b,
 /* Remove folding triangles */
 .nav-folder-collapse-indicator {
   display: none;
+}
+
+/* Fix text/background color on file/folder hover (text is white, bg is default) */
+body:not(.is-grabbing) .nav-file:not(.is-active) .nav-file-title:hover, 
+body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
+  --text-normal: var(--text-normal) !important;
+  --background-secondary-alt: var(--background-secondary-alt) !important;
 }
 
 
