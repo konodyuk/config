@@ -42,6 +42,44 @@
   --ayu-syntax-tag-bracket: #5ccfe680;
 }
 
+.theme-light {
+  --ayu-common-accent: #FF9940;
+  --ayu-common-bg: #FAFAFA;
+  --ayu-common-fg: #575F66;
+  --ayu-common-ui: #8A9199;
+
+  --ayu-syntax-tag: #55B4D4;
+  --ayu-syntax-func: #F2AE49;
+  --ayu-syntax-entity: #399EE6;
+  --ayu-syntax-string: #86B300;
+  --ayu-syntax-regexp: #4CBF99;
+  --ayu-syntax-markup: #F07171;
+  --ayu-syntax-keyword: #FA8D3E;
+  --ayu-syntax-special: #E6BA7E;
+  --ayu-syntax-comment: #ABB0B6;
+  --ayu-syntax-constant: #A37ACC;
+  --ayu-syntax-operator: #ED9366;
+  --ayu-syntax-error: #F51818;
+
+  --ayu-ui-line: #8a91991a;
+  --ayu-ui-panel-bg: #ffffff;
+  --ayu-ui-panel-shadow: #424a5040;
+  --ayu-ui-panel-border: #f0f0f0;
+  --ayu-ui-gutter-normal: #8a919966;
+  --ayu-ui-gutter-active: #8a9199cc;
+  --ayu-ui-selection-bg: #d1e4f4;
+  --ayu-ui-selection-inactive: #e7e8e9;
+  --ayu-ui-selection-border: #e1e1e2;
+  --ayu-ui-guide-active: #8A919959;
+  --ayu-ui-guide-normal: #8A91992e;
+
+  --ayu-vcs-added: #99BF4D;
+  --ayu-vcs-modified: #709ECC;
+  --ayu-vcs-removed: #F27983;
+
+  --ayu-syntax-tag-bracket: #5ccfe680;
+}
+
 .theme-dark {
   --svg-color-main: #fffffe;
   --svg-color-accent: #ffcc66;
@@ -61,7 +99,7 @@
   --svg-stroke-dasharray-dashed: 2.0, 0.5;
 }
 
-.theme-dark/* , .theme-light */ {
+.theme-dark, .theme-light {
   /* --background-primary: #1e2430; */
   /* --background-primary-alt: #1b202b; */
   /* --background-secondary: #1b202b; */
