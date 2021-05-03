@@ -188,6 +188,11 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   --background-secondary-alt: var(--background-secondary-alt) !important;
 }
 
+/* Set closed folder icon color to accent on hover */
+.nav-folder:hover > .nav-folder-title > .nav-folder-title-content::before {
+  color: var(--ayu-common-accent);
+}
+
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
