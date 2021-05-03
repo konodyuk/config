@@ -188,6 +188,11 @@ strong, b,
   color: var(--ayu-common-ui);
 }
 
+/* Remove folding triangles */
+.nav-folder-collapse-indicator {
+  display: none;
+}
+
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
