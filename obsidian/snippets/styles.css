@@ -147,10 +147,6 @@ strong, b,
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
-.nav-file-title, .nav-folder-title {
-  color: #bbb !important;
-}
-
 .nav-file-title:hover, 
 .nav-folder-title:hover, 
 .nav-file-title.is-active, 
