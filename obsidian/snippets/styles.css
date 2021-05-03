@@ -159,6 +159,35 @@ strong, b,
   background-color:  var(--background-secondary) !important;
 }
 
+/* Fix width of space containing icon */
+.nav-folder-children .nav-file-title-content:first-child::before,
+.nav-folder-children .nav-folder-title-content::before {
+  display: inline-block;
+  margin-right: 0.3em;
+  font-size: 1.25em;
+  width: 1em;
+}
+
+/* File icon */
+.nav-folder-children .nav-file-title-content:first-child::before {
+  content: "\f15b";
+  font-family: "Font Awesome 5 Free Regular";
+}
+
+/* Open folder icon */
+.nav-folder-children .nav-folder-title-content::before {
+  content: "\f07b";
+  font-family: "Font Awesome 5 Free Regular";
+  color: var(--ayu-common-accent);
+}
+
+/* Closed folder icon */
+.nav-folder-children .is-collapsed .nav-folder-title-content::before {
+  content: "\f07b";
+  font-family: "Font Awesome 5 Free Solid";
+  color: var(--ayu-common-ui);
+}
+
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
