@@ -73,6 +73,7 @@
   --background-secondary-alt:  var(--background-primary);
 
   --text-faint: var(--ayu-syntax-comment);
+  --text-muted: var(--ayu-common-ui);
 }
 
 
