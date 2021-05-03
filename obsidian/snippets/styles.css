@@ -103,18 +103,26 @@ hr.workspace-leaf-resize-handle {
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
-/* *****                   PREVIEW, EDIT: HEADERS                   ***** */
+/* *****               PREVIEW, EDIT: MARKDOWN COLORS               ***** */
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
+/* Headers */
 h1, h2, h3, h4, h5, h6,
 pre.HyperMD-header {
   color: var(--ayu-syntax-string) !important;
 }
 
+/* Bold */
 strong, b,
 .cm-strong {
   color: var(--ayu-syntax-markup) !important;
+}
+
+/* Tags */
+.tag, .tag:hover,
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--ayu-common-accent);
 }
 
 
