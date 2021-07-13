@@ -1,0 +1,10 @@
+{
+  "theme": "obsidian",
+  "translucency": false,
+  "obsidianCss": false,
+  "cssTheme": "Atom",
+  "enabledCssSnippets": [
+    "styles"
+  ],
+  "baseFontSize": 18
+}

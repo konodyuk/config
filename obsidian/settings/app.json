@@ -1,0 +1,21 @@
+{
+  "foldIndent": true,
+  "foldHeading": true,
+  "defaultViewMode": "preview",
+  "showLineNumber": false,
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "promptDelete": false,
+  "trashOption": "local",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "inbox",
+  "attachmentFolderPath": "attachments",
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "1",
+    "downscalePercent": 100
+  },
+  "showUnsupportedFiles": true,
+  "spellcheck": false
+}

@@ -31,6 +31,11 @@
         path: '{{ vault_dir }}/.obsidian/{{ item }}'
         state: link
       loop:
-        - config
+        - app.json
+        - appearance.json
+        - core-plugins.json
+        - community-plugins.json
+        - hotkeys.json
+        - page-preview.json
         - daily-notes.json
         - global-search.json
