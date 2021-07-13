@@ -10,6 +10,7 @@
 
     - name: obsidian - own-packages
       include_tasks: build-obsidian-package.yml
+      tags: build
       loop:
         - obsidian-latex
         - obsidian-text-expander
