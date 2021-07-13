@@ -27,7 +27,8 @@ export default class JaxPlugin extends Plugin {
           Rnm: "\\Rii{n}{m}",
           Rmn: "\\Rii{m}{n}",
           ub: "\\underbrace",
-          ob: "\\overbrace"
+          ob: "\\overbrace",
+          df: "\\dfrac"
         };
 
         o.startup.ready = () => {

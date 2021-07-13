@@ -244,8 +244,6 @@
   "integrity" "sha512-+WR3bttcq7zE+BntH09UxaW3bQo3vItuYeLsyk4dL2tuwbeSKJuvwiawyhEnvRdRgrII0Uzk00FpctHO/zB1kw=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.39.0.tgz"
   "version" "2.39.0"
-  dependencies:
-    "fsevents" "~2.3.1"
   optionalDependencies:
     "fsevents" "~2.3.1"
 
