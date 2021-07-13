@@ -1,1 +1,8 @@
-{"formatType":"normal","showRibbonIcon":true,"useMonospaceFont":true,"preferredMonospaceFont":"Fira Code","bindEnter":true,"bindTab":true}
+{
+  "formatType": "normal",
+  "showRibbonIcon": true,
+  "useMonospaceFont": true,
+  "preferredMonospaceFont": "Fira Code",
+  "bindEnter": true,
+  "bindTab": true
+}
