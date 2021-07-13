@@ -419,13 +419,13 @@ span[src$="#portrait"] {
   margin-left: 16px;
 }
 
-span[src$="left"], span[alt$="left"] {
+span[src$="left"], span[alt~="left"] {
   position: relative;
   float: left;
   margin-right: 16px;
 }
 
-span[src$="right"], span[alt$="right"] {
+span[src~="right"], span[alt~="right"] {
   position: relative;
   float: right;
   margin-left: 16px;
@@ -733,4 +733,57 @@ pre[class*='language-'] {
   .markdown-preview-view {
     color: var(--text-normal) !important;
   }
+}
+
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                  ADAPTIVE IMAGES                           ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* General and default image blending */
+
+.theme-dark img {
+    display: block;
+    max-width: 80%;
+    padding: 0 auto 0 auto;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    mix-blend-mode: screen;
+    filter: opacity(1);
+}
+
+.theme-light img {
+    display: block;
+    max-width: 80%;
+    padding: 0 auto 0 auto;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    mix-blend-mode: multiply;
+    filter: opacity(0.95);
+}
+
+.popover.hover-popover .markdown-preview-view {
+    background-color: var(--background-primary);
+}
+
+/* Image dynamic colors inversion */
+
+.theme-dark span[alt~="ada-white"] img, .theme-dark span[alt~="aw"] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.theme-light span[alt~="ada-black"] img, .theme-light span[alt~="ab"] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.theme-dark span[alt~="ada-white-contrast"] img, .theme-dark span[alt~="awc"] img {
+  filter: invert(1) hue-rotate(180deg) contrast(1.5);
+}
+
+.theme-light span[alt~="ada-black-contrast"] img, .theme-light span[alt~="abc"] img {
+  filter: invert(1) hue-rotate(180deg) contrast(1.45);
 }
