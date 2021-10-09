@@ -1,7 +1,6 @@
 import logging
 
 import click
-import six
 from pyinfra import logger
 
 from mt.config import cfg
@@ -30,7 +29,7 @@ class LogFormatter(logging.Formatter):
         if record.args:
             message = record.msg % record.args
 
-        if isinstance(message, six.string_types):
+        if isinstance(message, str):
             if "-->" not in message:
                 message = "    {0}".format(message)
 
