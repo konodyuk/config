@@ -14,7 +14,6 @@ class BuildTreeNode:
     predecessors = attr.ib(type=set, factory=set)
     successors = attr.ib(type=set, factory=set)
     function = attr.ib(type=Callable, default=None)
-    live_only = attr.ib(type=bool, default=False)
     _run_id = attr.ib(init=False, default=None, cmp=False)
 
     def run_backward(self, run_id=None):
@@ -28,9 +27,7 @@ class BuildTreeNode:
         if run_id is not None:
             self._run_id = run_id
 
-    def run_forward(self, run_self=False, run_id=None, is_live_run=False):
-        if not is_live_run and self.live_only:
-            return
+    def run_forward(self, run_self=False, run_id=None):
         if self.function is not None and run_self:
             if run_id is not None:
                 if run_id != self._run_id:
@@ -55,12 +52,11 @@ class BuildTree(dict):
             self[key] = node
         return node
 
-    def add_node(self, target: str, deps: List[str], func: Callable, live_only: bool):
+    def add_node(self, target: str, deps: List[str], func: Callable):
         node = self[target]
         assert node.function is None, f"Duplicate target: {target}"
 
         node.function = func
-        node.live_only = live_only
 
         for dep in deps:
             dep_node = self[dep]
@@ -72,21 +68,21 @@ class BuildTree(dict):
         for node in self.values():
             node.run_backward(run_id=run_id)
 
-    def run_forward(self, target: str, is_live_run: bool = False):
+    def run_forward(self, target: str):
         run_id = object()
-        self[target].run_forward(run_self=False, run_id=run_id, is_live_run=is_live_run)
+        self[target].run_forward(run_self=False, run_id=run_id)
 
 
 class Build:
     def __init__(self):
         self.tree = BuildTree()
 
-    def __call__(self, target: str, deps: List[str] = None, live_only: bool = False):
+    def __call__(self, target: str, deps: List[str] = None):
         if deps is None:
             deps = []
 
         def _inner(func):
-            self.tree.add_node(target=target, deps=deps, func=func, live_only=live_only)
+            self.tree.add_node(target=target, deps=deps, func=func)
 
         return _inner
 
@@ -95,7 +91,7 @@ class Build:
 
     def on_file_update(self, file: str):
         if file in self.tree:
-            self.tree.run_forward(file, is_live_run=True)
+            self.tree.run_forward(file)
 
 
 def build(path: str, live: bool = False):
