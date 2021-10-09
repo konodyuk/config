@@ -1,75 +1,75 @@
----
-name: CI
+# ---
+# name: CI
 
-on: [push]
+# on: [push]
 
-jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the codebase.
-        uses: actions/checkout@v2
+# jobs:
+#   lint:
+#     name: Lint
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Check out the codebase.
+#         uses: actions/checkout@v2
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+#       - name: Set up Python 3.
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: '3.x'
 
-      - uses: actions/cache@v2
-        id: cache
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+#       - uses: actions/cache@v2
+#         id: cache
+#         with:
+#           path: ~/.cache/pip
+#           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+#           restore-keys: |
+#             ${{ runner.os }}-pip-
 
-      - name: Install test dependencies.
-        run: pip3 install -r requirements.txt -r requirements-dev.txt
+#       - name: Install test dependencies.
+#         run: pip3 install -r requirements.txt -r requirements-dev.txt
 
-      - name: Lint code.
-        run: |
-          yamllint .
-          ansible-lint
+#       - name: Lint code.
+#         run: |
+#           yamllint .
+#           ansible-lint
 
-  integration:
-    name: Integration
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - macos-10.15
+#   integration:
+#     name: Integration
+#     runs-on: ${{ matrix.os }}
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         os:
+#           - macos-10.15
 
-    steps:
-      - name: Check out the codebase.
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
+#     steps:
+#       - name: Check out the codebase.
+#         uses: actions/checkout@v2
+#         with:
+#           submodules: recursive
 
-      - uses: actions/cache@v2
-        id: cache
-        with:
-          path: ~/Library/Caches/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+#       - uses: actions/cache@v2
+#         id: cache
+#         with:
+#           path: ~/Library/Caches/pip
+#           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+#           restore-keys: |
+#             ${{ runner.os }}-pip-
 
-      - name: Install test dependencies.
-        run: sudo pip3 install -r requirements.txt
+#       - name: Install test dependencies.
+#         run: sudo pip3 install -r requirements.txt
 
-      - name: Test the playbook's syntax.
-        run: ansible-playbook playbook.yml --syntax-check
+#       - name: Test the playbook's syntax.
+#         run: ansible-playbook playbook.yml --syntax-check
 
-      - name: Test the playbook.
-        run: ansible-playbook playbook.yml
-        env:
-          ANSIBLE_FORCE_COLOR: '1'
+#       - name: Test the playbook.
+#         run: ansible-playbook playbook.yml
+#         env:
+#           ANSIBLE_FORCE_COLOR: '1'
 
-      - name: Idempotence check.
-        run: |
-          idempotence=$(mktemp)
-          ansible-playbook playbook.yml | tee -a ${idempotence}
-          tail ${idempotence} | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
-        env:
-          ANSIBLE_FORCE_COLOR: '1'
+#       - name: Idempotence check.
+#         run: |
+#           idempotence=$(mktemp)
+#           ansible-playbook playbook.yml | tee -a ${idempotence}
+#           tail ${idempotence} | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+#         env:
+#           ANSIBLE_FORCE_COLOR: '1'
