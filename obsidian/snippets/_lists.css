@@ -1,0 +1,125 @@
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                       PREVIEW: LISTS                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* edit mode: collapse indicator vertical centering */
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* edit mode: no additional padding in lists */
+.cm-s-obsidian .HyperMD-list-line {
+  padding-top: 0;
+}
+
+/* edit mode: collapse indicator */
+.CodeMirror-foldgutter-folded:after {
+  content: ">";
+  color: var(--ayu-common-fg);
+}
+
+/* edit mode: collapse indicator */
+.CodeMirror-foldgutter-open:after {
+  content: ">";
+  display: inline-block;
+  transform: rotate(90deg);
+  color: var(--ayu-common-fg);
+}
+
+/* preview mode: collapse indicator: remove default svg */
+.markdown-preview-view .collapse-indicator:not(.list-collapse-indicator) svg {
+  display: none;
+  z-index: -1;
+}
+
+/* preview mode: collapse indicator (except lists): folded */
+.markdown-preview-view .collapse-indicator:not(.list-collapse-indicator):after {
+  content: ">";
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+/* preview mode: collapse indicator (except lists): unfolded */
+.markdown-preview-view
+  .is-collapsed
+  .collapse-indicator:not(.list-collapse-indicator):after {
+  transform: rotate(0deg);
+}
+
+/* unordered */
+
+/* remove default bullets */
+ul > li {
+  list-style: none;
+}
+
+ul > li {
+  position: relative;
+}
+
+/* line */
+ul > li:before {
+  content: "";
+  border-left: 1px solid var(--ayu-common-ui);
+  position: absolute;
+  left: -1em;
+  height: 100%;
+  z-index: 0;
+}
+
+/* bullets */
+ul > li:after {
+  content: "•";
+  position: absolute;
+  left: -1.08em;
+  top: 0;
+  z-index: 1;
+  font-size: 1.25em;
+}
+
+/* collapsed bullets */
+ul > li.is-collapsed:after {
+  content: "⦿";
+  left: -1.1em;
+}
+
+/* remove default collapse indicator icon */
+.markdown-preview-view .list-collapse-indicator svg {
+  display: none;
+  z-index: -1;
+}
+
+/* move collapse indicator area to around bullet */
+.markdown-preview-view .list-collapse-indicator {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  font-size: 1.25em;
+  left: -1.08em;
+  top: 0;
+  z-index: 2;
+  padding: 0;
+  margin-left: 0px;
+}
+
+/* cut line to start in first bullet */
+ul > li:first-child::before {
+  top: 14px;
+}
+
+/* cut line to end in last bullet */
+ul > li:last-child::before {
+  height: 12px;
+}
+
+/* if only child, remove the line */
+ul > li:first-child:last-child::before {
+  height: 0px !important;
+}

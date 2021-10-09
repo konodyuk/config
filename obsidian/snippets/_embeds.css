@@ -1,0 +1,96 @@
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: EMBEDS                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Remove title */
+.markdown-embed-title {
+  display: none;
+}
+
+/* Disable scrolling, always embed full note */
+.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
+  max-height: unset;
+}
+
+/* Remove paddings */
+.markdown-preview-view .markdown-embed {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.markdown-preview-view .markdown-embed .markdown-preview-view {
+  padding: 0px 0px 0px 0px;
+}
+.markdown-embed:not(.hover-popover .markdown-embed) {
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
+}
+
+/* Norder around embed and background */
+.markdown-preview-view .markdown-embed::before {
+  left: -8px;
+  right: -8px;
+  top: -0px;
+  bottom: -0px;
+  border-radius: 8px;
+  content: "";
+  position: absolute;
+  background-color: var(--ayu-embed-background-color);
+  border: 1px solid var(--ayu-embed-border-color);
+  border-style: dashed;
+}
+.markdown-embed .markdown-embed::before {
+  left: -0px;
+  right: -0px;
+}
+.popover.hover-popover .markdown-embed::before {
+  z-index: var(--layer-popover);
+}
+
+/* Link icon: rotate and shift; */
+.markdown-embed-link {
+  top: 0px;
+  right: -8px;
+  left: unset;
+  color: var(--ayu-common-ui);
+}
+.markdown-embed-link svg {
+  transform: rotate(90deg);
+}
+/* Move link icon to match the inner frame for 2nd level embeds */
+.markdown-embed * .markdown-embed .markdown-embed-link {
+  right: 0px;
+}
+
+/* Remove margins of top and bottom blocks of embed */
+.markdown-preview-view .markdown-embed-content {
+  max-height: unset;
+}
+.markdown-preview-view
+  .markdown-embed-content
+  > div
+  > div
+  > :nth-child(2)
+  > :first-child {
+  margin-top: 0;
+}
+.markdown-preview-view
+  .markdown-embed-content
+  > div
+  > div
+  > :last-child
+  > :first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-preview-view
+  .markdown-embed-content
+  > div
+  > div
+  > :last-child
+  > :last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
