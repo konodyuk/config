@@ -39,3 +39,8 @@ def _config_from_dir(path: Path) -> dict:
 # and then merge it with the newly read:
 # `cfg = OmegaConf.merge(cfg, _read_conf())`
 cfg = _config_from_dir(PWD / "vars")
+cfg.args = {}
+
+
+def set_args(args):
+    cfg.args = OmegaConf.from_cli(args)
