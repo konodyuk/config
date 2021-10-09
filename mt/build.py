@@ -1,4 +1,5 @@
 import os
+import time
 from pathlib import Path
 from typing import Callable, List
 
@@ -6,6 +7,7 @@ import attr
 import watchgod
 
 BUILD_SCRIPT_NAME = "MTBUILD.py"
+TIMEOUT = 0.5
 
 
 @attr.s(hash=False)
@@ -104,6 +106,7 @@ def build(path: str, live: bool = False):
     try:
         build = _load_build(path)
         build.run()
+        time.sleep(TIMEOUT)
     except Exception as e:
         print(f"Error loading/executing {BUILD_SCRIPT_NAME}:", e)
 
@@ -119,12 +122,14 @@ def build(path: str, live: bool = False):
                 try:
                     build = _load_build(path)
                     build.run()
+                    time.sleep(TIMEOUT)
                 except Exception as e:
                     print(f"Error loading/executing {BUILD_SCRIPT_NAME}:", e)
             else:
                 filepath_rel = str(filepath.relative_to(path))
                 try:
                     build.on_file_update(filepath_rel)
+                    time.sleep(TIMEOUT)
                 except Exception as e:
                     print(f"Error building {filepath_rel}:", e)
 
