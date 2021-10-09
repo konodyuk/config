@@ -118,16 +118,13 @@ b,
 .nav-folder-children .nav-folder-title-content::before {
   content: "\e185";
   font-family: "Font Awesome 6 Pro";
-  font-weight: 900;
+  font-weight: 400;
   color: var(--ayu-common-accent);
 }
 
 /* Closed folder icon */
 .nav-folder-children .is-collapsed .nav-folder-title-content::before {
-  content: "\e185";
-  font-family: "Font Awesome 6 Pro";
-  font-weight: 400;
-  color: var(--ayu-common-ui);
+  font-weight: 900;
 }
 
 /* Remove folding triangles */
@@ -140,11 +137,6 @@ body:not(.is-grabbing):not(.is-mobile) .nav-file:not(.is-active) .nav-file-title
 body:not(.is-grabbing):not(.is-mobile) .nav-folder:not(.is-active) .nav-folder-title:hover {
   --text-normal: var(--text-normal) !important;
   --background-secondary-alt: var(--background-secondary-alt) !important;
-}
-
-/* Set closed folder icon color to accent on hover */
-body:not(.is-mobile) .nav-folder:hover  > .nav-folder-title > .nav-folder-title-content::before {
-  color: var(--ayu-common-accent);
 }
 
 /* ********************************************************************** */
