@@ -23,6 +23,7 @@ class BuildTreeNode:
         for node in self.predecessors:
             node.run_backward(run_id=run_id)
         if self.function is not None:
+            print("Building", self.target)
             self.function()
         if run_id is not None:
             self._run_id = run_id
@@ -33,9 +34,11 @@ class BuildTreeNode:
         if self.function is not None and run_self:
             if run_id is not None:
                 if run_id != self._run_id:
+                    print("Building", self.target)
                     self.function()
                     self._run_id = run_id
             else:
+                print("Building", self.target)
                 self.function()
         for node in self.successors:
             node.run_forward(run_self=True, run_id=run_id)
