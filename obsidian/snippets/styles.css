@@ -1,3 +1,7 @@
+/* Mobile styling references: */
+/* URL: https://github.com/whyt-byte/Blue-Topaz_Obsidian-css/blob/master/obsidian.css */
+/* URL: https://github.com/Mara-Li/Obsidian-WYSIWYG/blob/main/WYSIWYG.css */
+
 /* ********************************************************************** */
 /* *****                                                            ***** */
 /* *****                        GLOBAL: VARS                        ***** */
@@ -10,18 +14,18 @@
   --ayu-common-fg: #dcddde;
   --ayu-common-ui: #707a8c;
 
-  --ayu-syntax-tag: #5CCFE6;
-  --ayu-syntax-func: #FFD580;
-  --ayu-syntax-entity: #73D0FF;
-  --ayu-syntax-string: #BAE67E;
-  --ayu-syntax-regexp: #95E6CB;
-  --ayu-syntax-markup: #F28779;
-  --ayu-syntax-keyword: #FFA759;
-  --ayu-syntax-special: #FFE6B3;
-  --ayu-syntax-comment: #5C6773;
-  --ayu-syntax-constant: #D4BFFF;
-  --ayu-syntax-operator: #F29E74;
-  --ayu-syntax-error: #FF3333;
+  --ayu-syntax-tag: #5ccfe6;
+  --ayu-syntax-func: #ffd580;
+  --ayu-syntax-entity: #73d0ff;
+  --ayu-syntax-string: #bae67e;
+  --ayu-syntax-regexp: #95e6cb;
+  --ayu-syntax-markup: #f28779;
+  --ayu-syntax-keyword: #ffa759;
+  --ayu-syntax-special: #ffe6b3;
+  --ayu-syntax-comment: #5c6773;
+  --ayu-syntax-constant: #d4bfff;
+  --ayu-syntax-operator: #f29e74;
+  --ayu-syntax-error: #ff3333;
 
   --ayu-ui-line: #19132a;
   --ayu-ui-panel-bg: #232834;
@@ -40,26 +44,29 @@
   --ayu-vcs-removed: #f27983;
 
   --ayu-syntax-tag-bracket: #5ccfe680;
+
+  --ayu-embed-background-color: #707a8c1e;
+  --ayu-embed-border-color: #707a8cb2;
 }
 
 .theme-light {
-  --ayu-common-accent: #FF9940;
-  --ayu-common-bg: #FAFAFA;
-  --ayu-common-fg: #575F66;
-  --ayu-common-ui: #8A9199;
+  --ayu-common-accent: #ff9940;
+  --ayu-common-bg: #fafafa;
+  --ayu-common-fg: #575f66;
+  --ayu-common-ui: #8a9199;
 
-  --ayu-syntax-tag: #55B4D4;
-  --ayu-syntax-func: #F2AE49;
-  --ayu-syntax-entity: #399EE6;
-  --ayu-syntax-string: #86B300;
-  --ayu-syntax-regexp: #4CBF99;
-  --ayu-syntax-markup: #F07171;
-  --ayu-syntax-keyword: #FA8D3E;
-  --ayu-syntax-special: #E6BA7E;
-  --ayu-syntax-comment: #ABB0B6;
-  --ayu-syntax-constant: #A37ACC;
-  --ayu-syntax-operator: #ED9366;
-  --ayu-syntax-error: #F51818;
+  --ayu-syntax-tag: #55b4d4;
+  --ayu-syntax-func: #f2ae49;
+  --ayu-syntax-entity: #399ee6;
+  --ayu-syntax-string: #86b300;
+  --ayu-syntax-regexp: #4cbf99;
+  --ayu-syntax-markup: #f07171;
+  --ayu-syntax-keyword: #fa8d3e;
+  --ayu-syntax-special: #e6ba7e;
+  --ayu-syntax-comment: #abb0b6;
+  --ayu-syntax-constant: #a37acc;
+  --ayu-syntax-operator: #ed9366;
+  --ayu-syntax-error: #f51818;
 
   --ayu-ui-line: #8a91991a;
   --ayu-ui-panel-bg: #ffffff;
@@ -70,12 +77,12 @@
   --ayu-ui-selection-bg: #d1e4f4;
   --ayu-ui-selection-inactive: #e7e8e9;
   --ayu-ui-selection-border: #e1e1e2;
-  --ayu-ui-guide-active: #8A919959;
-  --ayu-ui-guide-normal: #8A91992e;
+  --ayu-ui-guide-active: #8a919959;
+  --ayu-ui-guide-normal: #8a91992e;
 
-  --ayu-vcs-added: #99BF4D;
-  --ayu-vcs-modified: #709ECC;
-  --ayu-vcs-removed: #F27983;
+  --ayu-vcs-added: #99bf4d;
+  --ayu-vcs-modified: #709ecc;
+  --ayu-vcs-removed: #f27983;
 
   --ayu-syntax-tag-bracket: #5ccfe680;
 }
@@ -95,25 +102,25 @@
 
   --svg-stroke-width-width-half: 0.25;
   --svg-stroke-width-width-default: 0.5;
-  --svg-stroke-width-width-double: 1.0;
-  --svg-stroke-dasharray-dashed: 2.0, 0.5;
+  --svg-stroke-width-width-double: 1;
+  --svg-stroke-dasharray-dashed: 2, 0.5;
 }
 
-.theme-dark, .theme-light {
+.theme-dark,
+.theme-light {
   /* --background-primary: #1e2430; */
   /* --background-primary-alt: #1b202b; */
   /* --background-secondary: #1b202b; */
   /* --background-secondary-alt: #171b24; */
 
   --background-primary: var(--ayu-common-bg);
-  --background-primary-alt:  var(--background-primary);
-  --background-secondary:  var(--background-primary);
-  --background-secondary-alt:  var(--background-primary);
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
 
   --text-faint: var(--ayu-syntax-comment);
   --text-muted: var(--ayu-common-ui);
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -121,11 +128,23 @@
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
-body {
-  --font-monospace: 'Fira Code Retina', 'Source Code Pro', monospace !important;
-  font-family: 'Fira Code Retina', 'Source Code Pro', monospace !important;
+body,
+.is-mobile .cm-s-obsidian * {
+  --font-monospace: "Fira Code Retina", "Source Code Pro", monospace !important;
+  font-family: "Fira Code Retina", "Source Code Pro", monospace !important;
 }
 
+/* URL: https://forum.obsidian.md/t/font-is-thinner-in-editor-mode-than-in-preview-mode-how-do-i-change-that/6533/5 */
+.cm-s-obsidian .CodeMirror-line * {
+  -webkit-font-smoothing: auto;
+}
+
+/* line height sync */
+.cm-s-obsidian,
+.markdown-preview-view,
+.is-mobile .cm-s-obsidian * {
+  line-height: 1.5em !important;
+}
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -138,7 +157,6 @@ hr.workspace-leaf-resize-handle {
   border-right: 1px solid var(--background-modifier-border);
 }
 
-
 /* ********************************************************************** */
 /* *****                                                            ***** */
 /* *****               PREVIEW, EDIT: MARKDOWN COLORS               ***** */
@@ -146,23 +164,31 @@ hr.workspace-leaf-resize-handle {
 /* ********************************************************************** */
 
 /* Headers */
-h1, h2, h3, h4, h5, h6,
-pre.HyperMD-header {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre.HyperMD-header,
+.is-mobile .cm-header {
   color: var(--ayu-syntax-string) !important;
+  line-height: 1em !important;
 }
 
 /* Bold */
-strong, b,
+strong,
+b,
 .cm-strong {
   color: var(--ayu-syntax-markup) !important;
 }
 
 /* Tags */
-.tag, .tag:hover,
+.tag,
+.tag:hover,
 .cm-s-obsidian span.cm-hashtag {
   color: var(--ayu-common-accent);
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -170,10 +196,10 @@ strong, b,
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
-.markdown-preview-view th, .markdown-preview-view td {
+.markdown-preview-view th,
+.markdown-preview-view td {
   border: 1px solid var(--ayu-common-ui) !important;
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -185,7 +211,6 @@ strong, b,
   border: 1px solid var(--ayu-common-ui) !important;
   border-left-width: 8px !important;
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -228,7 +253,7 @@ strong, b,
 }
 
 /* Fix text/background color on file/folder hover (text is white, bg is default) */
-body:not(.is-grabbing) .nav-file:not(.is-active) .nav-file-title:hover, 
+body:not(.is-grabbing) .nav-file:not(.is-active) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   --text-normal: var(--text-normal) !important;
   --background-secondary-alt: var(--background-secondary-alt) !important;
@@ -239,7 +264,6 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   color: var(--ayu-common-accent);
 }
 
-
 /* ********************************************************************** */
 /* *****                                                            ***** */
 /* *****                      PREVIEW: EMBEDS                       ***** */
@@ -247,57 +271,95 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
 /* ********************************************************************** */
 
 /* Remove title */
-.markdown-embed-title { 
-  display: none; 
+.markdown-embed-title {
+  display: none;
+}
+
+/* Disable scrolling, always embed full note */
+.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
+  max-height: unset;
 }
 
 /* Remove paddings */
-.markdown-preview-view .markdown-embed { 
+.markdown-preview-view .markdown-embed {
   border: none;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
-.markdown-preview-view .markdown-embed .markdown-preview-view { 
-  padding: 0px 0px 0px 0px; 
+.markdown-preview-view .markdown-embed .markdown-preview-view {
+  padding: 0px 0px 0px 0px;
+}
+.markdown-embed:not(.hover-popover .markdown-embed) {
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
 }
 
-/* Add border around embed */
-.markdown-preview-view .markdown-embed::before { 
+/* Norder around embed and background */
+.markdown-preview-view .markdown-embed::before {
   left: -8px;
   right: -8px;
   top: -0px;
   bottom: -0px;
-  border: 1px solid var(--ayu-common-ui);
-  border-style: dashed;
-  border-radius: 6px;
+  border-radius: 8px;
   content: "";
   position: absolute;
+  background-color: var(--ayu-embed-background-color);
+  border: 1px solid var(--ayu-embed-border-color);
+  border-style: dashed;
+}
+.markdown-embed .markdown-embed::before {
+  left: -0px;
+  right: -0px;
+}
+.popover.hover-popover .markdown-embed::before {
+  z-index: var(--layer-popover);
 }
 
 /* Link icon: rotate and shift; */
 .markdown-embed-link {
   top: 0px;
   right: -8px;
+  left: unset;
   color: var(--ayu-common-ui);
 }
 .markdown-embed-link svg {
   transform: rotate(90deg);
 }
+/* Move link icon to match the inner frame for 2nd level embeds */
+.markdown-embed * .markdown-embed .markdown-embed-link {
+  right: 0px;
+}
 
 /* Remove margins of top and bottom blocks of embed */
-.markdown-preview-view .markdown-embed-content { 
+.markdown-preview-view .markdown-embed-content {
   max-height: unset;
 }
-.markdown-preview-view .markdown-embed-content>div>div>:nth-child(2)>:first-child {
- margin-top: 0;
+.markdown-preview-view
+  .markdown-embed-content
+  > div
+  > div
+  > :nth-child(2)
+  > :first-child {
+  margin-top: 0;
 }
-.markdown-preview-view .markdown-embed-content>div>div>:last-child>:first-child { 
-  margin-top: 0; margin-bottom: 0; 
+.markdown-preview-view
+  .markdown-embed-content
+  > div
+  > div
+  > :last-child
+  > :first-child {
+  margin-top: 0;
+  margin-bottom: 0;
 }
-.markdown-preview-view .markdown-embed-content>div>div>:last-child>:last-child { 
-  margin-top: 0; margin-bottom: 0; 
+.markdown-preview-view
+  .markdown-embed-content
+  > div
+  > div
+  > :last-child
+  > :last-child {
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -307,7 +369,8 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
 
 /* Border and shadow */
 .popover {
-  box-shadow: 0px 0px 20px 10px var(--ayu-common-bg), inset 0px 0px 1px 1px var(--ayu-common-ui);
+  box-shadow: 0px 0px 20px 10px var(--ayu-common-bg),
+    inset 0px 0px 1px 1px var(--ayu-common-ui);
 }
 
 /* Widen the size constraints */
@@ -341,69 +404,131 @@ body:not(.is-grabbing) .nav-folder:not(.is-active) .nav-folder-title:hover {
   padding-bottom: 0px !important;
 }
 
-
 /* ********************************************************************** */
 /* *****                                                            ***** */
 /* *****                       PREVIEW: LISTS                       ***** */
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
-/* unordered -> unordered */
-ul > li > ul {
-    position: relative;
+/* edit mode: collapse indicator vertical centering */
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-ul > li > ul::before {
-    content: '';
-    border-left: 1px solid var(--ayu-common-ui);
-    position: absolute;
-    left: -1em;
-    top: 0;
-    bottom: 0;
+/* edit mode: no additional padding in lists */
+.cm-s-obsidian .HyperMD-list-line {
+  padding-top: 0;
 }
 
-/* ordered -> ordered */
-ol > li > ol {
-    position: relative;
+/* edit mode: collapse indicator */
+.CodeMirror-foldgutter-folded:after {
+  content: ">";
+  color: var(--ayu-common-fg);
 }
 
-ol > li > ol::before {
-    content: '';
-    border-left: 1px solid var(--ayu-common-ui);
-    position: absolute;
-    left: -1.5em;
-    top: 0;
-    bottom: 0;
+/* edit mode: collapse indicator */
+.CodeMirror-foldgutter-open:after {
+  content: ">";
+  display: inline-block;
+  transform: rotate(90deg);
+  color: var(--ayu-common-fg);
 }
 
-/* unordered -> ordered */
-ul > li > ol {
-    position: relative;
+/* preview mode: collapse indicator: remove default svg */
+.markdown-preview-view .collapse-indicator:not(.list-collapse-indicator) svg {
+  display: none;
+  z-index: -1;
 }
 
-ul > li > ol::before {
-    content: '';
-    border-left: 1px solid var(--ayu-common-ui);
-    position: absolute;
-    left: -1em;
-    top: 0;
-    bottom: 0;
+/* preview mode: collapse indicator (except lists): folded */
+.markdown-preview-view .collapse-indicator:not(.list-collapse-indicator):after {
+  content: ">";
+  display: inline-block;
+  transform: rotate(90deg);
 }
 
-/* ordered -> unordered */
-ol > li > ul {
-    position: relative;
+/* preview mode: collapse indicator (except lists): unfolded */
+.markdown-preview-view
+  .is-collapsed
+  .collapse-indicator:not(.list-collapse-indicator):after {
+  transform: rotate(0deg);
 }
 
-ol > li > ul::before {
-    content: '';
-    border-left: 1px solid var(--ayu-common-ui);
-    position: absolute;
-    left: -1.5em;
-    top: 0;
-    bottom: 0;
+/* unordered */
+
+/* remove default bullets */
+ul > li {
+  list-style: none;
 }
 
+ul > li {
+  position: relative;
+}
+
+/* line */
+ul > li:before {
+  content: "";
+  border-left: 1px solid var(--ayu-common-ui);
+  position: absolute;
+  left: -1em;
+  height: 100%;
+  z-index: 0;
+}
+
+/* bullets */
+ul > li:after {
+  content: "•";
+  position: absolute;
+  left: -1.08em;
+  top: 0;
+  z-index: 1;
+  font-size: 1.25em;
+}
+
+/* collapsed bullets */
+ul > li.is-collapsed:after {
+  content: "⦿";
+  left: -1.1em;
+}
+
+/* remove default collapse indicator icon */
+.markdown-preview-view .list-collapse-indicator svg {
+  display: none;
+  z-index: -1;
+}
+
+/* move collapse indicator area to around bullet */
+.markdown-preview-view .list-collapse-indicator {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  font-size: 1.25em;
+  left: -1.08em;
+  top: 0;
+  z-index: 2;
+  padding: 0;
+  margin-left: 0px;
+}
+
+/* cut line to start in first bullet */
+ul > li:first-child::before {
+  top: 14px;
+}
+
+/* cut line to end in last bullet */
+ul > li:last-child::before {
+  height: 12px;
+}
+
+/* if only child, remove the line */
+ul > li:first-child:last-child::before {
+  height: 0px !important;
+}
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -419,18 +544,19 @@ span[src$="#portrait"] {
   margin-left: 16px;
 }
 
-span[src$="left"], span[alt~="left"] {
+span[src$="left"],
+span[alt~="left"] {
   position: relative;
   float: left;
   margin-right: 16px;
 }
 
-span[src~="right"], span[alt~="right"] {
+span[src~="right"],
+span[alt~="right"] {
   position: relative;
   float: right;
   margin-left: 16px;
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -439,13 +565,12 @@ span[src~="right"], span[alt~="right"] {
 /* ********************************************************************** */
 
 .table-view-table > thead > tr > th {
-    font-size: 1em !important;
+  font-size: 1em !important;
 }
 
 .table-view-table {
-    width: auto !important;
+  width: auto !important;
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -454,18 +579,19 @@ span[src~="right"], span[alt~="right"] {
 /* ********************************************************************** */
 
 /* Borders */
-pre[class*='language-'], .markdown-preview-view code {
+pre[class*="language-"],
+.markdown-preview-view code {
   border: 1px solid var(--ayu-common-ui);
 }
 
 /* Highlighing */
-.theme-dark :not(pre) > code[class*='language-'],
-.theme-dark pre[class*='language-'] {
+.theme-dark :not(pre) > code[class*="language-"],
+.theme-dark pre[class*="language-"] {
   background: var(--ayu-common-bg) !important;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   line-height: 1.2 !important;
 }
 
@@ -529,7 +655,7 @@ pre[class*='language-'] {
 }
 
 .token.keyword {
-  color: var(--ayu-syntax-keyword) !important; 
+  color: var(--ayu-syntax-keyword) !important;
   font-weight: bold !important;
 }
 
@@ -545,180 +671,211 @@ pre[class*='language-'] {
   color: var(--ayu-common-fg) !important;
 }
 
-
 /* ********************************************************************** */
 /* *****                                                            ***** */
 /* *****                EDIT: CODEBLOCK HIGHLIGHTING                ***** */
 /* *****                                                            ***** */
 /* ********************************************************************** */
 
-.cm-s-obsidian pre.HyperMD-codeblock span.cm-formatting-code-block {
+.cm-s-obsidian span.cm-formatting-code-block,
+.is-mobile .cm-s-obsidian span.cm-formatting-code-block {
   color: var(--text-muted) !important;
 }
 
-.cm-s-obsidian pre.HyperMD-codeblock .cm-keyword {
+.cm-s-obsidian .cm-keyword,
+.is-mobile .cm-s-obsidian .cm-keyword {
   font-weight: italic !important;
 }
 
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock {
+.theme-dark .cm-s-obsidian,
+.is-mobile .theme-dark .cm-s-obsidian {
   color: var(--ayu-common-fg) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-keyword,
 .theme-dark .cm-s-obsidian .cm-math.cm-keyword,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-keyword {
+.theme-dark .cm-s-obsidian .cm-keyword,
+.is-mobile .theme-dark .cm-s-obsidian .cm-keyword {
   color: var(--ayu-syntax-keyword) !important;
   font-weight: bold !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
 .theme-dark .cm-s-obsidian .cm-math.cm-atom,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-atom {
+.theme-dark .cm-s-obsidian .cm-atom,
+.is-mobile .theme-dark .cm-s-obsidian .cm-atom {
   color: var(--ayu-syntax-tag) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
 .theme-dark .cm-s-obsidian .cm-math.cm-number,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-number {
+.theme-dark .cm-s-obsidian .cm-number,
+.is-mobile .theme-dark .cm-s-obsidian .cm-number {
   color: var(--ayu-common-accent) !important;
 }
 .theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-type,
 .theme-dark .cm-s-obsidian span.cm-math.cm-type,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-type {
-  color: #A06FCA !important;
+.theme-dark .cm-s-obsidian span.cm-type,
+.is-mobile .theme-dark .cm-s-obsidian span.cm-type {
+  color: #a06fca !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-def,
 .theme-dark .cm-s-obsidian .cm-math.cm-def,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-def {
+.theme-dark .cm-s-obsidian .cm-def,
+.is-mobile .theme-dark .cm-s-obsidian .cm-def {
   color: var(--ayu-syntax-func) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property,
 .theme-dark .cm-s-obsidian .cm-math.cm-property,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-property {
+.theme-dark .cm-s-obsidian .cm-property,
+.is-mobile .theme-dark .cm-s-obsidian .cm-property {
   color: var(--ayu-syntax-func) !important;
 }
 .theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable,
 .theme-dark .cm-s-obsidian span.cm-math.cm-variable,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable {
+.theme-dark .cm-s-obsidian span.cm-variable,
+.is-mobile .theme-dark .cm-s-obsidian span.cm-variable {
   color: var(--ayu-common-fg) !important;
 }
 .theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-2,
 .theme-dark .cm-s-obsidian span.cm-math.cm-variable-2,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable-2 {
+.theme-dark .cm-s-obsidian span.cm-variable-2,
+.is-mobile .theme-dark .cm-s-obsidian span.cm-variable-2 {
   color: var(--ayu-syntax-entity) !important;
 }
 .theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-3,
 .theme-dark .cm-s-obsidian span.cm-math.cm-variable-3,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable-3 {
+.theme-dark .cm-s-obsidian span.cm-variable-3,
+.is-mobile .theme-dark .cm-s-obsidian span.cm-variable-3 {
   color: var(--ayu-common-fg) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-type.cm-def,
 .theme-dark .cm-s-obsidian .cm-math.cm-type.cm-def,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-type.cm-def {
-  color: #FC4384 !important;
+.theme-dark .cm-s-obsidian .cm-type.cm-def,
+.is-mobile .theme-dark .cm-s-obsidian .cm-type.cm-def {
+  color: #fc4384 !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property.cm-def,
 .theme-dark .cm-s-obsidian .cm-math.cm-property.cm-def,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-property.cm-def {
-  color: #FC4384 !important;
+.theme-dark .cm-s-obsidian .cm-property.cm-def,
+.is-mobile .theme-dark .cm-s-obsidian .cm-property.cm-def {
+  color: #fc4384 !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-callee,
 .theme-dark .cm-s-obsidian .cm-math.cm-callee,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-callee {
-  color: #FC4384 !important;
+.theme-dark .cm-s-obsidian .cm-callee,
+.is-mobile .theme-dark .cm-s-obsidian .cm-callee {
+  color: #fc4384 !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-operator,
 .theme-dark .cm-s-obsidian .cm-math.cm-operator,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-operator {
+.theme-dark .cm-s-obsidian .cm-operator,
+.is-mobile .theme-dark .cm-s-obsidian .cm-operator {
   color: var(--ayu-syntax-operator) !important;
   font-weight: bold !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-qualifier,
 .theme-dark .cm-s-obsidian .cm-math.cm-qualifier,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-qualifier {
+.theme-dark .cm-s-obsidian .cm-qualifier,
+.is-mobile .theme-dark .cm-s-obsidian .cm-qualifier {
   color: var(--ayu-syntax-func) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag,
 .theme-dark .cm-s-obsidian .cm-math.cm-tag,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-tag {
+.theme-dark .cm-s-obsidian .cm-tag,
+.is-mobile .theme-dark .cm-s-obsidian .cm-tag {
   color: var(--ayu-syntax-tag) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag.cm-bracket,
 .theme-dark .cm-s-obsidian .cm-math.cm-tag.cm-bracket,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-tag.cm-bracket {
+.theme-dark .cm-s-obsidian .cm-tag.cm-bracket,
+.is-mobile .theme-dark .cm-s-obsidian .cm-tag.cm-bracket {
   color: var(--ayu-syntax-tag-bracket) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-attribute,
 .theme-dark .cm-s-obsidian .cm-math.cm-attribute,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-attribute {
+.theme-dark .cm-s-obsidian .cm-attribute,
+.is-mobile .theme-dark .cm-s-obsidian .cm-attribute {
   color: var(--ayu-syntax-string) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment,
 .theme-dark .cm-s-obsidian .cm-math.cm-comment,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-comment {
+.theme-dark .cm-s-obsidian .cm-comment,
+.is-mobile .theme-dark .cm-s-obsidian .cm-comment {
   color: var(--ayu-syntax-comment) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-tag,
 .theme-dark .cm-s-obsidian .cm-math.cm-comment.cm-tag,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-comment.cm-tag {
-  color: #FC4384 !important;
+.theme-dark .cm-s-obsidian .cm-comment.cm-tag,
+.is-mobile .theme-dark .cm-s-obsidian .cm-comment.cm-tag {
+  color: #fc4384 !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-attribute,
 .theme-dark .cm-s-obsidian .cm-math.cm-comment.cm-attribute,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-comment.cm-attribute {
-  color: #D4D4D4 !important;
+.theme-dark .cm-s-obsidian .cm-comment.cm-attribute,
+.is-mobile .theme-dark .cm-s-obsidian .cm-comment.cm-attribute {
+  color: #d4d4d4 !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
 .theme-dark .cm-s-obsidian .cm-math.cm-string,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-string {
+.theme-dark .cm-s-obsidian .cm-string,
+.is-mobile .theme-dark .cm-s-obsidian .cm-string {
   color: var(--ayu-syntax-string) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string-2,
 .theme-dark .cm-s-obsidian .cm-math.cm-string-2,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-string-2 {
+.theme-dark .cm-s-obsidian .cm-string-2,
+.is-mobile .theme-dark .cm-s-obsidian .cm-string-2 {
   color: var(--ayu-syntax-string) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
 .theme-dark .cm-s-obsidian .cm-math.cm-meta,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-meta {
+.theme-dark .cm-s-obsidian .cm-meta,
+.is-mobile .theme-dark .cm-s-obsidian .cm-meta {
   color: var(--ayu-syntax-special) !important;
   background: inherit !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-builtin,
 .theme-dark .cm-s-obsidian .cm-math.cm-builtin,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-builtin {
+.theme-dark .cm-s-obsidian .cm-builtin,
+.is-mobile .theme-dark .cm-s-obsidian .cm-builtin {
   color: var(--ayu-syntax-tag) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-header,
 .theme-dark .cm-s-obsidian .cm-math.cm-header,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-header {
+.theme-dark .cm-s-obsidian .cm-header,
+.is-mobile .theme-dark .cm-s-obsidian .cm-header {
   color: var(--ayu-syntax-string) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-hr,
 .theme-dark .cm-s-obsidian .cm-math.cm-hr,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-hr {
+.theme-dark .cm-s-obsidian .cm-hr,
+.is-mobile .theme-dark .cm-s-obsidian .cm-hr {
   color: var(--ayu-syntax-comment) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-link,
 .theme-dark .cm-s-obsidian .cm-math.cm-link,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-link {
+.theme-dark .cm-s-obsidian .cm-link,
+.is-mobile .theme-dark .cm-s-obsidian .cm-link {
   color: var(--ayu-syntax-tag) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-error,
 .theme-dark .cm-s-obsidian .cm-math.cm-error,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .cm-error {
+.theme-dark .cm-s-obsidian .cm-error,
+.is-mobile .theme-dark .cm-s-obsidian .cm-error {
   border-bottom: 1px solid var(--ayu-syntax-error) !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-activeline-background,
 .theme-dark .cm-s-obsidian .cm-math.CodeMirror-activeline-background,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .CodeMirror-activeline-background {
+.theme-dark .cm-s-obsidian .CodeMirror-activeline-background,
+.is-mobile .theme-dark .cm-s-obsidian .CodeMirror-activeline-background {
   background: #272727 !important;
 }
 .theme-dark .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-matchingbracket,
 .theme-dark .cm-s-obsidian .cm-math.CodeMirror-matchingbracket,
-.theme-dark .cm-s-obsidian pre.HyperMD-codeblock .CodeMirror-matchingbracket {
+.theme-dark .cm-s-obsidian .CodeMirror-matchingbracket,
+.is-mobile .theme-dark .cm-s-obsidian .CodeMirror-matchingbracket {
   outline: 1px solid grey !important;
   color: var(--ayu-syntax-special) !important;
 }
-
 
 /* ********************************************************************** */
 /* *****                                                            ***** */
@@ -735,7 +892,6 @@ pre[class*='language-'] {
   }
 }
 
-
 /* ********************************************************************** */
 /* *****                                                            ***** */
 /* *****                  ADAPTIVE IMAGES                           ***** */
@@ -745,45 +901,49 @@ pre[class*='language-'] {
 /* General and default image blending */
 
 .theme-dark img {
-    display: block;
-    max-width: 80%;
-    padding: 0 auto 0 auto;
-    outline: none;
-    margin-left: auto;
-    margin-right: auto;
-    mix-blend-mode: screen;
-    filter: opacity(1);
+  display: block;
+  max-width: 80%;
+  padding: 0 auto 0 auto;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  mix-blend-mode: screen;
+  filter: opacity(1);
 }
 
 .theme-light img {
-    display: block;
-    max-width: 80%;
-    padding: 0 auto 0 auto;
-    outline: none;
-    margin-left: auto;
-    margin-right: auto;
-    mix-blend-mode: multiply;
-    filter: opacity(0.95);
+  display: block;
+  max-width: 80%;
+  padding: 0 auto 0 auto;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  mix-blend-mode: multiply;
+  filter: opacity(0.95);
 }
 
 .popover.hover-popover .markdown-preview-view {
-    background-color: var(--background-primary);
+  background-color: var(--background-primary);
 }
 
 /* Image dynamic colors inversion */
 
-.theme-dark span[alt~="ada-white"] img, .theme-dark span[alt~="aw"] img {
+.theme-dark span[alt~="ada-white"] img,
+.theme-dark span[alt~="aw"] img {
   filter: invert(1) hue-rotate(180deg);
 }
 
-.theme-light span[alt~="ada-black"] img, .theme-light span[alt~="ab"] img {
+.theme-light span[alt~="ada-black"] img,
+.theme-light span[alt~="ab"] img {
   filter: invert(1) hue-rotate(180deg);
 }
 
-.theme-dark span[alt~="ada-white-contrast"] img, .theme-dark span[alt~="awc"] img {
+.theme-dark span[alt~="ada-white-contrast"] img,
+.theme-dark span[alt~="awc"] img {
   filter: invert(1) hue-rotate(180deg) contrast(1.5);
 }
 
-.theme-light span[alt~="ada-black-contrast"] img, .theme-light span[alt~="abc"] img {
+.theme-light span[alt~="ada-black-contrast"] img,
+.theme-light span[alt~="abc"] img {
   filter: invert(1) hue-rotate(180deg) contrast(1.45);
 }
