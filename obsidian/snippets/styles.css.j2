@@ -1,0 +1,360 @@
+/* Mobile styling references: */
+/* URL: https://github.com/whyt-byte/Blue-Topaz_Obsidian-css/blob/master/obsidian.css */
+/* URL: https://github.com/Mara-Li/Obsidian-WYSIWYG/blob/main/WYSIWYG.css */
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                       GLOBAL: FONTS                        ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+body,
+.is-mobile .cm-s-obsidian * {
+  --font-monospace: "Fira Code Medium", "Source Code Pro", monospace !important;
+  font-family: "Fira Code Medium", "Source Code Pro", monospace !important;
+}
+
+/* URL: https://forum.obsidian.md/t/font-is-thinner-in-editor-mode-than-in-preview-mode-how-do-i-change-that/6533/5 */
+.cm-s-obsidian .CodeMirror-line * {
+  -webkit-font-smoothing: auto;
+}
+
+/* line height sync */
+.cm-s-obsidian,
+.markdown-preview-view,
+.is-mobile .cm-s-obsidian * {
+  line-height: 1.5em !important;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                       GLOBAL: INTERFACE                    ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Sidepane separators */
+hr.workspace-leaf-resize-handle {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****               PREVIEW, EDIT: MARKDOWN COLORS               ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre.HyperMD-header,
+.is-mobile .cm-header {
+  color: var(--ayu-syntax-string) !important;
+  line-height: 1em !important;
+}
+
+/* Bold */
+strong,
+b,
+.cm-strong {
+  color: var(--ayu-syntax-markup) !important;
+}
+
+/* Tags */
+.tag,
+.tag:hover,
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--ayu-common-accent);
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: TABLES                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.markdown-preview-view th,
+.markdown-preview-view td {
+  border: 1px solid var(--ayu-common-ui) !important;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: QUOTES                       ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.markdown-preview-view blockquote {
+  border: 1px solid var(--ayu-common-ui) !important;
+  border-left-width: 8px !important;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                   PREVIEW: FILE EXPLORER                   ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Fix width of space containing icon */
+.nav-folder-children .nav-file-title-content:first-child::before,
+.nav-folder-children .nav-folder-title-content::before {
+  display: inline-block;
+  margin-right: 0.3em;
+  font-size: 1.25em;
+  width: 1em;
+}
+
+/* File icon */
+.nav-folder-children .nav-file-title-content:first-child::before {
+  content: "\f15c";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 400;
+}
+
+/* Open folder icon */
+.nav-folder-children .nav-folder-title-content::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  color: var(--ayu-common-accent);
+}
+
+/* Closed folder icon */
+.nav-folder-children .is-collapsed .nav-folder-title-content::before {
+  content: "\e185";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 400;
+  color: var(--ayu-common-ui);
+}
+
+/* Remove folding triangles */
+.nav-folder-collapse-indicator {
+  display: none;
+}
+
+/* Fix text/background color on file/folder hover (text is white, bg is default) */
+body:not(.is-grabbing):not(.is-mobile) .nav-file:not(.is-active) .nav-file-title:hover,
+body:not(.is-grabbing):not(.is-mobile) .nav-folder:not(.is-active) .nav-folder-title:hover {
+  --text-normal: var(--text-normal) !important;
+  --background-secondary-alt: var(--background-secondary-alt) !important;
+}
+
+/* Set closed folder icon color to accent on hover */
+body:not(.is-mobile) .nav-folder:hover  > .nav-folder-title > .nav-folder-title-content::before {
+  color: var(--ayu-common-accent);
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                      PREVIEW: POPOVER                      ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Border and shadow */
+.popover {
+  box-shadow: 0px 0px 20px 10px var(--ayu-common-bg),
+    inset 0px 0px 1px 1px var(--ayu-common-ui);
+}
+
+/* Widen the size constraints */
+.popover.hover-popover {
+  width: auto;
+  height: auto;
+  min-width: 200px;
+  min-height: 30px;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+/* Enable scroll */
+.popover.hover-popover {
+  overflow-y: auto;
+}
+
+/* Disable file link as in regular embeds */
+.popover.hover-popover .markdown-embed .markdown-embed-link {
+  display: none;
+}
+
+/* Fix size of embeds inside popover (default: 300px) */
+.popover.hover-popover .markdown-embed {
+  height: 100%;
+}
+
+/* Remove redundant vertical padding */
+.popover.hover-popover .markdown-embed .markdown-preview-view {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****          PREVIEW: EMBED/IMAGE POSITION MODIFIERS           ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* ref: https://forum.obsidian.md/t/how-to-achieve-css-code-snippets/8474/35 */
+span[src$="#portrait"] {
+  position: relative;
+  float: right;
+  width: 250px;
+  margin-left: 16px;
+}
+
+span[src$="left"],
+span[alt~="left"] {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+}
+
+span[src~="right"],
+span[alt~="right"] {
+  position: relative;
+  float: right;
+  margin-left: 16px;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                     PREVIEW: DATAVIEW                      ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+.table-view-table > thead > tr > th {
+  font-size: 1em !important;
+}
+
+.table-view-table {
+  width: auto !important;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                    PREVIEW: CODEBLOCKS                     ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* Borders */
+pre[class*="language-"],
+.markdown-preview-view code {
+  border: 1px solid var(--ayu-common-ui);
+}
+
+/* Highlighing */
+.theme-dark :not(pre) > code[class*="language-"],
+.theme-dark pre[class*="language-"] {
+  background: var(--ayu-common-bg) !important;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  line-height: 1.2 !important;
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                   PRINT: PDF BACKGROUND                    ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+@media print {
+  body {
+    box-shadow: inset 0 0 0 1000px var(--background-primary) !important;
+  }
+  .markdown-preview-view {
+    color: var(--text-normal) !important;
+  }
+}
+
+/* ********************************************************************** */
+/* *****                                                            ***** */
+/* *****                  ADAPTIVE IMAGES                           ***** */
+/* *****                                                            ***** */
+/* ********************************************************************** */
+
+/* General and default image blending */
+
+.theme-dark img {
+  display: block;
+  max-width: 80%;
+  padding: 0 auto 0 auto;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  mix-blend-mode: screen;
+  filter: opacity(1);
+}
+
+.theme-light img {
+  display: block;
+  max-width: 80%;
+  padding: 0 auto 0 auto;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  mix-blend-mode: multiply;
+  filter: opacity(0.95);
+}
+
+.popover.hover-popover .markdown-preview-view {
+  background-color: var(--background-primary);
+}
+
+/* Image dynamic colors inversion */
+
+.theme-dark span[alt~="ada-white"] img,
+.theme-dark span[alt~="aw"] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.theme-light span[alt~="ada-black"] img,
+.theme-light span[alt~="ab"] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.theme-dark span[alt~="ada-white-contrast"] img,
+.theme-dark span[alt~="awc"] img {
+  filter: invert(1) hue-rotate(180deg) contrast(1.5);
+}
+
+.theme-light span[alt~="ada-black-contrast"] img,
+.theme-light span[alt~="abc"] img {
+  filter: invert(1) hue-rotate(180deg) contrast(1.45);
+}
+
+/* Misc */
+
+.kanban-plugin__markdown-preview-view {
+  font-family: unset !important;
+}
+
+.is-mobile .kanban-plugin .markdown-preview-view {
+  padding: unset !important;
+}
+
+.typing-icon,
+.internal-link,
+.internal-link:hover {
+  color: var(--ayu-syntax-func);
+}
+
+.internal-link {
+  border: 1px solid var(--ayu-ui-panel-bg);
+  border-radius: 5px;
+  padding: 2px;
+  background-color: var(--ayu-ui-panel-border);
+}
+
+.typing-icon {
+  margin-right: 0.15em;
+}
+
+{% include "_variables.css.j2" %}
+{% include "_highlighting.css" %}
+{% include "_lists.css" %}
+{% include "_embeds.css" %}
+{% include "_fonts.css.j2" %}
