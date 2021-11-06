@@ -84,192 +84,197 @@
   font-weight: italic !important;
 }
 
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter,
-.theme-dark .cm-s-obsidian,
-.is-mobile .theme-dark .cm-s-obsidian {
+.cm-s-obsidian .cm-hmd-frontmatter,
+.cm-s-obsidian,
+.is-mobile .cm-s-obsidian {
   color: var(--ayu-common-fg) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-keyword,
-.theme-dark .cm-s-obsidian .cm-math.cm-keyword,
-.theme-dark .cm-s-obsidian .cm-keyword,
-.is-mobile .theme-dark .cm-s-obsidian .cm-keyword {
+.cm-s-obsidian .cm-math,
+.is-mobile .cm-s-obsidian .cm-math {
+  color: var(--text-normal) !important;
+  font-weight: bold !important;
+}
+.cm-s-obsidian .cm-hmd-frontmatter.cm-keyword,
+.cm-s-obsidian .cm-math.cm-keyword,
+.cm-s-obsidian .cm-keyword,
+.is-mobile .cm-s-obsidian .cm-keyword {
   color: var(--ayu-syntax-keyword) !important;
   font-weight: bold !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
-.theme-dark .cm-s-obsidian .cm-math.cm-atom,
-.theme-dark .cm-s-obsidian .cm-atom,
-.is-mobile .theme-dark .cm-s-obsidian .cm-atom {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
+.cm-s-obsidian .cm-math.cm-atom,
+.cm-s-obsidian .cm-atom,
+.is-mobile .cm-s-obsidian .cm-atom {
   color: var(--ayu-syntax-tag) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
-.theme-dark .cm-s-obsidian .cm-math.cm-number,
-.theme-dark .cm-s-obsidian .cm-number,
-.is-mobile .theme-dark .cm-s-obsidian .cm-number {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-number,
+.cm-s-obsidian .cm-math.cm-number,
+.cm-s-obsidian .cm-number,
+.is-mobile .cm-s-obsidian .cm-number {
   color: var(--ayu-common-accent) !important;
 }
-.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-type,
-.theme-dark .cm-s-obsidian span.cm-math.cm-type,
-.theme-dark .cm-s-obsidian span.cm-type,
-.is-mobile .theme-dark .cm-s-obsidian span.cm-type {
+.cm-s-obsidian span.cm-hmd-frontmatter.cm-type,
+.cm-s-obsidian span.cm-math.cm-type,
+.cm-s-obsidian span.cm-type,
+.is-mobile .cm-s-obsidian span.cm-type {
   color: #a06fca !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-def,
-.theme-dark .cm-s-obsidian .cm-math.cm-def,
-.theme-dark .cm-s-obsidian .cm-def,
-.is-mobile .theme-dark .cm-s-obsidian .cm-def {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-def,
+.cm-s-obsidian .cm-math.cm-def,
+.cm-s-obsidian .cm-def,
+.is-mobile .cm-s-obsidian .cm-def {
   color: var(--ayu-syntax-func) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property,
-.theme-dark .cm-s-obsidian .cm-math.cm-property,
-.theme-dark .cm-s-obsidian .cm-property,
-.is-mobile .theme-dark .cm-s-obsidian .cm-property {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-property,
+.cm-s-obsidian .cm-math.cm-property,
+.cm-s-obsidian .cm-property,
+.is-mobile .cm-s-obsidian .cm-property {
   color: var(--ayu-syntax-func) !important;
 }
-.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable,
-.theme-dark .cm-s-obsidian span.cm-math.cm-variable,
-.theme-dark .cm-s-obsidian span.cm-variable,
-.is-mobile .theme-dark .cm-s-obsidian span.cm-variable {
+.cm-s-obsidian span.cm-hmd-frontmatter.cm-variable,
+.cm-s-obsidian span.cm-math.cm-variable,
+.cm-s-obsidian span.cm-variable,
+.is-mobile .cm-s-obsidian span.cm-variable {
   color: var(--ayu-common-fg) !important;
 }
-.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-2,
-.theme-dark .cm-s-obsidian span.cm-math.cm-variable-2,
-.theme-dark .cm-s-obsidian span.cm-variable-2,
-.is-mobile .theme-dark .cm-s-obsidian span.cm-variable-2 {
+.cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-2,
+.cm-s-obsidian span.cm-math.cm-variable-2,
+.cm-s-obsidian span.cm-variable-2,
+.is-mobile .cm-s-obsidian span.cm-variable-2 {
   color: var(--ayu-syntax-entity) !important;
 }
-.theme-dark .cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-3,
-.theme-dark .cm-s-obsidian span.cm-math.cm-variable-3,
-.theme-dark .cm-s-obsidian span.cm-variable-3,
-.is-mobile .theme-dark .cm-s-obsidian span.cm-variable-3 {
+.cm-s-obsidian span.cm-hmd-frontmatter.cm-variable-3,
+.cm-s-obsidian span.cm-math.cm-variable-3,
+.cm-s-obsidian span.cm-variable-3,
+.is-mobile .cm-s-obsidian span.cm-variable-3 {
   color: var(--ayu-common-fg) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-type.cm-def,
-.theme-dark .cm-s-obsidian .cm-math.cm-type.cm-def,
-.theme-dark .cm-s-obsidian .cm-type.cm-def,
-.is-mobile .theme-dark .cm-s-obsidian .cm-type.cm-def {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-type.cm-def,
+.cm-s-obsidian .cm-math.cm-type.cm-def,
+.cm-s-obsidian .cm-type.cm-def,
+.is-mobile .cm-s-obsidian .cm-type.cm-def {
   color: #fc4384 !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-property.cm-def,
-.theme-dark .cm-s-obsidian .cm-math.cm-property.cm-def,
-.theme-dark .cm-s-obsidian .cm-property.cm-def,
-.is-mobile .theme-dark .cm-s-obsidian .cm-property.cm-def {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-property.cm-def,
+.cm-s-obsidian .cm-math.cm-property.cm-def,
+.cm-s-obsidian .cm-property.cm-def,
+.is-mobile .cm-s-obsidian .cm-property.cm-def {
   color: #fc4384 !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-callee,
-.theme-dark .cm-s-obsidian .cm-math.cm-callee,
-.theme-dark .cm-s-obsidian .cm-callee,
-.is-mobile .theme-dark .cm-s-obsidian .cm-callee {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-callee,
+.cm-s-obsidian .cm-math.cm-callee,
+.cm-s-obsidian .cm-callee,
+.is-mobile .cm-s-obsidian .cm-callee {
   color: #fc4384 !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-operator,
-.theme-dark .cm-s-obsidian .cm-math.cm-operator,
-.theme-dark .cm-s-obsidian .cm-operator,
-.is-mobile .theme-dark .cm-s-obsidian .cm-operator {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-operator,
+.cm-s-obsidian .cm-math.cm-operator,
+.cm-s-obsidian .cm-operator,
+.is-mobile .cm-s-obsidian .cm-operator {
   color: var(--ayu-syntax-operator) !important;
   font-weight: bold !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-qualifier,
-.theme-dark .cm-s-obsidian .cm-math.cm-qualifier,
-.theme-dark .cm-s-obsidian .cm-qualifier,
-.is-mobile .theme-dark .cm-s-obsidian .cm-qualifier {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-qualifier,
+.cm-s-obsidian .cm-math.cm-qualifier,
+.cm-s-obsidian .cm-qualifier,
+.is-mobile .cm-s-obsidian .cm-qualifier {
   color: var(--ayu-syntax-func) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag,
-.theme-dark .cm-s-obsidian .cm-math.cm-tag,
-.theme-dark .cm-s-obsidian .cm-tag,
-.is-mobile .theme-dark .cm-s-obsidian .cm-tag {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-tag,
+.cm-s-obsidian .cm-math.cm-tag,
+.cm-s-obsidian .cm-tag,
+.is-mobile .cm-s-obsidian .cm-tag {
   color: var(--ayu-syntax-tag) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-tag.cm-bracket,
-.theme-dark .cm-s-obsidian .cm-math.cm-tag.cm-bracket,
-.theme-dark .cm-s-obsidian .cm-tag.cm-bracket,
-.is-mobile .theme-dark .cm-s-obsidian .cm-tag.cm-bracket {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-tag.cm-bracket,
+.cm-s-obsidian .cm-math.cm-tag.cm-bracket,
+.cm-s-obsidian .cm-tag.cm-bracket,
+.is-mobile .cm-s-obsidian .cm-tag.cm-bracket {
   color: var(--ayu-syntax-tag-bracket) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-attribute,
-.theme-dark .cm-s-obsidian .cm-math.cm-attribute,
-.theme-dark .cm-s-obsidian .cm-attribute,
-.is-mobile .theme-dark .cm-s-obsidian .cm-attribute {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-attribute,
+.cm-s-obsidian .cm-math.cm-attribute,
+.cm-s-obsidian .cm-attribute,
+.is-mobile .cm-s-obsidian .cm-attribute {
   color: var(--ayu-syntax-string) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment,
-.theme-dark .cm-s-obsidian .cm-math.cm-comment,
-.theme-dark .cm-s-obsidian .cm-comment,
-.is-mobile .theme-dark .cm-s-obsidian .cm-comment {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-comment,
+.cm-s-obsidian .cm-math.cm-comment,
+.cm-s-obsidian .cm-comment,
+.is-mobile .cm-s-obsidian .cm-comment {
   color: var(--ayu-syntax-comment) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-tag,
-.theme-dark .cm-s-obsidian .cm-math.cm-comment.cm-tag,
-.theme-dark .cm-s-obsidian .cm-comment.cm-tag,
-.is-mobile .theme-dark .cm-s-obsidian .cm-comment.cm-tag {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-tag,
+.cm-s-obsidian .cm-math.cm-comment.cm-tag,
+.cm-s-obsidian .cm-comment.cm-tag,
+.is-mobile .cm-s-obsidian .cm-comment.cm-tag {
   color: #fc4384 !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-attribute,
-.theme-dark .cm-s-obsidian .cm-math.cm-comment.cm-attribute,
-.theme-dark .cm-s-obsidian .cm-comment.cm-attribute,
-.is-mobile .theme-dark .cm-s-obsidian .cm-comment.cm-attribute {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-comment.cm-attribute,
+.cm-s-obsidian .cm-math.cm-comment.cm-attribute,
+.cm-s-obsidian .cm-comment.cm-attribute,
+.is-mobile .cm-s-obsidian .cm-comment.cm-attribute {
   color: #d4d4d4 !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
-.theme-dark .cm-s-obsidian .cm-math.cm-string,
-.theme-dark .cm-s-obsidian .cm-string,
-.is-mobile .theme-dark .cm-s-obsidian .cm-string {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-string,
+.cm-s-obsidian .cm-math.cm-string,
+.cm-s-obsidian .cm-string,
+.is-mobile .cm-s-obsidian .cm-string {
   color: var(--ayu-syntax-string) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-string-2,
-.theme-dark .cm-s-obsidian .cm-math.cm-string-2,
-.theme-dark .cm-s-obsidian .cm-string-2,
-.is-mobile .theme-dark .cm-s-obsidian .cm-string-2 {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-string-2,
+.cm-s-obsidian .cm-math.cm-string-2,
+.cm-s-obsidian .cm-string-2,
+.is-mobile .cm-s-obsidian .cm-string-2 {
   color: var(--ayu-syntax-string) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
-.theme-dark .cm-s-obsidian .cm-math.cm-meta,
-.theme-dark .cm-s-obsidian .cm-meta,
-.is-mobile .theme-dark .cm-s-obsidian .cm-meta {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
+.cm-s-obsidian .cm-math.cm-meta,
+.cm-s-obsidian .cm-meta,
+.is-mobile .cm-s-obsidian .cm-meta {
   color: var(--ayu-syntax-special) !important;
   background: inherit !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-builtin,
-.theme-dark .cm-s-obsidian .cm-math.cm-builtin,
-.theme-dark .cm-s-obsidian .cm-builtin,
-.is-mobile .theme-dark .cm-s-obsidian .cm-builtin {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-builtin,
+.cm-s-obsidian .cm-math.cm-builtin,
+.cm-s-obsidian .cm-builtin,
+.is-mobile .cm-s-obsidian .cm-builtin {
   color: var(--ayu-syntax-tag) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-header,
-.theme-dark .cm-s-obsidian .cm-math.cm-header,
-.theme-dark .cm-s-obsidian .cm-header,
-.is-mobile .theme-dark .cm-s-obsidian .cm-header {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-header,
+.cm-s-obsidian .cm-math.cm-header,
+.cm-s-obsidian .cm-header,
+.is-mobile .cm-s-obsidian .cm-header {
   color: var(--ayu-syntax-string) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-hr,
-.theme-dark .cm-s-obsidian .cm-math.cm-hr,
-.theme-dark .cm-s-obsidian .cm-hr,
-.is-mobile .theme-dark .cm-s-obsidian .cm-hr {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-hr,
+.cm-s-obsidian .cm-math.cm-hr,
+.cm-s-obsidian .cm-hr,
+.is-mobile .cm-s-obsidian .cm-hr {
   color: var(--ayu-syntax-comment) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-link,
-.theme-dark .cm-s-obsidian .cm-math.cm-link,
-.theme-dark .cm-s-obsidian .cm-link,
-.is-mobile .theme-dark .cm-s-obsidian .cm-link {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-link,
+.cm-s-obsidian .cm-math.cm-link,
+.cm-s-obsidian .cm-link,
+.is-mobile .cm-s-obsidian .cm-link {
   color: var(--ayu-syntax-tag) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.cm-error,
-.theme-dark .cm-s-obsidian .cm-math.cm-error,
-.theme-dark .cm-s-obsidian .cm-error,
-.is-mobile .theme-dark .cm-s-obsidian .cm-error {
+.cm-s-obsidian .cm-hmd-frontmatter.cm-error,
+.cm-s-obsidian .cm-math.cm-error,
+.cm-s-obsidian .cm-error,
+.is-mobile .cm-s-obsidian .cm-error {
   border-bottom: 1px solid var(--ayu-syntax-error) !important;
 }
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-activeline-background,
-.theme-dark .cm-s-obsidian .cm-math.CodeMirror-activeline-background,
-.theme-dark .cm-s-obsidian .CodeMirror-activeline-background,
-.is-mobile .theme-dark .cm-s-obsidian .CodeMirror-activeline-background {
+/* .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-activeline-background,
+ .cm-s-obsidian .cm-math.CodeMirror-activeline-background,
+ .cm-s-obsidian .CodeMirror-activeline-background,
+.is-mobile  .cm-s-obsidian .CodeMirror-activeline-background {
   background: #272727 !important;
-}
-.theme-dark .cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-matchingbracket,
-.theme-dark .cm-s-obsidian .cm-math.CodeMirror-matchingbracket,
-.theme-dark .cm-s-obsidian .CodeMirror-matchingbracket,
-.is-mobile .theme-dark .cm-s-obsidian .CodeMirror-matchingbracket {
+} */
+.cm-s-obsidian .cm-hmd-frontmatter.CodeMirror-matchingbracket,
+.cm-s-obsidian .cm-math.CodeMirror-matchingbracket,
+.cm-s-obsidian .CodeMirror-matchingbracket,
+.is-mobile .cm-s-obsidian .CodeMirror-matchingbracket {
   outline: 1px solid grey !important;
   color: var(--ayu-syntax-special) !important;
 }
