@@ -52,7 +52,7 @@ h5,
 h6,
 pre.HyperMD-header,
 .is-mobile .cm-header {
-  color: var(--ayu-syntax-string) !important;
+  color: var(--c-header-color) !important;
   line-height: 1em !important;
 }
 
@@ -60,14 +60,15 @@ pre.HyperMD-header,
 strong,
 b,
 .cm-strong {
-  color: var(--ayu-syntax-markup) !important;
+  color: var(--c-bold-color) !important;
+  font-weight: var(--c-bold-font-weight) !important; 
 }
 
 /* Tags */
 .tag,
 .tag:hover,
 .cm-s-obsidian span.cm-hashtag {
-  color: var(--ayu-common-accent);
+  color: var(--c-tag-color);
 }
 
 /* ********************************************************************** */
@@ -78,7 +79,7 @@ b,
 
 .markdown-preview-view th,
 .markdown-preview-view td {
-  border: 1px solid var(--ayu-common-ui) !important;
+  border: var(--c-table-border) !important;
 }
 
 /* ********************************************************************** */
@@ -88,7 +89,7 @@ b,
 /* ********************************************************************** */
 
 .markdown-preview-view blockquote {
-  border: 1px solid var(--ayu-common-ui) !important;
+  border: var(--c-blockquote-border) !important;
   border-left-width: 8px !important;
 }
 
@@ -119,7 +120,7 @@ b,
   content: "\e185";
   font-family: "Font Awesome 6 Pro";
   font-weight: 400;
-  color: var(--ayu-common-accent);
+  color: var(--c-nav-folder-icon-color);
 }
 
 /* Closed folder icon */
@@ -147,8 +148,7 @@ body:not(.is-grabbing):not(.is-mobile) .nav-folder:not(.is-active) .nav-folder-t
 
 /* Border and shadow */
 .popover {
-  box-shadow: 0px 0px 20px 10px var(--ayu-common-bg),
-    inset 0px 0px 1px 1px var(--ayu-common-ui);
+  box-shadow: var(--c-popover-box-shadow);
 }
 
 /* Widen the size constraints */
@@ -330,15 +330,31 @@ pre[class*="language-"] {
 
 .typing-icon,
 .internal-link,
-.internal-link:hover {
-  color: var(--ayu-syntax-func);
+.internal-link:hover,
+.cm-link,
+.cm-hmd-internal-link,
+.cm-url {
+  color: var(--c-link-color) !important;
+}
+
+.theme-light .external-link,
+.theme-light .external-link:hover,
+.theme-light .cm-link,
+.theme-light .cm-hmd-internal-link,
+.theme-light .cm-url {
+  color: var(--c-link-color) !important;
+  text-decoration: underline !important;
+}
+
+.theme-light .markdown-source-view * {
+  text-color: var(--text-normal) !important;
 }
 
 .internal-link {
-  border: 1px solid var(--ayu-ui-panel-bg);
+  border: var(--c-link-border);
   border-radius: 5px;
   padding: 2px;
-  background-color: var(--ayu-ui-panel-border);
+  background-color: var(--c-link-background);
 }
 
 .typing-icon {
