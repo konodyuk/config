@@ -4,7 +4,7 @@ source ${ZSH}/oh-my-zsh.sh
 
 bindkey -v
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "changyuheng/fz", defer:1
