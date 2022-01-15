@@ -24,7 +24,7 @@
 
 .token.boolean {
   color: var(--ayu-syntax-keyword) !important;
-  font-weight: bold !important;
+  /* font-weight: bold !important; */
 }
 
 .token.number {
@@ -54,12 +54,12 @@
 
 .token.operator {
   color: var(--ayu-syntax-operator) !important;
-  font-weight: bold !important;
+  /* font-weight: bold !important; */
 }
 
 .token.keyword {
   color: var(--ayu-syntax-keyword) !important;
-  font-weight: bold !important;
+  /* font-weight: bold !important; */
 }
 
 .token.function {
@@ -79,10 +79,10 @@
   color: var(--text-muted) !important;
 }
 
-.cm-s-obsidian .cm-keyword,
-.is-mobile .cm-s-obsidian .cm-keyword {
-  font-weight: italic !important;
-}
+/* .cm-s-obsidian .cm-keyword, */
+/* .is-mobile .cm-s-obsidian .cm-keyword { */
+/*   font-weight: italic !important; */
+/* } */
 
 .cm-s-obsidian .cm-hmd-frontmatter,
 .cm-s-obsidian,
@@ -99,7 +99,7 @@
 .cm-s-obsidian .cm-keyword,
 .is-mobile .cm-s-obsidian .cm-keyword {
   color: var(--ayu-syntax-keyword) !important;
-  font-weight: bold !important;
+  /* font-weight: bold !important; */
 }
 .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
 .cm-s-obsidian .cm-math.cm-atom,
@@ -172,7 +172,7 @@
 .cm-s-obsidian .cm-operator,
 .is-mobile .cm-s-obsidian .cm-operator {
   color: var(--ayu-syntax-operator) !important;
-  font-weight: bold !important;
+  /* font-weight: bold !important; */
 }
 .cm-s-obsidian .cm-hmd-frontmatter.cm-qualifier,
 .cm-s-obsidian .cm-math.cm-qualifier,
