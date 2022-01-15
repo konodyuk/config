@@ -1,5 +1,5 @@
 export ZSH=~/.oh-my-zsh
-plugins=(osx wd python nmap docker cp battery thefuck web-search zsh-autosuggestions)
+plugins=(macos wd python nmap docker cp battery web-search zsh-autosuggestions)
 source ${ZSH}/oh-my-zsh.sh
 
 bindkey -v
