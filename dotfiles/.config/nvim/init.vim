@@ -26,7 +26,7 @@ call plug#begin()
     " Code suggestions/completion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Python `black` integration
-    Plug 'psf/black', { 'branch': 'master' }
+    Plug 'psf/black', { 'branch': 'main' }
     " Python `isort` integration
     Plug 'fisadev/vim-isort'
 call plug#end()
