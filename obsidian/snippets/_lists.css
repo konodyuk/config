@@ -171,10 +171,11 @@ ul > li:first-child::before {
 
 /* cut line to end in last bullet */
 ul > li:last-child::before {
-  height: 12px;
+  height: calc(100% - 14px); 
 }
 
 /* if only child, remove the line */
 ul > li:first-child:last-child::before {
-  height: 0px !important;
+  /* height: 0px !important; */
+  height: calc(100% - 26px); 
 }
