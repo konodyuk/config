@@ -1,4 +1,4 @@
-export ZSH="/Users/`whoami`/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh
 plugins=(osx wd python nmap docker cp battery thefuck web-search zsh-autosuggestions)
 source ${ZSH}/oh-my-zsh.sh
 
