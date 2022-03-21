@@ -1,3 +1,6 @@
+# set env
+export PATH=/usr/local/bin:/usr/bin:/bin
+
 cd $HOME/Obsidian/main
 
 PREFIX="CRON ($(date +"%Y-%m-%d %H:%M:%S"))"
