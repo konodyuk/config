@@ -1,6 +1,11 @@
 # set env
 export PATH=/usr/local/bin:/usr/bin:/bin
 
+# set logging
+LOGDIR=$HOME/config/scripts/obsidian/logs
+exec >>$LOGDIR/stdout.log
+exec 2>>$LOGDIR/stderr.log
+
 cd $HOME/Obsidian/main
 
 PREFIX="CRON ($(date +"%Y-%m-%d %H:%M:%S"))"
