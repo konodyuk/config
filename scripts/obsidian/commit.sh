@@ -14,6 +14,8 @@ git add -A files && git commit -m "$PREFIX: files"
 cd .obsidian
 git reset
 git add -A plugins && git commit -m "$PREFIX: update plugins"
+git add -A themes && git commit -m "$PREFIX: update themes"
+git add *.json && git commit -m "$PREFIX: update settings"
 git push
 cd ..
 
