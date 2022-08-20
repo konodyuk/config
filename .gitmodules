@@ -1,0 +1,3 @@
+[submodule "mackup"]
+	path = mackup
+	url = git@github.com:konodyuk/config-mackup.git
