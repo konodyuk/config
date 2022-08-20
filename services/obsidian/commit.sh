@@ -2,7 +2,7 @@
 export PATH=/usr/local/bin:/usr/bin:/bin
 
 # set logging
-LOGDIR=$HOME/config/scripts/obsidian/logs
+LOGDIR=$HOME/config/services/obsidian/logs
 exec >>$LOGDIR/stdout.log
 exec 2>>$LOGDIR/stderr.log
 
