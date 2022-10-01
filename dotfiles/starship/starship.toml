@@ -1,0 +1,80 @@
+[character]
+vicmd_symbol = "[V](bold green)"
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_status]
+disabled = true
+
+[python]
+python_binary = ["python3", "python", "python2"]
+format = 'via [${symbol}${pyenv_prefix}(\($virtualenv\) )]($style)'
+symbol = " "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
