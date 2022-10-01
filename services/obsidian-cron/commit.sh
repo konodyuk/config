@@ -3,6 +3,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin
 
 # set logging
 LOGDIR=$HOME/config/services/obsidian-cron/logs
+mkdir -p "$LOGDIR"
 exec >>$LOGDIR/stdout.log
 exec 2>>$LOGDIR/stderr.log
 
