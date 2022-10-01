@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+
+import shlex
+import subprocess as sp
+import sys
+from pathlib import Path
+
+DIR = Path("~/.cache/nvref").expanduser()
+URL = "https://github.com"
+PREVIEW_FORMAT = (
+    f'bat --color=always --style=plain {DIR}/$(tr "/" "@" <<< {{}})/README.md'
+)
+
+
+def normalize(s):
+    # url to slug
+    if s.count("/") > 1:
+        s = "/".join(s.split("/")[-2:])
+
+    # truncate git
+    if s.endswith(".git"):
+        s = s[:-4]
+
+    return s
+
+
+def slug2dir(s):
+    return s.replace("/", "@")
+
+
+def dir2slug(s):
+    return s.replace("@", "/")
+
+
+def main():
+    if not DIR.exists():
+        DIR.mkdir()
+
+    query = ""
+    if len(sys.argv) >= 2:
+        query = sys.argv[1]
+
+    dirs = DIR.glob("*")
+    slugs = [dir2slug(d.name) for d in dirs]
+
+    if query:
+        query = normalize(query)
+
+    proc = sp.run(
+        f"""
+        fzf \
+            --preview '{PREVIEW_FORMAT}' \
+            --query={query}\
+            --layout=reverse \
+            --info=inline \
+            --border \
+            --margin=0 \
+            --padding=0 \
+            --print-query \
+            --bind ctrl-u:preview-page-up,ctrl-d:preview-page-down,ctrl-j:down,ctrl-k:up
+        """,
+        shell=True,
+        stdout=sp.PIPE,
+        input="\n".join(slugs).encode(),
+    )
+
+    fzf_out = proc.stdout.decode().rstrip().split("\n")
+
+    if len(fzf_out) == 0:
+        return
+
+    if len(fzf_out) == 1 and fzf_out[0]:
+        download_repo(fzf_out[0])
+        open_repo(fzf_out[0])
+
+    if len(fzf_out) == 2:
+        open_repo(fzf_out[1])
+
+
+def download_repo(repo):
+    repo_slug = normalize(repo)
+    repo_dir = slug2dir(repo_slug)
+    sp.run(shlex.split(f"git clone --depth 1 {URL}/{repo_slug}.git {DIR}/{repo_dir}"))
+
+
+def open_repo(repo):
+    repo_slug = normalize(repo)
+    repo_dir = slug2dir(repo_slug)
+    sp.run(shlex.split(f"nvim {DIR}/{repo_dir}"))
+
+
+if __name__ == "__main__":
+    main()
