@@ -1,7 +1,0 @@
----
-- name: Install tools
-  tags: tools
-  pip:
-    name: .
-    chdir: '{{ ansible_env.PWD }}/tools'
-    editable: yes

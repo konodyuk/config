@@ -1,7 +1,0 @@
-GIMP Palette
-Name: {{ item.key }}
-Columns: 0
-#
-{% for color in item.value %}
-{% for ch in range(3) %}{{ '%3d' | format(color.value[1+ch*2:3+ch*2] | int(value, 16)) }} {% endfor %}{{ color.name }}
-{% endfor %}

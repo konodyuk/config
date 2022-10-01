@@ -1,6 +1,0 @@
----
-- name: Read vars
-  tags: always
-  include_vars:
-    dir: '{{ ansible_env.PWD }}/vars'
-    depth: 0

@@ -1,7 +1,0 @@
----
-- name: link self to global config dir
-  tags: always
-  file:
-    src: '{{ ansible_env.PWD }}'
-    path: '~/config'
-    state: link

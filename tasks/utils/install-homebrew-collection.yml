@@ -1,9 +1,0 @@
----
-- name: 'brew install - {{ package }} ({{ collection.key }})'
-  tags: brew, {{ collection.key }}
-  homebrew:
-    name: '{{ package }}'
-    state: present
-  loop_control:
-    loop_var: package
-  loop: '{{ collection.value }}'
