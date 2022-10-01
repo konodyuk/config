@@ -1,0 +1,9 @@
+try:
+    %pylab inline
+    from IPython.display import set_matplotlib_formats
+    set_matplotlib_formats('retina')
+    style.use("dark_background")
+    plt.rcParams.update({'figure.facecolor': (0, 0, 0, 0)})
+    matplotlib.pyplot.switch_backend("module://itermplot")
+except:
+    print("not enabling pylab")
