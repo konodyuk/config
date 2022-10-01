@@ -1,0 +1,50 @@
+#!/bin/sh
+
+DIR="/tmp"
+EXT="py"
+
+POSITIONAL_ARGS=()
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -d|--dir) DIR="$2"; shift ;;
+        -e|--ext) EXT="$2"; shift ;;
+        *) POSITIONAL_ARGS+=("$1") ;;
+    esac
+    shift
+done
+
+set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
+
+files=$(ls $DIR | grep .$EXT)
+
+filenames=$(echo "$files" | sed "s/.$EXT//")
+
+fzf_out=$(
+    echo "$filenames" |
+    fzf \
+        --preview "bat --color=always --style=plain $DIR/{}.$EXT" \
+        --layout=reverse \
+        --info=inline \
+        --query=$1 \
+        --border \
+        --margin=0 \
+        --padding=0 \
+        --print-query \
+        --height=40% \
+        --bind ctrl-u:preview-page-up,ctrl-d:preview-page-down,ctrl-j:down,ctrl-k:up
+)
+
+# fzf outputs 2 lines: query and match
+# if match is empty, we use query as result
+sel_filename=$(echo "$fzf_out" | tail -n 1)
+
+# return if nothing is selected and query is empty
+[[ -z "$sel_filename" ]] && exit 1
+
+# trim whitespace
+sel_filename=$(echo "$sel_filename" | xargs)
+
+sel_path=$(echo "$DIR/$sel_filename.$EXT")
+
+nvim -c ":IronRepl" $sel_path
