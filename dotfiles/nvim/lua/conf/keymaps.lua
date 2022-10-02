@@ -68,9 +68,12 @@ map("n", "<leader>rR", "<cmd>IronRestart<cr>")
 
 map("n", "<S-Tab>", "<C-o>")
 
-map("n", "<C-a>", require("dial.map").inc_normal())
-map("n", "<C-x>", require("dial.map").dec_normal())
-map("v", "<C-a>", require("dial.map").inc_visual())
-map("v", "<C-x>", require("dial.map").dec_visual())
-map("v", "g<C-a>", require("dial.map").inc_gvisual())
-map("v", "g<C-x>", require("dial.map").dec_gvisual())
+local status_ok, dial = pcall(require, "dial.map")
+if status_ok then
+	map("n", "<C-a>", dial.inc_normal())
+	map("n", "<C-x>", dial.dec_normal())
+	map("v", "<C-a>", dial.inc_visual())
+	map("v", "<C-x>", dial.dec_visual())
+	map("v", "g<C-a>", dial.inc_gvisual())
+	map("v", "g<C-x>", dial.dec_gvisual())
+end

@@ -1,6 +1,14 @@
-local augend = require("dial.augend")
+local status_ok, dial_config = pcall(require, "dial.config")
+if not status_ok then
+	return
+end
 
-require("dial.config").augends:register_group({
+local status_ok, augend = pcall(require, "dial.augend")
+if not status_ok then
+	return
+end
+
+dial_config.augends:register_group({
 	-- default augends used when no group name is specified
 	default = {
 		augend.integer.alias.decimal_int,
