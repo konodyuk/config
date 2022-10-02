@@ -3,7 +3,7 @@
 # @TODO check platform and arch based on uname; choose appropriate binaries
 # @TODO detect current shell
 
-QCPATH="/tmp/.quickconf"
+QCPATH="$HOME/.quickconf"
 PKGPATH="$QCPATH/pkg"
 BINPATH="$QCPATH/bin"
 CONFPATH="$QCPATH/config"
