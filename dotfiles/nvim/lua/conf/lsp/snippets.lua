@@ -6,6 +6,11 @@ end
 -- Path api: https://github.com/L3MON4D3/LuaSnip/blob/master/lua/luasnip/util/path.lua
 local Path = require("luasnip.util.path")
 local snippets_root = Path.expand("~/codebox/snippets")
+
+if not snippets_root then
+	return
+end
+
 local _, ft_dirs = Path.scandir(snippets_root)
 
 local ASYNC = false
