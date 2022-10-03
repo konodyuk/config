@@ -157,7 +157,7 @@ install_tools() {
 
     (
         install \
-            "https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz" \
+            "https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz" \
             "nvim" \
             "*/bin/nvim"
     )
