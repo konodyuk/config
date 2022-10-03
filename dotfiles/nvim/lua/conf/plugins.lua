@@ -84,8 +84,13 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use({ "nvim-treesitter/nvim-treesitter-textobjects", commit = "b8df8b07b4ec2fea8af606004c952b1881402b1e" })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
+	use({ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" })
 	-- use("theHamsta/crazy-node-movement")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("danymat/neogen")
