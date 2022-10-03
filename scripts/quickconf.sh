@@ -239,7 +239,7 @@ EOF
 
     add_line_to_file \
         "$HOME/.bash_profile" \
-        "source $QCPATH/.bashrc || true # QuickConf line, do not edit $QC_LINE_TAG" \
+        "source ~/.bashrc || true # QuickConf line, do not edit $QC_LINE_TAG" \
         'Enable the configuration in login shell (e.g. SSH)? `~/.bash_profile` will be modified'
 
     # gum confirm "Apply changes to the current shell?" && cd "$PREV_CWD" && bash
