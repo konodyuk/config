@@ -1,1 +1,1 @@
-vim.cmd("helptags $XDG_CONFIG_HOME/nvim/doc")
+vim.cmd("helptags " .. vim.fn.stdpath("config") .. "/doc")
