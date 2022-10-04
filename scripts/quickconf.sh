@@ -14,7 +14,7 @@ XDG_RUNTIME="$XDGPATH/runtime"
 XDG_STATE="$XDGPATH/state"
 
 PREV_CWD=$(pwd)
-QC_LINE_TAG="@@QC@@"
+QC_LINE_TAG="quickconf"
 
 export PATH="$BINPATH:$PATH"
 
@@ -253,12 +253,12 @@ EOF
 
     add_line_to_file \
         "$HOME/.bashrc" \
-        "source $QCPATH/rc.sh || true # QuickConf line, do not edit $QC_LINE_TAG" \
+        "source $QCPATH/rc.sh || true # DO NOT EDIT THIS LINE ($QC_LINE_TAG)" \
         'Enable starship prompt and installed binaries? `~/.bashrc` will be modified'
 
     add_line_to_file \
         "$HOME/.bash_profile" \
-        "source ~/.bashrc || true # QuickConf line, do not edit $QC_LINE_TAG" \
+        "source ~/.bashrc || true # DO NOT EDIT THIS LINE ($QC_LINE_TAG)" \
         'Enable the configuration in login shell (e.g. SSH)? `~/.bash_profile` will be modified'
 
     # gum confirm "Apply changes to the current shell?" && cd "$PREV_CWD" && bash
