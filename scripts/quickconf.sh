@@ -182,6 +182,13 @@ install_tools() {
             "rg" \
             "*/rg"
     )
+
+    (
+        install \
+            "https://github.com/extrawurst/gitui/releases/download/v0.21.0/gitui-linux-musl.tar.gz" \
+            "gitui" \
+            "gitui"
+    )
 }
 
 #######################################
@@ -216,16 +223,26 @@ set_configs() {
     mkdir -p "$XDG_DATA"
     mkdir -p "$XDG_RUNTIME"
     mkdir -p "$XDG_STATE"
+
+    # nvim conf
     mkdir -p "$XDG_CONFIG/nvim"
     ln -sf $CONFPATH/dotfiles/nvim/* $XDG_CONFIG/nvim
+
+    # gitui conf
+    mkdir -p "$XDG_CONFIG/gitui"
+    ln -sf $CONFPATH/dotfiles/gitui/* $XDG_CONFIG/gitui
+
+    # starship conf
     ln -sf $CONFPATH/dotfiles/starship/starship.toml $XDG_CONFIG/starship.toml
 
+    # custom binaries: inv, quickconf
     ln -sf $CONFPATH/bin/* $BINPATH
 
     cat << EOF > $QCPATH/rc.sh
         XDG_ENV="XDG_CONFIG_HOME=$XDG_CONFIG XDG_DATA_HOME=$XDG_DATA XDG_RUNTIME_DIR=$XDG_RUNTIME XDG_STATE_HOME=$XDG_STATE"
         alias nvim="\$XDG_ENV nvim"
         alias inv="\$XDG_ENV inv"
+        alias gitui="\$XDG_ENV gitui"
 
         PATH="$BINPATH:\$PATH"
 
