@@ -246,7 +246,8 @@ set_configs() {
 
         PATH="$BINPATH:\$PATH"
 
-        eval "\$(XDG_CONFIG_HOME=$XDG_CONFIG starship init bash)"
+        export STARSHIP_CONFIG="$XDG_CONFIG/starship.toml"
+        eval "\$(starship init bash)"
 EOF
 
     add_line_to_file \
