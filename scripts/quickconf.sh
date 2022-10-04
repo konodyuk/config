@@ -262,7 +262,7 @@ EOF
         'Enable the configuration in login shell (e.g. SSH)? `~/.bash_profile` will be modified'
 
     # gum confirm "Apply changes to the current shell?" && cd "$PREV_CWD" && bash
-    echo 'Successfully installed. Run `bash` to apply changes.'
+    echo 'Successfully installed. Run `bash` to apply changes. Further information: `quickconf help`' | gum format
 }
 
 #######################################
