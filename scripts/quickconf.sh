@@ -218,7 +218,7 @@ install_tools() {
 #   PREV_CWD
 #######################################
 set_configs() {
-    git_sparse_clone "https://github.com/konodyuk/config.git" "$CONFPATH" "dotfiles/nvim" "dotfiles/starship" "bin/inv"
+    git_sparse_clone "https://github.com/konodyuk/config.git" "$CONFPATH" "dotfiles/nvim" "dotfiles/starship" "bin/inv" "scripts/quickconf.sh"
     mkdir -p "$XDG_CONFIG"
     mkdir -p "$XDG_DATA"
     mkdir -p "$XDG_RUNTIME"
