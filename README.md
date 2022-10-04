@@ -6,7 +6,7 @@
 
 ## QuickConf
 
-Minimal, unpriveleged and isolated dev configuration.
+Minimal, unprivileged and isolated dev configuration.
 
 Installs and configures:
 - `nvim`
@@ -23,13 +23,25 @@ External, i.e. not managed deps:
 - `node`: for language servers
 - `ipython`: for `inv`
 
-**Installation**:
+**Install**:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/konodyuk/config/main/scripts/quickconf.sh | bash
+curl -fsSL https://raw.githubusercontent.com/konodyuk/config/main/scripts/quickconf.sh | bash -s -- install
 ```
 
-**Uninstallation**:
+**Update**:
+
+```sh
+quickconf update
+```
+
+**Uninstall**:
+
+```sh
+quickconf uninstall
+```
+
+or
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/konodyuk/config/main/scripts/quickconf.sh | bash -s -- uninstall

@@ -237,6 +237,7 @@ set_configs() {
 
     # custom binaries: inv, quickconf
     ln -sf $CONFPATH/bin/* $BINPATH
+    ln -sf $CONFPATH/scripts/quickconf.sh $BINPATH/quickconf
 
     cat << EOF > $QCPATH/rc.sh
         XDG_ENV="XDG_CONFIG_HOME=$XDG_CONFIG XDG_DATA_HOME=$XDG_DATA XDG_RUNTIME_DIR=$XDG_RUNTIME XDG_STATE_HOME=$XDG_STATE"
@@ -288,6 +289,23 @@ uninstall() {
     echo 'Successfully uninstalled. Run `bash` to apply changes.'
 }
 
+help() {
+    cat <<EOF
+quickconf
+
+Minimal, unprivileged and isolated dev configuration.
+
+USAGE:
+    quickconf <SUBCOMMAND>
+
+SUBCOMMANDS:
+    install         Install and configure initially: download binaries and configs
+    uninstall       Remove all files, undo changes applied to ~/.bashrc and ~/.bash_profile
+    update          Download and apply the fresh configuration
+    help            Print this message
+EOF
+}
+
 #######################################
 # Runs installation or uninstallation.
 #
@@ -295,7 +313,7 @@ uninstall() {
 #   1: command: 'install' (default) or 'uninstall'
 #######################################
 main() {
-    local command=${1:-"install"}
+    local command=${1:-"help"}
 
     if [ "$command" = 'install' ]; then
         install_tools
@@ -308,7 +326,19 @@ main() {
         return
     fi
 
+    if [ "$command" = 'update' ]; then
+        set_configs
+        return
+    fi
+
+    if [ "$command" = 'help' ]; then
+        help
+        return
+    fi
+
     echo "Unknown command: $command"
+    echo
+    help
 }
 
 main "$@"
