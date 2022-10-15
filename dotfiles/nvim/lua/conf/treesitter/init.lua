@@ -48,7 +48,9 @@ configs.setup({
 			selection_modes = {
 				-- ["@parameter.outer"] = "v", -- charwise
 				["@function.outer"] = "V", -- linewise
-				["@class.outer"] = "V", -- blockwise
+				["@function.inner"] = "V", -- linewise
+				["@class.outer"] = "V", -- linewise
+				["@class.inner"] = "V", -- linewise
 			},
 			-- If you set this to `true` (default is `false`) then any textobject is
 			-- extended to include preceding xor succeeding whitespace. Succeeding
