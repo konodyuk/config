@@ -14,10 +14,7 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.isort,
-		formatting.black.with({
-			args = { "--quiet", "-" },
-			extra_args = { "--line-length", "120" },
-		}),
+		formatting.black,
 		formatting.stylua,
 		null_ls.builtins.code_actions.gitsigns,
 	},
