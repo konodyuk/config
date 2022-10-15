@@ -110,7 +110,6 @@ return packer.startup(function(use)
 	use("simrat39/symbols-outline.nvim")
 
 	-- scratchpad
-	use("metakirby5/codi.vim")
 	use("hkupty/iron.nvim")
 
 	-- git
