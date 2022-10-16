@@ -1,0 +1,104 @@
+#!/bin/sh
+
+# STAGES BEGIN
+
+stage00__essentials() {
+    xcode-select --install
+
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew instal git git-lfs python@3.10 pipx node
+    pipx ensurepath
+}
+
+stage10__init_repo() {
+    pipx install pyinfra
+    pyinfra @local deploys/init.py
+}
+
+stage11__shell() {
+    pyinfra @local deploys/shell.py
+}
+
+stage12__dotfiles() {
+    dotmap to-disk --all
+}
+
+stage20__macos_defaults() {
+    pyinfra @local deploys/macos_defaults.py
+}
+
+stage21__sudo_touchid() {
+    pyinfra @local deploys/sudo_touchid.py
+}
+
+stage22__iterm() {
+    pyinfra @local deploys/apps/iterm.py
+}
+
+stage30__apps_essential() {
+    stage_3_raycast
+    stage_3_ui
+}
+
+stage30__apps() {
+    stage3__apps_essential
+    stage3__media
+    stage3__utils
+    stage3__editors
+    stage3__communication
+}
+
+stage31__raycast() {
+    pyinfra @local deploys/apps/raycast.py
+}
+
+stage31__ui() {
+    pyinfra @local deploys/apps/ui.py
+}
+
+stage32__media() {
+    pyinfra @local deploys/apps/media.py
+}
+
+stage32__utils() {
+    pyinfra @local deploys/apps/utils.py
+}
+
+stage33__editors() {
+    pyinfra @local deploys/apps/editors.py
+}
+
+stage33__communication() {
+    pyinfra @local deploys/apps/communication.py
+}
+
+# STAGES END
+
+stage_functions=$(compgen -A function | grep -E "^stage")
+stage_names=$(echo "$stage_functions" | sed -e 's/stage.*__/    /')
+
+help() {
+    cat <<EOF
+USAGE:
+    bootstrap <STAGE>
+
+STAGES:
+$stage_names
+EOF
+}
+
+main() {
+    if [ -z "$1" ]; then help; return 0; fi
+
+    local stage_name=$1; shift
+    local cmd_name=$(echo "$stage_functions" | grep -E "__$stage_name$")
+
+    if [ -z "$cmd_name" ]; then
+        echo "Unknown stage: $stage_name"; echo
+        help
+    else
+        $cmd_name "$@"
+    fi
+}
+
+main "$@"
