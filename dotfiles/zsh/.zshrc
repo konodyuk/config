@@ -1,21 +1,39 @@
-export ZSH=~/.oh-my-zsh
+# clone a plugin, identify its init file, source it, and add it to fpath
+# ref: https://github.com/mattmc3/zsh_unplugged
+function plugin-load {
+  local repo plugdir initfile
+  ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
+  for repo in $@; do
+    plugdir=$ZPLUGINDIR/${repo:t}
+    initfile=$plugdir/${repo:t}.plugin.zsh
+    if [[ ! -d $plugdir ]]; then
+      echo "Cloning $repo..."
+      git clone -q --depth 1 --recursive --shallow-submodules https://github.com/$repo $plugdir
+    fi
+    if [[ ! -e $initfile ]]; then
+      local -a initfiles=($plugdir/*.plugin.{z,}sh(N) $plugdir/*.{z,}sh{-theme,}(N))
+      (( $#initfiles )) || { echo >&2 "No init file found '$repo'." && continue }
+      ln -sf "${initfiles[1]}" "$initfile"
+    fi
+    fpath+=$plugdir
+    (( $+functions[zsh-defer] )) && zsh-defer . $initfile || . $initfile
+  done
+}
 
-if [[ ! -e  $ZSH/custom/plugins/zsh-autosuggestions ]]; then
-    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
-fi
+repos=(
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-syntax-highlighting
+    jeffreytse/zsh-vi-mode
+)  # + zsh-autocomplete?
 
-if [[ ! -e  $ZSH/custom/plugins/zsh-syntax-highlighting ]]; then
-    git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
-fi
+# override keybindings of zsh-vi-mode
+function zvm_after_init {
+    # ref: https://apple.stackexchange.com/questions/426084/zsh-how-do-i-get-ctrl-p-and-ctrl-n-keys-to-perform-history-search-backward-forw
+    bindkey '^P' history-beginning-search-backward
+    bindkey '^N' history-beginning-search-forward
+}
 
-if [[ ! -e  $ZSH/custom/plugins/zsh-vi-mode ]]; then
-    git clone --depth=1 https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
-fi
-
-plugins=(zsh-autosuggestions zsh-vi-mode zsh-syntax-highlighting)  # + zsh-autocomplete?
-source ${ZSH}/oh-my-zsh.sh
-
-bindkey -v
+plugin-load $repos
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
