@@ -23,6 +23,7 @@ pip.packages(
         "ipython",
         "black",
         "isort",
+        "ruamel.yaml",
     ],
     pip="pip3",
 )
