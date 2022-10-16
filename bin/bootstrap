@@ -6,7 +6,7 @@ stage00__essentials() {
     xcode-select --install
 
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew instal git git-lfs python@3.10 pipx node
+    brew install git git-lfs python@3.10 pipx node
     pipx ensurepath
 }
 
