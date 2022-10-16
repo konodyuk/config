@@ -18,10 +18,11 @@ brew.packages(
 )
 
 pip.packages(
-    [
+    packages=[
         "click",
         "ipython",
         "black",
         "isort",
-    ]
+    ],
+    pip="pip3",
 )
