@@ -41,11 +41,11 @@ stage30__apps_essential() {
 }
 
 stage30__apps() {
-    stage3__apps_essential
-    stage3__media
-    stage3__utils
-    stage3__editors
-    stage3__communication
+    stage30__apps_essential
+    stage32__media
+    stage32__utils
+    stage33__editors
+    stage33__communication
 }
 
 stage31__raycast() {
