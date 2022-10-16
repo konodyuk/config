@@ -20,7 +20,7 @@ stage11__shell() {
 }
 
 stage12__dotfiles() {
-    dotmap to-disk --all
+    ./bin/dotmap to-disk --all
 }
 
 stage20__macos_defaults() {
