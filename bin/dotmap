@@ -36,6 +36,7 @@ class Link:
 
         if not dry_run:
             try:
+                dst.parent.mkdir(parents=True, exist_ok=True)
                 os.symlink(src, dst)
             except Exception as e:
                 print(e)
