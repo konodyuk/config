@@ -1,6 +1,27 @@
 # install & setup starship & shell utilities
-# @TODO: install oh-my-zsh
 
-from pyinfra.operations import brew
+from pyinfra.operations import brew, pip
 
-brew.packages(["starship", "zoxide"])
+brew.packages(
+    [
+        "starship",
+        "zoxide",
+        "fzf",
+        "ripgrep",
+        "gitui",
+        "bat",
+        "neovim",
+        "watch",
+        "tmux",
+        "tldr",
+    ]
+)
+
+pip.packages(
+    [
+        "click",
+        "ipython",
+        "black",
+        "isort",
+    ]
+)
