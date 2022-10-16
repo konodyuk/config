@@ -36,8 +36,8 @@ stage22__iterm() {
 }
 
 stage30__apps_essential() {
-    stage_31__raycast
-    stage_31__ui
+    stage31__raycast
+    stage31__ui
 }
 
 stage30__apps() {
