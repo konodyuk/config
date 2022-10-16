@@ -1,0 +1,14 @@
+zsh:
+- {path: ~/.zshrc, alias: zsh/.zshrc}
+starship:
+- {path: ~/.config/starship.toml, alias: starship/starship.toml}
+nvim:
+- {path: ~/.config/nvim/doc, alias: nvim/doc}
+- {path: ~/.config/nvim/lua, alias: nvim/lua}
+- {path: ~/.config/nvim/init.lua, alias: nvim/init.lua}
+ipython:
+- {path: ~/.ipython/profile_default/startup, alias: ipython/profile_default/startup}
+- {path: ~/.ipython/profile_default/ipython_config.py, alias: ipython/profile_default/ipython_config.py}
+gitui:
+- {path: ~/.config/gitui/theme.ron, alias: gitui/theme.ron}
+- {path: ~/.config/gitui/key_bindings.ron, alias: gitui/key_bindings.ron}

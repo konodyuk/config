@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+
+import os
+from contextlib import contextmanager
+from dataclasses import dataclass
+from pathlib import Path
+
+import click
+from ruamel.yaml import YAML
+from ruamel.yaml.comments import CommentedMap
+
+DOTFILES_PATH = Path("~/config/dotfiles").expanduser()
+CONFIG_PATH = DOTFILES_PATH / "dotmap.yaml"
+
+
+@dataclass
+class Link:
+    path: Path
+    alias: str
+    # copy: bool = False
+    # getter?
+    # setter?
+
+    def __post_init__(self):
+        self.path = _path_expand(self.path)
+
+    @property
+    def status(self):
+        raise NotImplementedError()
+
+    def to_disk(self, dry_run: bool = False):
+        src = self.full_source_path
+        dst = self.full_destination_path
+
+        print(f"Linking {src} to {dst}")
+
+        if not dry_run:
+            try:
+                os.symlink(src, dst)
+            except Exception as e:
+                print(e)
+
+    def to_repo(self, dry_run: bool = False):
+        raise NotImplementedError()
+
+    @property
+    def full_source_path(self):
+        return DOTFILES_PATH / self.alias
+
+    @property
+    def full_destination_path(self):
+        return self.path
+
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+@click.argument("group", type=str)
+@click.argument("path", type=str)
+def add(group, path):
+    path = _path_expand(path)
+    if not path.exists():
+        raise ValueError("Provided path does not exist:", path)
+    alias = os.path.join(group, path.name)
+
+    with read_config(read_only=False) as cfg:
+        if group not in cfg:
+            cfg[group] = []
+
+        for link in cfg[group]:
+            if _path_expand(link["path"]) == path:
+                raise ValueError("The path is already added:", path)
+            if link["alias"] == alias:
+                raise ValueError("The alias is already registered:", alias)
+
+        path = str(_path_shorten(path))
+        print(f"Adding alias={alias}, path={path}")
+        cfg[group].append({"path": path, "alias": alias})
+
+
+@cli.command()
+def diff():
+    raise NotImplementedError()
+
+
+@cli.command()
+def status():
+    """Prints stats for modified groups."""
+
+    # Usage:
+    #     dotmap status          # prints stats for modified groups: # of unlinked, # of uncommitted
+    #     dotmap status neovim   # prints detailed stats for a group
+
+    raise NotImplementedError()
+
+
+@cli.command("to-disk")
+@click.option("--all", is_flag=True)
+@click.option("--dry-run", is_flag=True)
+@click.argument("groups", nargs=-1)
+def to_disk(all, dry_run, groups):
+    with read_config() as cfg:
+        if groups and all:
+            raise ValueError(
+                "Specific groups cannot be provided if --all is specified."
+            )
+        if all:
+            groups = cfg.keys()
+        for group in groups:
+            if group not in cfg:
+                raise ValueError("Unknown group:", group)
+        for group in groups:
+            for item in cfg[group]:
+                link = Link(**item)
+                link.to_disk(dry_run=dry_run)
+
+
+@cli.command("to-repo")
+@click.option("--all", is_flag=True)
+@click.option("--dry-run", is_flag=True)
+@click.argument("groups", nargs=-1)
+def to_repo(all, dry_run, groups):
+    raise NotImplementedError()
+
+
+@contextmanager
+def read_config(read_only=True):
+    yaml = YAML()
+
+    if os.path.exists(CONFIG_PATH):
+        with open(CONFIG_PATH) as f:
+            data = yaml.load(f)
+    else:
+        data = {}
+
+    yield data
+
+    if read_only:
+        return
+
+    for group in data:
+        group_links = data[group]
+        for idx, file in enumerate(group_links):
+            if not isinstance(file, CommentedMap):
+                group_links[idx] = CommentedMap(file)
+                group_links[idx].fa.set_flow_style()
+    with open(CONFIG_PATH, "w") as f:
+        yaml.dump(data, f)
+
+
+def _path_expand(path):
+    # note that we should not apply Path.resolve()
+    # as that would trace the existing symlinks
+    return Path(path).expanduser()
+
+
+def _path_shorten(path):
+    path = _path_expand(path)
+    if Path.home() in path.parents:
+        return "~" / path.relative_to(Path.home())
+    return path
+
+
+if __name__ == "__main__":
+    cli()
