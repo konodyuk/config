@@ -1,30 +1,24 @@
-# clone a plugin, identify its init file, source it, and add it to fpath
-# ref: https://github.com/mattmc3/zsh_unplugged
-function plugin-load {
-  local repo plugdir initfile
-  ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
-  for repo in $@; do
-    plugdir=$ZPLUGINDIR/${repo:t}
-    initfile=$plugdir/${repo:t}.plugin.zsh
-    if [[ ! -d $plugdir ]]; then
-      echo "Cloning $repo..."
-      git clone -q --depth 1 --recursive --shallow-submodules https://github.com/$repo $plugdir
-    fi
-    if [[ ! -e $initfile ]]; then
-      local -a initfiles=($plugdir/*.plugin.{z,}sh(N) $plugdir/*.{z,}sh{-theme,}(N))
-      (( $#initfiles )) || { echo >&2 "No init file found '$repo'." && continue }
-      ln -sf "${initfiles[1]}" "$initfile"
-    fi
-    fpath+=$plugdir
-    (( $+functions[zsh-defer] )) && zsh-defer . $initfile || . $initfile
-  done
-}
+export ZSH=~/.oh-my-zsh
+export ZSH_CUSTOM="$ZSH/custom"
+
+if [[ ! -d $ZSH ]]; then
+    git clone https://github.com/ohmyzsh/ohmyzsh.git $ZSH
+fi
 
 repos=(
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-syntax-highlighting
     jeffreytse/zsh-vi-mode
 )  # + zsh-autocomplete?
+
+plugins=()
+for repo in $repos; do
+    if [[ ! -d $ZSH_CUSTOM/plugins/${repo:t} ]]; then
+        git clone https://github.com/${repo} $ZSH_CUSTOM/plugins/${repo:t}
+    fi
+    plugins+=("${repo:t}")
+done
+unset repo{s,}
 
 # override keybindings of zsh-vi-mode
 function zvm_after_init {
@@ -33,7 +27,7 @@ function zvm_after_init {
     bindkey '^N' history-beginning-search-forward
 }
 
-plugin-load $repos
+source ${ZSH}/oh-my-zsh.sh
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
