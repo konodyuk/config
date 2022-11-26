@@ -28,6 +28,8 @@ function zvm_after_init {
     bindkey '^ ' autosuggest-accept
 }
 
+# export DISABLE_AUTO_UPDATE=true
+zstyle ':omz:update' mode disabled
 source ${ZSH}/oh-my-zsh.sh
 
 typeset -A ZSH_HIGHLIGHT_STYLES
