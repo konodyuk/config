@@ -25,6 +25,7 @@ function zvm_after_init {
     # ref: https://apple.stackexchange.com/questions/426084/zsh-how-do-i-get-ctrl-p-and-ctrl-n-keys-to-perform-history-search-backward-forw
     bindkey '^P' history-beginning-search-backward
     bindkey '^N' history-beginning-search-forward
+    bindkey '^ ' autosuggest-accept
 }
 
 source ${ZSH}/oh-my-zsh.sh
