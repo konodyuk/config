@@ -3,9 +3,20 @@
 # STAGES BEGIN
 
 stage00__essentials() {
-    xcode-select --install
+    stage01__essentials_xcode_select
+    stage02__essentials_brew
+    stage03__essentials_git_python_node_pipx
+}
 
+stage01__essentials_xcode_select() {
+    xcode-select --install
+}
+
+stage02__essentials_brew() {
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+stage03__essentials_git_python_node_pipx() {
     brew install git git-lfs python@3.10 pipx node
     pipx ensurepath
 }
