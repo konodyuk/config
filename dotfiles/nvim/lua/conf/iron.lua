@@ -19,6 +19,9 @@ iron.setup({
 			applescript = {
 				command = { "osascript", "-i" },
 			},
+            sql = {
+                command = { "sqlite3" },
+            }
 		},
 		-- how the REPL window will be opened, the default is opening
 		-- a float window of height 40 at the bottom.
