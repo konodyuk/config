@@ -92,7 +92,7 @@ return packer.startup(function(use)
 	})
 	use({ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" })
 	-- use("theHamsta/crazy-node-movement")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use({ "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" })
 	use("danymat/neogen")
 
 	-- snippets
