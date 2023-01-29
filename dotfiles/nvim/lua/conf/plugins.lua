@@ -119,6 +119,7 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 
 	-- misc
+	use("norcalli/nvim-colorizer.lua")
 	use("folke/which-key.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
