@@ -71,5 +71,18 @@ configs.setup({
 				["]C"] = "@comment.outer",
 			},
 		},
+		swap = {
+			enable = true,
+			swap_next = {
+				["][a"] = "@parameter.inner",
+				["][f"] = "@function.outer",
+				["][c"] = "@class.outer",
+			},
+			swap_previous = {
+				["[]a"] = "@parameter.inner",
+				["[]f"] = "@function.outer",
+				["[]c"] = "@class.outer",
+			},
+		},
 	},
 })
