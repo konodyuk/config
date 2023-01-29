@@ -8,7 +8,6 @@ local modules = {
 	"conf.cmp",
 	"conf.lsp",
 	"conf.telescope",
-	-- "conf.codi",
 	"conf.iron",
 	"conf.surround",
 	"conf.help",
@@ -22,7 +21,8 @@ local modules = {
 	"conf.toggleterm",
 	"conf.bufferline",
 	"conf.dial",
-	-- "conf.symbols-outline",
+	"conf.symbols-outline",
+	"conf.colorizer",
 }
 
 local err_modules = {}
