@@ -16,6 +16,10 @@ null_ls.setup({
 		formatting.isort,
 		formatting.black,
 		formatting.stylua,
+		formatting.gofmt,
+		formatting.clang_format.with({
+			extra_args = { "-style", "{IndentWidth: 4, ColumnLimit: 300}" },
+		}),
 		null_ls.builtins.code_actions.gitsigns,
 	},
 	on_attach = function(client, bufnr)
