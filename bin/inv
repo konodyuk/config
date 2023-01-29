@@ -47,4 +47,4 @@ sel_filename=$(echo "$sel_filename" | xargs)
 
 sel_path=$(echo "$DIR/$sel_filename.$EXT")
 
-nvim -c ":IronRepl" $sel_path
+cd $DIR && nvim -c ":IronRepl" $sel_path
