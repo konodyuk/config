@@ -103,14 +103,18 @@ local mappings = {
 	-- j = { "<cmd>tabnext<cr>", "Next tab" },
 	-- k = { "<cmd>tabprev<cr>", "Prev tab" },
 	["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
+	["E"] = { "<cmd>NeoTreeReveal<cr>", "Reveal current file" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
+	["W"] = { "<cmd>noautocmd w<CR>", "Save without autoformatting" },
 	["q"] = { "<cmd>q<CR>", "Quit" },
 	["Q"] = { "<cmd>q!<CR>", "Force Quit" },
 	--[[ ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" }, ]]
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 	-- ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["t"] = { "<cmd>SymbolsOutline<cr>", "Tree (Symbols)" },
 	["s"] = { "<cmd>Telescope live_grep<cr>", "Search" },
+	["S"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
 	--[[ ["f"] = { ]]
 	--[[   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
 	--[[   "Find files", ]]
