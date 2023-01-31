@@ -199,6 +199,11 @@ local mappings = {
 		},
 	},
 
+	["?"] = {
+		"<cmd>Telescope help_tags<cr>",
+		"Help tags",
+	},
+
 	--[[ s = { ]]
 	--[[ 	name = "Search", ]]
 	--[[ 	b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" }, ]]
