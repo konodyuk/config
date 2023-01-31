@@ -3,13 +3,14 @@ if not snip_status_ok then
 	return
 end
 
--- Path api: https://github.com/L3MON4D3/LuaSnip/blob/master/lua/luasnip/util/path.lua
-local Path = require("luasnip.util.path")
-local snippets_root = Path.expand("~/codebox/snippets")
-
+local snippets_root = os.getenv("NVIM_EXTERNAL_SNIPPETS")
 if not snippets_root then
 	return
 end
+
+-- Path api: https://github.com/L3MON4D3/LuaSnip/blob/master/lua/luasnip/util/path.lua
+local Path = require("luasnip.util.path")
+snippets_root = Path.expand(snippets_root)
 
 local _, ft_dirs = Path.scandir(snippets_root)
 
