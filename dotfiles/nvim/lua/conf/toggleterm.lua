@@ -34,6 +34,11 @@ function _G.set_terminal_keymaps()
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+
+	-- ref: https://github.com/equalsraf/neovim-qt/issues/259#issuecomment-475829115
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Space>", [[<Space>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Backspace>", [[<Backspace>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-Backspace>", [[<Backspace>]], opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
