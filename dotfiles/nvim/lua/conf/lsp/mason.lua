@@ -33,3 +33,34 @@ for _, server in pairs(mason_lspconfig.get_installed_servers()) do
 
 	lspconfig[server].setup(opts)
 end
+
+local status_ok, registry = pcall(require, "mason-registry")
+if not status_ok then
+	return
+end
+
+local function install_package(name)
+	if not registry.has_package(name) then
+		print("Setup: Invalid package: " .. name)
+		return
+	end
+	if registry.is_installed(name) then
+		print("Setup: Already installed: " .. name)
+		return
+	end
+	local pkg = registry.get_package(name)
+	print("Setup: Installing: " .. name)
+	pkg:install()
+end
+
+vim.api.nvim_create_user_command("SetupPython", function()
+	install_package("pyright")
+	install_package("debugpy")
+	install_package("black")
+	install_package("isort")
+end, { force = true })
+
+vim.api.nvim_create_user_command("SetupBash", function()
+	install_package("bash-language-server")
+	install_package("beautysh")
+end, { force = true })

@@ -17,6 +17,7 @@ null_ls.setup({
 		formatting.black,
 		formatting.stylua,
 		formatting.gofmt,
+		formatting.beautysh,
 		formatting.clang_format.with({
 			extra_args = { "-style", "{IndentWidth: 4, ColumnLimit: 300}" },
 		}),

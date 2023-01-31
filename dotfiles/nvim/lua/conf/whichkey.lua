@@ -201,6 +201,11 @@ local mappings = {
 	m = {
 		name = "Mason",
 		m = { "<cmd>Mason<cr>", "Open Mason" },
+		i = {
+			name = "Install Group",
+			p = { "<cmd>SetupPython<cr>", "Python" },
+			b = { "<cmd>SetupBash<cr>", "Bash" },
+		},
 	},
 
 	["?"] = {
