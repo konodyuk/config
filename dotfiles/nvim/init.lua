@@ -23,6 +23,8 @@ local modules = {
 	"conf.dial",
 	"conf.symbols-outline",
 	"conf.colorizer",
+	"conf.mini-jump",
+	"conf.leap",
 }
 
 local err_modules = {}

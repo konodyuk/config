@@ -120,6 +120,8 @@ return packer.startup(function(use)
 
 	-- misc
 	use("norcalli/nvim-colorizer.lua")
+	use({ "echasnovski/mini.jump", branch = "stable" })
+	use("ggandor/leap.nvim")
 	use("folke/which-key.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
