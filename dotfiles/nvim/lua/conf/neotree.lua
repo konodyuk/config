@@ -86,7 +86,8 @@ neotree.setup({
 			["l"] = "open",
 			["o"] = "open",
 			["<cr>"] = "open",
-			["s"] = "open_split",
+			["s"] = false, -- for leap.nvim
+			["S"] = false,
 			["v"] = "open_vsplit",
 			-- ["S"] = "split_with_window_picker",
 			-- ["s"] = "vsplit_with_window_picker",
