@@ -121,6 +121,7 @@ return packer.startup(function(use)
 	-- misc
 	use("norcalli/nvim-colorizer.lua")
 	use({ "echasnovski/mini.jump", branch = "stable" })
+	use("RRethy/vim-illuminate")
 	use("ggandor/leap.nvim")
 	use("folke/which-key.nvim")
 

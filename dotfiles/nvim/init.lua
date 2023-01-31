@@ -25,6 +25,7 @@ local modules = {
 	"conf.colorizer",
 	"conf.mini-jump",
 	"conf.leap",
+	"conf.illuminate",
 }
 
 local err_modules = {}
