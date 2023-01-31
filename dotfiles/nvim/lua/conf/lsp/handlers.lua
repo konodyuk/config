@@ -1,3 +1,5 @@
+local wk = require("which-key")
+
 local M = {}
 
 -- TODO: backfill this to template
@@ -65,27 +67,23 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	--[[ vim.api.nvim_buf_set_keymap(bufnr, "n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts) ]]
-	--[[ vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) ]]
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references initial_mode=normal<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gl",
-		'<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	--[[ vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) ]]
+	-- ref: https://github.com/folke/dot/blob/master/config/nvim/lua/config/plugins/lsp/keys.lua
+	wk.register({
+		buffer = bufnr,
+		g = {
+			name = "+goto",
+			D = { "<cmd>Telescope lsp_declarations initial_mode=normal<cr>", "Declaration" },
+			d = { "<cmd>Telescope lsp_definitions initial_mode=normal<cr>", "Definition" },
+			i = { "<cmd>Telescope lsp_implementations initial_mode=normal<cr>", "Implementations" },
+			t = { "<cmd>Telescope lsp_type_definitions initial_mode=normal<cr>", "Type Definitions" },
+			r = { "<cmd>Telescope lsp_references initial_mode=normal<cr>", "References" },
+			l = { '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', "Diagnostic" },
+		},
+		K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+		["<C-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+		["[d"] = { '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', "Prev Diagnostic" },
+		["]d"] = { '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', "Next Diagnostic" },
+	})
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
