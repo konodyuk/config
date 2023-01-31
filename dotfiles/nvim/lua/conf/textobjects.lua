@@ -31,3 +31,12 @@ map("x", "iF", ":normal! G$Vgg0<cr>")
 map("o", "iF", ":normal! GVgg<cr>")
 map("x", "aF", ":normal! G$Vgg0<cr>")
 map("o", "aF", ":normal! GVgg<cr>")
+
+local status_ok, presets = pcall(require, "which-key.plugins.presets")
+if status_ok then
+	presets.objects["aP"] = [[a paragraph (backwargs)]]
+	presets.objects["il"] = [[inner line (content only)]]
+	presets.objects["al"] = [[a line (including whitespace)]]
+	presets.objects["aF"] = [[a file (entire buffer)]]
+	presets.objects["iF"] = [[inside file (entire buffer)]]
+end

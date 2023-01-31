@@ -86,3 +86,24 @@ configs.setup({
 		},
 	},
 })
+
+local status_ok, presets = pcall(require, "which-key.plugins.presets")
+if status_ok then
+	presets.objects["af"] = [[a function]]
+	presets.objects["if"] = [[inside function]]
+	presets.objects["ac"] = [[a class]]
+	presets.objects["ic"] = [[inside class]]
+	presets.objects["aa"] = [[a parameter]]
+	presets.objects["ia"] = [[inside parameter]]
+	presets.objects["aC"] = [[a comment block]]
+
+	presets.motions["]a"] = [[next parameter (end of)]]
+	presets.motions["]c"] = [[next class]]
+	presets.motions["]f"] = [[next function]]
+	presets.motions["]C"] = [[next comment]]
+
+	presets.motions["[a"] = [[previous parameter]]
+	presets.motions["[c"] = [[previous class]]
+	presets.motions["[f"] = [[previous function]]
+	presets.motions["[C"] = [[previous comment]]
+end
