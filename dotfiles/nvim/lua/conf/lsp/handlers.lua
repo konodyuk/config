@@ -64,6 +64,9 @@ local function lsp_keymaps(bufnr)
 		["[d"] = { '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', "Prev Diagnostic" },
 		["]d"] = { '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', "Next Diagnostic" },
 	})
+	wk.register({
+		["<C-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+	}, { mode = "i" })
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
