@@ -63,7 +63,6 @@ return packer.startup(function(use)
 	-- editing
 	use("kylechui/nvim-surround")
 	use("windwp/nvim-autopairs")
-	use("numToStr/Comment.nvim")
 	use({ "monaqa/dial.nvim", commit = "d2d7a57fb030c82b8b0d6712d9c35dfb49d9aa3c" })
 
 	-- cmp plugins

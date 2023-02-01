@@ -40,7 +40,7 @@ configs.setup({
 				["ic"] = "@class.inner",
 				["aa"] = "@parameter.outer", -- for "argument"
 				["ia"] = "@parameter.inner",
-				["aC"] = "@comment.outer",
+				-- ["aC"] = "@comment.outer",
 				-- ["ai"] = "@block.outer", -- for "indent"
 				-- ["ii"] = "@block.inner",
 			},
@@ -63,12 +63,12 @@ configs.setup({
 				["[a"] = "@parameter.outer",
 				["[c"] = "@class.outer",
 				["[f"] = "@function.outer",
-				["[C"] = "@comment.outer",
+				-- ["[C"] = "@comment.outer",
 			},
 			goto_next_start = {
 				["]c"] = "@class.outer",
 				["]f"] = "@function.outer",
-				["]C"] = "@comment.outer",
+				-- ["]C"] = "@comment.outer",
 			},
 		},
 		swap = {
@@ -95,15 +95,15 @@ if status_ok then
 	presets.objects["ic"] = [[inside class]]
 	presets.objects["aa"] = [[a parameter]]
 	presets.objects["ia"] = [[inside parameter]]
-	presets.objects["aC"] = [[a comment block]]
+	presets.objects["gc"] = [[a comment block]]
 
 	presets.motions["]a"] = [[next parameter (end of)]]
 	presets.motions["]c"] = [[next class]]
 	presets.motions["]f"] = [[next function]]
-	presets.motions["]C"] = [[next comment]]
+	-- presets.motions["]C"] = [[next comment]]
 
 	presets.motions["[a"] = [[previous parameter]]
 	presets.motions["[c"] = [[previous class]]
 	presets.motions["[f"] = [[previous function]]
-	presets.motions["[C"] = [[previous comment]]
+	-- presets.motions["[C"] = [[previous comment]]
 end
