@@ -4,11 +4,12 @@ if not status_ok then
 end
 
 require("scope").setup()
+require("mini.bufremove").setup()
 
 bufferline.setup({
 	options = {
 		-- mode = "tabs",
-		close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+		close_command = "lua require'mini.bufremove'.delete(%d)", -- can be a string | function, see "Mouse actions"
 		show_buffer_close_icons = false,
 		show_close_icon = false,
 		-- close_command = "bd",

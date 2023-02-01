@@ -93,7 +93,7 @@ local mappings = {
 			"Buffer List",
 		},
 		-- d = { "<cmd>bp<cr><cmd>bd#<cr>", "Delete" },
-		d = { "<cmd>Bdelete<cr>", "Buffer Delete" },
+		d = { "<cmd>lua require'mini.bufremove'.delete(0, false)<cr>", "Buffer Delete" },
 		t = { "<cmd>tabnew<cr>", "New tab" },
 		r = { "<cmd>edit<cr>", "Buffer Reload" },
 	},

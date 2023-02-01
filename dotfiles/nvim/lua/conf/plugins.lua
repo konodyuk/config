@@ -52,7 +52,7 @@ return packer.startup(function(use)
 
 	-- buffers
 	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
-	use("moll/vim-bbye")
+	use("echasnovski/mini.bufremove")
 	use("tiagovla/scope.nvim")
 
 	-- performance
