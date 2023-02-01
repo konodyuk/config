@@ -60,7 +60,7 @@ local function lsp_keymaps(bufnr)
 			l = { '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', "Diagnostic" },
 		},
 		K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
-		["<C-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+		["<C-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 		["[d"] = { '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', "Prev Diagnostic" },
 		["]d"] = { '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', "Next Diagnostic" },
 	})
