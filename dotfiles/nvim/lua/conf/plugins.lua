@@ -52,7 +52,6 @@ return packer.startup(function(use)
 
 	-- buffers
 	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
-	use("echasnovski/mini.bufremove")
 	use("tiagovla/scope.nvim")
 
 	-- performance
@@ -122,10 +121,10 @@ return packer.startup(function(use)
 
 	-- misc
 	use("norcalli/nvim-colorizer.lua")
-	use({ "echasnovski/mini.jump", branch = "stable" })
 	use("RRethy/vim-illuminate")
 	use("ggandor/leap.nvim")
 	use("folke/which-key.nvim")
+	use("echasnovski/mini.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
