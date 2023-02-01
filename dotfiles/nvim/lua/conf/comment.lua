@@ -8,7 +8,7 @@ require("mini.comment").setup({
 		comment_line = "gcc",
 
 		-- Define 'comment' textobject (like `dgc` - delete whole comment block)
-		textobject = "gc",
+		textobject = "aC",
 	},
 	hooks = {
 		pre = function()

@@ -95,7 +95,7 @@ if status_ok then
 	presets.objects["ic"] = [[inside class]]
 	presets.objects["aa"] = [[a parameter]]
 	presets.objects["ia"] = [[inside parameter]]
-	presets.objects["gc"] = [[a comment block]]
+	presets.objects["aC"] = [[a comment block]]
 
 	presets.motions["]a"] = [[next parameter (end of)]]
 	presets.motions["]c"] = [[next class]]
