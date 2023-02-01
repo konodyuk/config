@@ -39,6 +39,8 @@ function _G.set_terminal_keymaps()
 	vim.api.nvim_buf_set_keymap(0, "t", "<S-Space>", [[<Space>]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<S-Backspace>", [[<Backspace>]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-Backspace>", [[<Backspace>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Enter>", [[<Enter>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-Enter>", [[<Enter>]], opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
