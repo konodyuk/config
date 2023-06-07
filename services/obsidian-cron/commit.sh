@@ -20,7 +20,7 @@ echo "SYNC $PREFIX"
 git reset
 git add -A js && git commit -m "$PREFIX: js"
 git add -A typed && git commit -m "$PREFIX: notes"
-git add -A index INDEX.md && git commit -m "$PREFIX: indices"
+git add -A apps miniapps INDEX.md && git commit -m "$PREFIX: apps and INDEX"
 git add typing.otl && git commit -m "$PREFIX: schema"
 git add -A files && git commit -m "$PREFIX: files"
 
