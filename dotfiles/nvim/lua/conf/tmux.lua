@@ -33,7 +33,7 @@ local function send_lines_to_tmux_pane(pane_id, lines)
 	os.execute(cmd)
 end
 
-function mark_and_send_motion(mtype)
+local function mark_and_send_motion(mtype)
 	local text = require("iron.core").mark_motion(mtype)
 	local pane_id = get_adjacent_pane_id()
 	if pane_id then
