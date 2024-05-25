@@ -39,15 +39,19 @@ ZSH_HIGHLIGHT_STYLES[arg0]='fg=white,bold'
 
 if [ -f ~/.aliases ]
 then
-  source ~/.aliases
+    source ~/.aliases
 fi
 
 if [ -f ~/.env ]
 then
-  source ~/.env
+    source ~/.env
 fi
 
 export PATH="$HOME/config/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR="nvim"
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+eval `ssh-agent` && ssh-add > /dev/null
