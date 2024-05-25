@@ -6,8 +6,10 @@ end
 theme.setup({
 	theme_style = "dark_default",
 
-	comment_style = "italic",
-	keyword_style = "NONE",
-	function_style = "NONE",
-	variable_style = "NONE",
+	options = { styles = {
+		comments = "italic",
+		keywords = "NONE",
+		functions = "NONE",
+		variables = "NONE",
+	} },
 })
