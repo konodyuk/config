@@ -34,7 +34,7 @@ add_line_to_file() {
     local message="$3"
 
     touch "$file"
-    grep -qxF "$line" "$file" || ( ([ -z "$message" ] || gum confirm "$message") && echo "$line" >> "$file")
+    grep -qxF "$line" "$file" || ( ([ -z "$message" ] || gum confirm "$message") && echo "$line" >>"$file")
 }
 
 #######################################
@@ -68,7 +68,7 @@ longrun() {
     shift
     local cmd="$@"
 
-    ( (gum spin --title "$title" -- $cmd) || (echo "$title" && $cmd) )
+    ( (gum spin --title "$title" -- $cmd) || (echo "$title" && $cmd))
 }
 
 #######################################
@@ -218,7 +218,12 @@ install_tools() {
 #   PREV_CWD
 #######################################
 set_configs() {
-    git_sparse_clone "https://github.com/konodyuk/config.git" "$CONFPATH" "dotfiles/nvim" "dotfiles/starship" "bin/inv" "scripts/quickconf.sh"
+    git_sparse_clone "https://github.com/konodyuk/config.git" "$CONFPATH" \
+        "dotfiles/nvim" \
+        "dotfiles/starship" \
+        "dotfiles/tmux" \
+        "bin/inv" \
+        "scripts/quickconf.sh"
     mkdir -p "$XDG_CONFIG"
     mkdir -p "$XDG_DATA"
     mkdir -p "$XDG_RUNTIME"
@@ -235,11 +240,15 @@ set_configs() {
     # starship conf
     ln -sf $CONFPATH/dotfiles/starship/starship.toml $XDG_CONFIG/starship.toml
 
+    # tmux conf
+    ln -sf $CONFPATH/dotfiles/tmux/.tmux.conf $XDG_CONFIG/.tmux.conf
+    ln -sf $CONFPATH/dotfiles/tmux/.tmux.conf.local $XDG_CONFIG/.tmux.conf.local
+
     # custom binaries: inv, quickconf
     ln -sf $CONFPATH/bin/* $BINPATH
     ln -sf $CONFPATH/scripts/quickconf.sh $BINPATH/quickconf
 
-    cat << EOF > $QCPATH/rc.sh
+    cat <<EOF >$QCPATH/rc.sh
         XDG_ENV="XDG_CONFIG_HOME=$XDG_CONFIG XDG_DATA_HOME=$XDG_DATA XDG_RUNTIME_DIR=$XDG_RUNTIME XDG_STATE_HOME=$XDG_STATE"
         alias nvim="\$XDG_ENV nvim"
         alias inv="\$XDG_ENV inv"
@@ -248,6 +257,7 @@ set_configs() {
         PATH="$BINPATH:\$PATH"
 
         export STARSHIP_CONFIG="$XDG_CONFIG/starship.toml"
+        tmux source "$XDG_CONFIG/.tmux.conf"
         eval "\$(starship init bash)"
 EOF
 
