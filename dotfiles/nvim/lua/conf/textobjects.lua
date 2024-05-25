@@ -32,6 +32,12 @@ map("o", "iF", ":normal! GVgg<cr>")
 map("x", "aF", ":normal! G$Vgg0<cr>")
 map("o", "aF", ":normal! GVgg<cr>")
 
+-- swaps
+-- TODO: swap inner backward and forward: W, w, p, l
+-- map("n", "][W", [[ "xdiWdWEp"xp ]])
+-- map("n", "[]W", [[ "xdiWhvBEldBP"xP ]])
+map("n", "][W", [[ "xdE"ydBdWEp"xp"yP ]])
+
 local status_ok, presets = pcall(require, "which-key.plugins.presets")
 if status_ok then
 	presets.objects["aP"] = [[a paragraph (backwargs)]]
