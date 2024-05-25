@@ -13,3 +13,6 @@ ipython:
 gitui:
 - {path: ~/.config/gitui/theme.ron, alias: gitui/theme.ron}
 - {path: ~/.config/gitui/key_bindings.ron, alias: gitui/key_bindings.ron}
+tmux:
+- {path: ~/.tmux.conf, alias: tmux/.tmux.conf}
+- {path: ~/.tmux.conf.local, alias: tmux/.tmux.conf.local}
