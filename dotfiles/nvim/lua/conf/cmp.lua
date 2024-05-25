@@ -9,7 +9,6 @@ if not snip_status_ok then
 end
 
 require("lsp_signature").setup({
-	--      floating_window = false,
 	hint_enable = false,
 	handler_opts = {
 		border = "single",
