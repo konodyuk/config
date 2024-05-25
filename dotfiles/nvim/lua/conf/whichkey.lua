@@ -220,7 +220,7 @@ return function()
 		},
 
 		t = {
-			"<cmd>TmuxSendToAdjacentOp<cr>",
+			"<cmd>TmuxSendToAdjacentPaneOp<cr>",
 			"Send to adjacent tmux pane",
 		},
 
@@ -271,7 +271,7 @@ return function()
 			s = { "<cmd>lua require 'gitsigns'.stage_hunk({vim.fn.line('v'), vim.fn.line('.')})<cr>", "Stage Hunk" },
 		},
 		t = {
-			"<cmd>TmuxSendToAdjacent<cr>",
+			"<cmd>TmuxSendToAdjacentPaneVisual<cr>",
 			"Send to adjacent tmux pane",
 		},
 	}, vim.tbl_extend("force", opts, { mode = "v" }))
