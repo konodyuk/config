@@ -21,6 +21,7 @@ null_ls.setup({
 		formatting.clang_format.with({
 			extra_args = { "-style", "{IndentWidth: 4, ColumnLimit: 300}" },
 		}),
+		formatting.terraform_fmt,
 		null_ls.builtins.code_actions.gitsigns,
 	},
 	on_attach = function(client, bufnr)
