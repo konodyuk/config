@@ -49,7 +49,7 @@ map("i", "jk", "<ESC>")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
-map("v", "p", '"_dP')
+map("v", "p", ":<C-U>let @p = @+<CR>gvp:let @+ = @p<CR>")
 
 -- Visual Block --
 -- Move text up and down
