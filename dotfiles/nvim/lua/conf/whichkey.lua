@@ -19,8 +19,8 @@ local setup = {
 			text_objects = true, -- help for text objects triggered after entering an operator
 			windows = false, -- default bindings on <c-w>
 			nav = false, -- misc bindings to work with windows
-			z = false, -- bindings for folds, spelling and others prefixed with z
-			g = false, -- bindings for prefixed with g
+			z = true, -- bindings for folds, spelling and others prefixed with z
+			g = true, -- bindings for prefixed with g
 		},
 	},
 	-- add operators that will trigger motion and text object completion
@@ -96,6 +96,9 @@ local mappings = {
 		d = { "<cmd>lua require'mini.bufremove'.delete(0, false)<cr>", "Buffer Delete" },
 		t = { "<cmd>tabnew<cr>", "New tab" },
 		r = { "<cmd>edit<cr>", "Buffer Reload" },
+
+		-- I know about <C-g>, just for convenience
+		i = { "<cmd>echo expand('%:p')<cr>", "Buffer Info" },
 	},
 	["]"] = { "<cmd>tabnext<cr>", "Next tab" },
 	["["] = { "<cmd>tabprev<cr>", "Prev tab" },
@@ -112,7 +115,7 @@ local mappings = {
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 	-- ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["t"] = { "<cmd>SymbolsOutline<cr>", "Tree (Symbols)" },
+	["T"] = { "<cmd>SymbolsOutline<cr>", "Tree (Symbols)" },
 	["s"] = { "<cmd>Telescope live_grep<cr>", "Search" },
 	["S"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
 	--[[ ["f"] = { ]]
@@ -136,6 +139,7 @@ local mappings = {
 		--[[ g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" }, ]]
 		-- g = { "<cmd>Neotree git_status<CR>", "Control" },
 		g = { "<cmd>lua _GITUI_TOGGLE()<CR>", "GitUI" },
+		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "GitUI" },
 		["["] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		["]"] = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		-- ["k"] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -204,6 +208,12 @@ local mappings = {
 		i = {
 			name = "Install Group",
 			p = { "<cmd>SetupPython<cr>", "Python" },
+			g = { "<cmd>SetupGolang<cr>", "Golang" },
+			l = { "<cmd>SetupLua<cr>", "Lua" },
+			f = { "<cmd>SetupFrontend<cr>", "Frontend" },
+			c = { "<cmd>SetupCpp<cr>", "Cpp" },
+			m = { "<cmd>SetupMarkdown<cr>", "Markdown" },
+			j = { "<cmd>SetupMarkups<cr>", "Markups: json/yaml" },
 			b = { "<cmd>SetupBash<cr>", "Bash" },
 		},
 	},
@@ -237,6 +247,15 @@ local mappings = {
 	--[[ 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" }, ]]
 	--[[ }, ]]
 }
+
+local status_ok, presets = pcall(require, "which-key.plugins.presets")
+if status_ok then
+	presets.operators["gc"] = [[Comment]]
+	presets.operators["ys"] = [[Add surrounding]]
+	presets.operators["cs"] = [[Change surrounding]]
+	presets.operators["ds"] = [[Delete surrounding]]
+	-- presets.operators["<leader>r"] = [[Send to REPL]]
+end
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
