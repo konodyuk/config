@@ -58,7 +58,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- theme
-	use("projekt0n/github-nvim-theme")
+	use({ "projekt0n/github-nvim-theme", commit = "0e4887c614f6a982cdffb3651cd54543c7ef4e3e" })
 
 	-- editing
 	use("kylechui/nvim-surround")
