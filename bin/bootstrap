@@ -99,13 +99,18 @@ EOF
 }
 
 main() {
-    if [ -z "$1" ]; then help; return 0; fi
+    if [ -z "$1" ]; then
+        help
+        return 0
+    fi
 
-    local stage_name=$1; shift
+    local stage_name=$1
+    shift
     local cmd_name=$(echo "$stage_functions" | grep -E "__$stage_name$")
 
     if [ -z "$cmd_name" ]; then
-        echo "Unknown stage: $stage_name"; echo
+        echo "Unknown stage: $stage_name"
+        echo
         help
     else
         $cmd_name "$@"
