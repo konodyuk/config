@@ -218,6 +218,11 @@ local mappings = {
 		},
 	},
 
+	t = {
+		"<cmd>TmuxSendToAdjacentOp<cr>",
+		"Send to adjacent tmux pane",
+	},
+
 	["?"] = {
 		"<cmd>Telescope help_tags<cr>",
 		"Help tags",
@@ -263,5 +268,9 @@ which_key.register(mappings, opts)
 which_key.register({
 	g = {
 		s = { "<cmd>lua require 'gitsigns'.stage_hunk({vim.fn.line('v'), vim.fn.line('.')})<cr>", "Stage Hunk" },
+	},
+	t = {
+		"<cmd>TmuxSendToAdjacent<cr>",
+		"Send to adjacent tmux pane",
 	},
 }, vim.tbl_extend("force", opts, { mode = "v" }))
