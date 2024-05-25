@@ -1,35 +1,37 @@
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then
-	return
+return function()
+	local status_ok, bufferline = pcall(require, "bufferline")
+	if not status_ok then
+		return
+	end
+
+	require("scope").setup()
+	require("mini.bufremove").setup()
+
+	bufferline.setup({
+		options = {
+			-- mode = "tabs",
+			close_command = "lua require'mini.bufremove'.delete(%d)", -- can be a string | function, see "Mouse actions"
+			show_buffer_close_icons = false,
+			show_close_icon = false,
+			-- close_command = "bd",
+			-- sort_by = function(buffer_a, buffer_b)
+			-- 	-- add custom logic
+			-- 	return (buffer_a.modified and 1 or 0) > (buffer_b.modified and 1 or 0)
+			-- end,
+		},
+		highlights = {
+			buffer_selected = {
+				bold = true,
+				italic = false,
+			},
+			tab_selected = {
+				fg = { attribute = "fg", highlight = "Normal" },
+				bold = true,
+				italic = false,
+			},
+		},
+	})
 end
-
-require("scope").setup()
-require("mini.bufremove").setup()
-
-bufferline.setup({
-	options = {
-		-- mode = "tabs",
-		close_command = "lua require'mini.bufremove'.delete(%d)", -- can be a string | function, see "Mouse actions"
-		show_buffer_close_icons = false,
-		show_close_icon = false,
-		-- close_command = "bd",
-		-- sort_by = function(buffer_a, buffer_b)
-		-- 	-- add custom logic
-		-- 	return (buffer_a.modified and 1 or 0) > (buffer_b.modified and 1 or 0)
-		-- end,
-	},
-	highlights = {
-		buffer_selected = {
-			bold = true,
-			italic = false,
-		},
-		tab_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bold = true,
-			italic = false,
-		},
-	},
-})
 -- 	options = {
 -- 		numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
 -- 		close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
