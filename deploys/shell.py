@@ -14,6 +14,8 @@ brew.packages(
         "watch",
         "tmux",
         "tldr",
+        "go-task",
+        "gum",
     ]
 )
 
