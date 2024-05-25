@@ -28,9 +28,9 @@ map("x", "al", "$o0")
 map("o", "al", ":normal val<cr>")
 
 map("x", "iF", ":normal! G$Vgg0<cr>")
-map("o", "iF", ":normal! GVgg<cr>")
+map("o", "iF", ":normal! G$Vgg0<cr>")
 map("x", "aF", ":normal! G$Vgg0<cr>")
-map("o", "aF", ":normal! GVgg<cr>")
+map("o", "aF", ":normal! G$Vgg0<cr>")
 
 -- swaps
 -- TODO: swap inner backward and forward: W, w, p, l

@@ -145,9 +145,8 @@ end, {})
 
 -- Operator-pending mode command
 -- vim.api.nvim_create_user_command("TmuxMarkMotion", function()
-function mark_motion()
-	require("iron.marks").winsaveview()
-	local text = require("iron.core").mark_motion()
+function mark_motion(mtype)
+	local text = require("iron.core").mark_motion(mtype)
 	local pane_id = get_adjacent_pane_id()
 	if pane_id then
 		send_to_tmux_pane(pane_id, text)
@@ -157,6 +156,7 @@ end
 -- end, { range = true })
 
 function send_keys()
+	require("iron.marks").winsaveview()
 	vim.o.operatorfunc = "v:lua.require'conf.tmux'.mark_motion"
 	vim.api.nvim_feedkeys("g@", "ni", false)
 end
