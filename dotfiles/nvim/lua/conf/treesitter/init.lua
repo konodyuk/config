@@ -4,12 +4,37 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "all", -- one of "all" or a list of languages
+	ensure_installed = {
+		"bash",
+		"c",
+		"cpp",
+		"css",
+		"cuda",
+		"dockerfile",
+		"go",
+		"help",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"luadoc",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"scss",
+		"sql",
+		"terraform",
+		"toml",
+		"typescript",
+		"vim",
+		"yaml",
+	}, -- one of "all" or a list of languages
 	sync_install = false,
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "css" }, -- list of language that will be disabled
+		-- additional_vim_regex_highlighting = false,
 	},
 	autopairs = {
 		enable = true,
