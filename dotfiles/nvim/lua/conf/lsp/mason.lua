@@ -60,7 +60,36 @@ vim.api.nvim_create_user_command("SetupPython", function()
 	install_package("isort")
 end, { force = true })
 
+vim.api.nvim_create_user_command("SetupGolang", function()
+	install_package("gopls")
+	install_package("delve")
+end, { force = true })
+
+vim.api.nvim_create_user_command("SetupMarkdown", function()
+	install_package("marksman")
+end, { force = true })
+
+vim.api.nvim_create_user_command("SetupFrontend", function()
+	install_package("typescript-language-server")
+	install_package("prettier")
+end, { force = true })
+
 vim.api.nvim_create_user_command("SetupBash", function()
 	install_package("bash-language-server")
 	install_package("beautysh")
+end, { force = true })
+
+vim.api.nvim_create_user_command("SetupLua", function()
+	install_package("lua-language-server")
+	install_package("stylua")
+end, { force = true })
+
+vim.api.nvim_create_user_command("SetupCpp", function()
+	install_package("clangd")
+	install_package("clang-format")
+end, { force = true })
+
+vim.api.nvim_create_user_command("SetupMarkups", function()
+	install_package("yaml-language-server")
+	install_package("json-lsp")
 end, { force = true })
