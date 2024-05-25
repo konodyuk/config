@@ -24,6 +24,12 @@ toggleterm.setup({
 			background = "Normal",
 		},
 	},
+	winbar = {
+		enabled = true,
+		name_formatter = function(term) --  term: Terminal
+			return term.name
+		end,
+	},
 })
 
 function _G.set_terminal_keymaps()
@@ -64,6 +70,19 @@ local gitui = Terminal:new({
 
 function _GITUI_TOGGLE()
 	gitui:toggle()
+end
+
+local lazygit = Terminal:new({
+	cmd = "lazygit",
+	hidden = true,
+	on_open = function(term)
+		vim.api.nvim_buf_set_keymap(term.bufnr, "t", [[<c-\>]], "<cmd>close<CR>", { noremap = true, silent = true })
+		-- vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", "<cmd>close<CR>", { noremap = true, silent = true })
+	end,
+})
+
+function _LAZYGIT_TOGGLE()
+	lazygit:toggle()
 end
 
 -- local node = Terminal:new({ cmd = "node", hidden = true })
