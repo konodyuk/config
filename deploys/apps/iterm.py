@@ -3,7 +3,10 @@ from pyinfra.operations import brew, server
 brew.packages(["iterm2"], name="Install iTerm")
 
 brew.tap("homebrew/cask-fonts")
-brew.casks(["font-fira-code-nerd-font"], name="Install nerdfont")
+brew.casks(
+    ["font-fira-code-nerd-font", "font-jetbrains-mono-nerd-font"],
+    name="Install nerdfonts",
+)
 
 server.shell(
     "defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '~/config/dotfiles/iterm'",
