@@ -100,7 +100,7 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- telescope
-	use("nvim-telescope/telescope.nvim")
+	use({ "nvim-telescope/telescope.nvim", tag = "0.1.2" })
 	use("nvim-telescope/telescope-media-files.nvim")
 
 	-- file tree
