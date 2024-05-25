@@ -46,6 +46,11 @@ M.setup = function()
 	})
 end
 
+function _SMART_SIGNATURE_HELP()
+	vim.lsp.buf.hover()
+	vim.lsp.buf.signature_help()
+end
+
 local function lsp_keymaps(bufnr)
 	-- ref: https://github.com/folke/dot/blob/master/config/nvim/lua/config/plugins/lsp/keys.lua
 	wk.register({
@@ -57,12 +62,18 @@ local function lsp_keymaps(bufnr)
 			i = { "<cmd>Telescope lsp_implementations initial_mode=normal<cr>", "Implementations" },
 			t = { "<cmd>Telescope lsp_type_definitions initial_mode=normal<cr>", "Type Definitions" },
 			r = { "<cmd>Telescope lsp_references initial_mode=normal<cr>", "References" },
-			l = { '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', "Diagnostic" },
+			l = { '<cmd>lua vim.diagnostic.open_float({ border = "rounded", focusable = true })<CR>', "Diagnostic" },
 		},
 		K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
-		["<C-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-		["[d"] = { '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', "Prev Diagnostic" },
-		["]d"] = { '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', "Next Diagnostic" },
+		["<C-s>"] = { "<cmd>lua _SMART_SIGNATURE_HELP()<cr>", "Signature Help" },
+		["[d"] = {
+			'<cmd>lua vim.diagnostic.goto_prev({ border = "rounded", focusable = true })<CR>',
+			"Prev Diagnostic",
+		},
+		["]d"] = {
+			'<cmd>lua vim.diagnostic.goto_next({ border = "rounded", focusable = true })<CR>',
+			"Next Diagnostic",
+		},
 	})
 	wk.register({
 		["<C-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
