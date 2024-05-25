@@ -26,6 +26,7 @@ local modules = {
 	"conf.mini-jump",
 	"conf.leap",
 	"conf.illuminate",
+	"conf.tmux",
 }
 
 local err_modules = {}
