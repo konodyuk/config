@@ -116,7 +116,7 @@ return function()
 		["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 		["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 		-- ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-		["T"] = { "<cmd>SymbolsOutline<cr>", "Tree (Symbols)" },
+		["T"] = { "<cmd>AerialToggle<cr>", "Tree (Symbols)" },
 		["s"] = { "<cmd>Telescope live_grep<cr>", "Search" },
 		["S"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Current Buffer" },
 		--[[ ["f"] = { ]]

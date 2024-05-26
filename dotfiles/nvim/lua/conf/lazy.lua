@@ -137,8 +137,8 @@ local plugins = {
 	-- symbol tree
 	{
 
-		"simrat39/symbols-outline.nvim",
-		config = require("conf.symbols-outline"),
+		"stevearc/aerial.nvim",
+		config = require("conf.aerial"),
 	},
 
 	-- REPL
