@@ -22,6 +22,7 @@
   "mini.nvim": { "branch": "main", "commit": "b0b435873375c4341f2ecbcb95e9e645abe0d679" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "29f7c215332ba95e470811c380ddbce2cebe2af4" },
   "neogen": { "branch": "main", "commit": "6de0add4805165317ab7d3d36b5cef48b1b865f3" },
+  "neoscroll.nvim": { "branch": "master", "commit": "88e63a89fee0f6112f0477a5709a460c45e5dee9" },
   "nlsp-settings.nvim": { "branch": "main", "commit": "2090cb57a4b730233690cd957fa151ed37c3fe9f" },
   "none-ls.nvim": { "branch": "main", "commit": "60f5f80686f5a272ed3281a7d4962cb54dc5348e" },
   "nui.nvim": { "branch": "main", "commit": "b1b3dcd6ed8f355c78bad3d395ff645be5f8b6ae" },
