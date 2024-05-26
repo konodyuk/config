@@ -44,6 +44,10 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		config = require("conf.lualine"),
 	},
+	{
+		"stevearc/stickybuf.nvim",
+		config = require("conf.stickybuf"),
+	},
 
 	-- completion
 	{
