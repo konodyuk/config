@@ -119,7 +119,7 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		commit = "e519877", -- FIXME: update when this issue is resolved: https://github.com/camdencheek/tree-sitter-dockerfile/issues/53
+		-- commit = "e519877", -- FIXME: update when this issue is resolved: https://github.com/camdencheek/tree-sitter-dockerfile/issues/53
 		event = { "BufReadPost", "BufNewFile" },
 		config = require("conf.treesitter"),
 		dependencies = {
